@@ -8,6 +8,8 @@ const Index = () => {
         <div className="text-lg font-bold font-sans">Clanup</div>
         <div className="text-lg font-sans">About</div>
       </nav>
+      {/* Subtle horizontal line */}
+      <div className="border-b border-neutral-800 w-full"></div>
 
       {/* Main content area - intentionally left empty */}
       <div className="flex flex-col items-center justify-center h-[calc(100vh-64px)]">
