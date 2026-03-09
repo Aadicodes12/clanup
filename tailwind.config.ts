@@ -18,6 +18,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Bebas Neue", "sans-serif"], // Using Bebas Neue as the default sans font
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

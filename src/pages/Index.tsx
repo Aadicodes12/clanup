@@ -13,7 +13,7 @@ const Index = () => {
 
       {/* Main content area */}
       <div className="flex flex-col items-center justify-center flex-grow p-4">
-        <div className="mt-16 text-4xl font-bold text-center">
+        <div className="mt-16 text-4xl font-bold text-center font-sans">
           Great hacks start with great teams
         </div>
         {/* This space is intentionally left empty as per your request */}
