@@ -8,8 +8,8 @@ const Index = () => {
         <div className="text-lg font-bold font-sans">Clanup</div>
         <div className="text-lg font-sans">About</div>
       </nav>
-      {/* Subtle horizontal line */}
-      <div className="border-b border-neutral-700 w-full"></div>
+      {/* Thicker horizontal line */}
+      <div className="border-b-2 border-neutral-700 w-full"></div>
 
       {/* Main content area - now allows scrolling */}
       <div className="flex flex-col items-center justify-center flex-grow">
