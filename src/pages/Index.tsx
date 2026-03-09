@@ -9,7 +9,7 @@ const Index = () => {
         <div className="text-lg font-sans">About</div>
       </nav>
       {/* Thicker horizontal line */}
-      <div className="border-b-2 border-neutral-700 w-full"></div>
+      <div className="border-b-2 border-white w-full"></div>
 
       {/* Main content area - now allows scrolling */}
       <div className="flex flex-col items-center justify-center flex-grow">
