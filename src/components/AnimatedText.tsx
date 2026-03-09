@@ -10,7 +10,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ children, className }) => {
   return (
     <span
       className={cn(
-        "inline-block bg-gradient-to-r from-gray-400 via-gray-600 to-gray-400 text-transparent bg-clip-text animate-gradient-flow",
+        "inline-block bg-gradient-to-r from-white via-gray-300 to-white text-transparent bg-clip-text animate-gradient-flow",
         className
       )}
     >
