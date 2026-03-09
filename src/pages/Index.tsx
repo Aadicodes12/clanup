@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedText from '@/components/AnimatedText';
 
 const Index = () => {
   return (
@@ -13,8 +14,10 @@ const Index = () => {
 
       {/* Main content area */}
       <div className="flex flex-col items-center justify-center flex-grow p-4">
-        <div className="mt-16 text-4xl font-bold text-center font-sans">
-          Great hacks start with great teams
+        <div className="mt-16 text-center">
+          <AnimatedText className="text-4xl font-bold font-sans">
+            Great hacks start with great teams
+          </AnimatedText>
         </div>
         {/* This space is intentionally left empty as per your request */}
       </div>
