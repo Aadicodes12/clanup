@@ -9,7 +9,7 @@ const Index = () => {
         <div className="text-lg font-sans">About</div>
       </nav>
       {/* Subtle horizontal line */}
-      <div className="border-b border-neutral-800 w-full"></div>
+      <div className="border-b border-neutral-700 w-full"></div>
 
       {/* Main content area - intentionally left empty */}
       <div className="flex flex-col items-center justify-center h-[calc(100vh-64px)]">
