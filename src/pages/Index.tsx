@@ -1,10 +1,18 @@
-import { MadeWithDyad } from "@/components/made-with-dyad";
+import React from 'react';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white">
-      <h1 className="text-5xl font-bold mb-4">Welcome</h1>
-      <MadeWithDyad />
+    <div className="min-h-screen bg-black text-white">
+      {/* Navbar */}
+      <nav className="bg-neutral-900 p-4 flex justify-between items-center">
+        <div className="text-lg font-bold font-sans">Clanup</div>
+        <div className="text-lg font-sans">About</div>
+      </nav>
+
+      {/* Main content area - intentionally left empty */}
+      <div className="flex flex-col items-center justify-center h-[calc(100vh-64px)]">
+        {/* This space is intentionally left empty as per your request */}
+      </div>
     </div>
   );
 };
