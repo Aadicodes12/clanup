@@ -11,8 +11,11 @@ const Index = () => {
       {/* Thicker horizontal line */}
       <div className="border-b-2 border-white w-full"></div>
 
-      {/* Main content area - now allows scrolling */}
-      <div className="flex flex-col items-center justify-center flex-grow">
+      {/* Main content area */}
+      <div className="flex flex-col items-center justify-center flex-grow p-4">
+        <div className="mt-16 text-5xl font-bold text-center">
+          Meet your next hackathon
+        </div>
         {/* This space is intentionally left empty as per your request */}
       </div>
     </div>
