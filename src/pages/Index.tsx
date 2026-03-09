@@ -11,8 +11,8 @@ const Index = () => {
       {/* Subtle horizontal line */}
       <div className="border-b border-neutral-700 w-full"></div>
 
-      {/* Main content area - intentionally left empty */}
-      <div className="flex flex-col items-center justify-center h-[calc(100vh-64px)]">
+      {/* Main content area - now allows scrolling */}
+      <div className="flex flex-col items-center justify-center flex-grow">
         {/* This space is intentionally left empty as per your request */}
       </div>
     </div>
