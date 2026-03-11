@@ -14,8 +14,8 @@ const Index = () => {
       <div className="border-b-2 border-white w-full"></div>
 
       {/* Main content area */}
-      <div className="flex flex-col items-center justify-center flex-grow p-4">
-        <div className="mt-16 text-center mb-12"> {/* Added margin-bottom for spacing */}
+      <div className="flex flex-col items-center flex-grow p-4 pt-12 space-y-12"> {/* Removed justify-center, added pt-12 and space-y-12 */}
+        <div className="text-center"> {/* Removed mt-16 and mb-12, let space-y-12 handle spacing */}
           <AnimatedText className="text-4xl font-bold font-sans">
             Great hacks start with great teams
           </AnimatedText>
