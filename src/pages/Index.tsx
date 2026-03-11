@@ -1,5 +1,6 @@
 import React from 'react';
 import AnimatedText from '@/components/AnimatedText';
+import AnimatedGridLines from '@/components/AnimatedGridLines';
 
 const Index = () => {
   return (
@@ -22,7 +23,8 @@ const Index = () => {
             Build your hackathon team in minutes
           </p>
         </div>
-        {/* This space is intentionally left empty as per your request */}
+        {/* Animated Grid Lines below orange text */}
+        <AnimatedGridLines className="mt-8 max-w-4xl mx-auto" />
       </div>
     </div>
   );

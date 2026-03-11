@@ -110,3 +110,18 @@
   background-size: 200% auto; /* Make the gradient wider than the text */
   animation: gradient-flow 3s linear infinite;
 }
+
+@keyframes grid-line-scroll {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 40px; /* Moves one full pattern width */
+  }
+}
+
+.animated-grid-lines {
+  background-image: repeating-linear-gradient(to right, transparent, transparent 39px, rgba(255,255,255,0.05) 39px, rgba(255,255,255,0.05) 40px);
+  background-size: 40px 100%; /* Width of one pattern repeat */
+  animation: grid-line-scroll 10s linear infinite;
+}
