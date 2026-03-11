@@ -1,9 +1,10 @@
 import React from 'react';
 import AnimatedText from '@/components/AnimatedText';
+import PhoneMockup from '@/components/PhoneMockup'; // Import the new component
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white flex flex-col">
       {/* Navbar */}
       <nav className="bg-neutral-900 p-4 flex justify-between items-center">
         <div className="text-lg font-bold font-sans">Clanup</div>
@@ -14,7 +15,7 @@ const Index = () => {
 
       {/* Main content area */}
       <div className="flex flex-col items-center justify-center flex-grow p-4">
-        <div className="mt-16 text-center">
+        <div className="mt-16 text-center mb-12"> {/* Added margin-bottom for spacing */}
           <AnimatedText className="text-4xl font-bold font-sans">
             Great hacks start with great teams
           </AnimatedText>
@@ -22,6 +23,14 @@ const Index = () => {
             Build your hackathon team in minutes
           </p>
         </div>
+        
+        {/* Phone Mockup */}
+        <PhoneMockup>
+          {/* You can add content inside the phone screen here */}
+          <div className="flex items-center justify-center h-full text-gray-400 text-sm">
+            Your app content goes here!
+          </div>
+        </PhoneMockup>
       </div>
     </div>
   );
