@@ -121,7 +121,7 @@
 }
 
 .animated-grid-lines {
-  background-image: repeating-linear-gradient(to right, transparent, transparent 39px, rgba(255,255,255,0.05) 39px, rgba(255,255,255,0.05) 40px);
+  background-image: repeating-linear-gradient(to right, transparent, transparent 39px, rgba(255,255,255,0.15) 39px, rgba(255,255,255,0.15) 40px);
   background-size: 40px 100%; /* Width of one pattern repeat */
   animation: grid-line-scroll 10s linear infinite;
 }
