@@ -100,6 +100,9 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "orb-swirl": "orb-swirl 8s linear infinite",
       },
+      backgroundImage: {
+        'radial-gradient-mist': 'radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 70%)',
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
