@@ -20,6 +20,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Bebas Neue", "sans-serif"], // Using Bebas Neue as the default sans font
+        arial: ["Arial", "sans-serif"], // Adding Arial font family
       },
       colors: {
         border: "hsl(var(--border))",
