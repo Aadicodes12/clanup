@@ -21,6 +21,7 @@ export default {
       fontFamily: {
         sans: ["Bebas Neue", "sans-serif"], // Using Bebas Neue as the default sans font
         arial: ["Arial", "sans-serif"], // Adding Arial font family
+        sora: ["Sora", "sans-serif"], // Adding Sora font family
       },
       colors: {
         border: "hsl(var(--border))",
