@@ -21,12 +21,6 @@ const Index = () => {
           <p className="text-sm md:text-base font-sora font-bold text-orange-300 mt-6">
             Build your hackathon team in minutes
           </p>
-          {/* iPhone Mockup Image */}
-          <img
-            src="/Free-Floating-iPhone-13-Mockup-PSD-removebg-preview.png"
-            alt="iPhone 13 Mockup"
-            className="mt-8 mx-auto w-full max-w-md md:max-w-lg lg:max-w-xl h-auto"
-          />
         </div>
       </div>
     </div>
