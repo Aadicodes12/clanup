@@ -14,7 +14,7 @@ const Index = () => {
       <div className="border-b-2 border-white w-full"></div>
 
       {/* Main content area */}
-      <div className="flex flex-col items-center p-4 pt-16"> {/* Removed flex-grow and justify-center, added pt-16 */}
+      <div className="flex flex-col items-center p-4 pt-16">
         <div className="text-center">
           <AnimatedText className="text-4xl font-bold font-sans">
             Great hacks start with great teams
@@ -23,10 +23,10 @@ const Index = () => {
             Build your hackathon team in minutes
           </p>
           <div className="flex flex-col space-y-4">
-            <Button className="bg-white hover:bg-gray-100 text-black font-sora font-bold py-2 px-6 rounded-lg text-lg">
+            <Button className="bg-white hover:bg-gray-100 text-black font-sora font-bold py-2 px-6 rounded-lg text-lg w-fit mx-auto">
               Explore Hackathons
             </Button>
-            <Button className="bg-white hover:bg-gray-100 text-black font-sora font-bold py-2 px-6 rounded-lg text-lg">
+            <Button className="bg-white hover:bg-gray-100 text-black font-sora font-bold py-2 px-6 rounded-lg text-lg w-fit mx-auto">
               Meet Teammates
             </Button>
           </div>
