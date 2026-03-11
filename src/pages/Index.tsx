@@ -7,7 +7,7 @@ const Index = () => {
       {/* Navbar */}
       <nav className="bg-neutral-900 p-4 flex justify-between items-center">
         <div className="text-lg font-bold font-sans">Clanup</div>
-        <div className="text-lg font-sans">About</div> {/* Removed the Link component */}
+        {/* Removed the 'About' text */}
       </nav>
       {/* Thicker horizontal line */}
       <div className="border-b-2 border-white w-full"></div>
