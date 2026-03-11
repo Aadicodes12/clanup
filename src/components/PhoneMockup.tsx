@@ -10,7 +10,7 @@ const PhoneMockup: React.FC<PhoneMockupProps> = ({ children, className }) => {
   return (
     <div
       className={cn(
-        "relative w-64 h-128 md:w-80 md:h-[40rem] bg-gray-800 rounded-[2.5rem] shadow-2xl border-[10px] border-gray-700 flex items-center justify-center overflow-hidden",
+        "relative w-64 h-128 md:w-80 md:h-[40rem] bg-gray-800 rounded-[2.5rem] shadow-2xl border-[10px] border-white flex items-center justify-center overflow-hidden", // Changed border-gray-700 to border-white
         "transform rotate-3 translate-x-4", // Slight rotation and translation to the right
         className
       )}
