@@ -18,8 +18,8 @@ const Index = () => {
           <AnimatedText className="text-4xl font-bold font-sans">
             Great hacks start with great teams
           </AnimatedText>
-          <p className="text-lg font-arial text-orange-300 mt-4">
-            Build ur hackathon team in minutes
+          <p className="text-lg font-arial text-orange-300 mt-6">
+            Build your hackathon team in minutes
           </p>
         </div>
         {/* This space is intentionally left empty as per your request */}
