@@ -22,14 +22,6 @@ const Index = () => {
             Build your hackathon team in minutes
           </p>
         </div>
-        {/* Image below text */}
-        <div className="mt-12 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
-          <img 
-            src="/iphone-mockup.png" 
-            alt="iPhone Mockup" 
-            className="w-full h-auto object-contain"
-          />
-        </div>
       </div>
     </div>
   );
