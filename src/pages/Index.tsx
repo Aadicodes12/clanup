@@ -19,17 +19,10 @@ const Index = () => {
           <AnimatedText className="text-4xl font-bold font-sans">
             Great hacks start with great teams
           </AnimatedText>
-          <p className="text-sm md:text-base font-sora font-bold text-orange-300 mt-6 mb-12"> {/* Increased mb-8 to mb-12 */}
+          <p className="text-sm md:text-base font-sora font-bold text-orange-300 mt-6 mb-12">
             Build your hackathon team in minutes
           </p>
-          <div className="flex flex-col space-y-4 max-w-sm mx-auto"> {/* Added max-w-sm and mx-auto */}
-            <Button className="bg-white hover:bg-gray-100 text-black font-sora font-bold py-2 px-6 rounded-lg text-lg w-full"> {/* Changed to w-full */}
-              Explore Hackathons
-            </Button>
-            <Button className="bg-white hover:bg-gray-100 text-black font-sora font-bold py-2 px-6 rounded-lg text-lg w-full"> {/* Changed to w-full */}
-              Meet Teammates
-            </Button>
-          </div>
+          {/* CTA buttons removed */}
         </div>
       </div>
     </div>
