@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link
 import AnimatedText from '@/components/AnimatedText';
 
 const Index = () => {
@@ -7,7 +8,9 @@ const Index = () => {
       {/* Navbar */}
       <nav className="bg-neutral-900 p-4 flex justify-between items-center">
         <div className="text-lg font-bold font-sans">Clanup</div>
-        <div className="text-lg font-sans">About</div>
+        <div className="text-lg font-sans">
+          <Link to="/new-page" className="hover:text-gray-300">About</Link> {/* Changed 'About' to a link */}
+        </div>
       </nav>
       {/* Thicker horizontal line */}
       <div className="border-b-2 border-white w-full"></div>
