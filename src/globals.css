@@ -113,7 +113,7 @@
 
 @keyframes grid-line-scroll {
   from {
-    background-position-x: 0; /* Changed back to X-axis */
+    background-position-x: 0; /* Keep X-axis animation for left-to-right movement */
   }
   to {
     background-position-x: 40px; /* Moves one full pattern width */
@@ -121,7 +121,7 @@
 }
 
 .animated-grid-lines {
-  background-image: repeating-linear-gradient(to right, transparent, transparent 39px, rgba(255,255,255,0.3) 39px, rgba(255,255,255,0.3) 40px); /* Changed back to 'to right' */
-  background-size: 40px 100%; /* Width of one pattern repeat */
+  background-image: repeating-linear-gradient(to bottom, transparent, transparent 39px, rgba(255,255,255,0.3) 39px, rgba(255,255,255,0.3) 40px); /* Changed to 'to bottom' for horizontal lines */
+  background-size: 100% 40px; /* Full width, 40px height for the repeating pattern */
   animation: grid-line-scroll 10s linear infinite;
 }
