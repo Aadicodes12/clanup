@@ -1,6 +1,5 @@
 import React from 'react';
 import AnimatedText from '@/components/AnimatedText';
-import SwirlingOrb from '@/components/SwirlingOrb';
 
 const Index = () => {
   return (
@@ -22,10 +21,6 @@ const Index = () => {
           <p className="text-sm md:text-base font-sora font-bold text-orange-300 mt-6">
             Build your hackathon team in minutes
           </p>
-        </div>
-        {/* Swirling Orb below orange text */}
-        <div className="mt-12">
-          <SwirlingOrb />
         </div>
       </div>
     </div>
