@@ -23,7 +23,7 @@ const Index = () => {
       {/* Main content area */}
       <div className="flex flex-col items-center p-4 pt-16">
         <div className="text-center">
-          <AnimatedText className="text-4xl font-bold font-sans">
+          <AnimatedText className="text-3xl md:text-4xl font-bold font-sans"> {/* Adjusted text size for mobile */}
             Great hacks start with great teams
           </AnimatedText>
           <TextMarquee
@@ -31,11 +31,11 @@ const Index = () => {
             className="text-sm md:text-base font-sora font-bold text-orange-300 mt-6 mb-12"
             duration="20s" // Adjust duration as needed for speed
           />
-          {/* Image with reduced opacity */}
+          {/* Image with reduced opacity and adjusted width for mobile */}
           <img
             src="/www.beatsnoop.com-WrzvQ-removebg-preview.png"
             alt="Team collaboration illustration"
-            className="mx-auto max-w-full h-auto mt-8 md:mt-12 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 rounded-lg shadow-lg opacity-90"
+            className="mx-auto max-w-full h-auto mt-8 md:mt-12 w-[90%] md:w-3/4 lg:w-2/3 xl:w-1/2 rounded-lg shadow-lg opacity-90" // Adjusted width for mobile
           />
         </div>
       </div>
