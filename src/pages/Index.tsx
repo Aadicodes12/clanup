@@ -19,7 +19,7 @@ const Index = () => {
           <AnimatedText className="text-4xl font-bold font-sans">
             Great hacks start with great teams
           </AnimatedText>
-          <p className="text-sm md:text-base font-sora font-bold text-orange-300 mt-6 mb-12 animate-slide-in-out relative overflow-hidden">
+          <p className="text-sm md:text-base font-sora font-bold text-orange-300 mt-6 mb-12 animate-slide-continuous relative overflow-hidden whitespace-nowrap">
             Build your hackathon team in minutes
           </p>
           {/* Image with reduced opacity */}
