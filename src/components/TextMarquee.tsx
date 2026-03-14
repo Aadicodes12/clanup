@@ -8,8 +8,8 @@ interface TextMarqueeProps {
 }
 
 const TextMarquee: React.FC<TextMarqueeProps> = ({ messages, className, duration = "20s" }) => {
-  // Duplicate messages exactly twice for seamless continuous flow
-  const repeatedMessages = [...messages, ...messages];
+  // Duplicate messages multiple times for seamless continuous flow
+  const repeatedMessages = [...messages, ...messages, ...messages, ...messages]; // Duplicated 4 times
 
   return (
     <div className={cn("relative w-full overflow-hidden", className)}>

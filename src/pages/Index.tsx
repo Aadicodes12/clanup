@@ -29,12 +29,12 @@ const Index = () => {
           <TextMarquee
             messages={marqueeMessages}
             className="text-sm md:text-base font-sora font-bold text-orange-300 mt-6 mb-12"
-            duration="20s"
+            duration="30s" // Increased duration for slower speed
           />
           <img
             src="/www.beatsnoop.com-WrzvQ-removebg-preview.png"
             alt="Team collaborating on a hackathon project"
-            className="mt-8 max-w-sm h-auto mx-auto" // Changed to max-w-sm for a smaller size
+            className="mt-8 max-w-sm h-auto mx-auto"
           />
         </div>
       </div>
