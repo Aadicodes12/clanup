@@ -38,6 +38,12 @@ const Index = () => {
             alt="Team collaborating on a hackathon project"
             className="mt-8 max-w-sm h-auto mx-auto"
           />
+          <Button 
+            className="mt-8 bg-green-500 hover:bg-green-600 text-black font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105"
+            onClick={() => console.log('Browse Teams clicked')}
+          >
+            Browse Teams
+          </Button>
         </div>
       </div>
     </div>
