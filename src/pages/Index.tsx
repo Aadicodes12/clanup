@@ -1,7 +1,7 @@
 import React from 'react';
 import AnimatedText from '@/components/AnimatedText';
-import { Button } from '@/components/ui/button'; // Import the Button component
-import TextMarquee from '@/components/TextMarquee'; // Import the new TextMarquee component
+import { Button } from '@/components/ui/button';
+import TextMarquee from '@/components/TextMarquee';
 
 const Index = () => {
   const marqueeMessages = [
@@ -23,13 +23,15 @@ const Index = () => {
       {/* Main content area */}
       <div className="flex flex-col items-center p-4 pt-16">
         <div className="text-center">
-          <AnimatedText className="text-3xl md:text-4xl font-bold font-sans">
-            Great hacks start with great teams
-          </AnimatedText>
+          <div className="text-3xl md:text-4xl font-bold font-sans">
+            <AnimatedText>Great hacks start with</AnimatedText>
+            <br />
+            <AnimatedText>Great teams</AnimatedText>
+          </div>
           <TextMarquee
             messages={marqueeMessages}
             className="text-sm md:text-base font-sora font-bold text-orange-300 mt-6 mb-12"
-            duration="240s" // Increased duration to 240s for a much slower sliding effect
+            duration="240s"
           />
           <img
             src="/www.beatsnoop.com-WrzvQ-removebg-preview.png"
