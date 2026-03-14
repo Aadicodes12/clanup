@@ -25,31 +25,35 @@ const Index = () => {
       {/* Main content area */}
       <div className="flex flex-col items-center p-4 pt-16 flex-grow">
         <div className="text-center w-full max-w-2xl">
-          <div className="text-4xl md:text-5xl font-bold font-sans">
+          <div className="text-4xl md:text-5xl font-bold font-sans leading-tight">
             <AnimatedText>Great hacks start with</AnimatedText>
             <br />
             <AnimatedText>Great teams</AnimatedText>
           </div>
-          <TextMarquee
-            messages={marqueeMessages}
-            className="text-sm md:text-base font-sora font-bold text-orange-300 mt-6 mb-12"
-            duration="20s"
-          />
+          
+          <div className="h-12 mt-6 mb-8 flex items-center justify-center">
+            <TextMarquee
+              messages={marqueeMessages}
+              className="text-sm md:text-base font-sora font-bold text-amber-400"
+              duration="15s"
+            />
+          </div>
+
           <img
             src="/www.beatsnoop.com-WrzvQ-removebg-preview.png"
             alt="Team collaborating on a hackathon project"
-            className="mt-8 max-w-sm h-auto mx-auto"
+            className="mt-4 max-w-sm h-auto mx-auto"
           />
-          <div className="flex flex-col w-full items-center">
+          
+          <div className="flex flex-col w-full items-center mt-8">
             <Button 
-              className="mt-8 bg-[#7be382] hover:bg-[#6ad071] text-grey
-font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-64 max-w-full"
+              className="bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-64 max-w-full"
               onClick={() => navigate('/hackathons')}
             >
               Browse Hackathons
             </Button>
             <Button 
-              className="mt-4 bg-black border border-gray-400 text-grey font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-64 max-w-full"
+              className="mt-4 bg-black border border-gray-400 text-white font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-64 max-w-full"
               onClick={() => console.log('Sign Up clicked')}
             >
               Sign Up
