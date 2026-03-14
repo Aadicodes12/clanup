@@ -38,14 +38,15 @@ const TiledImageReveal: React.FC<TiledImageRevealProps> = ({
         const row = Math.floor(index / cols);
         const col = index % cols;
 
-        const backgroundPositionX = (col / (cols - 1)) * 100;
-        const backgroundPositionY = (row / (rows - 1)) * 100;
+        // Prevent division by zero if rows or cols is 1
+        const backgroundPositionX = cols > 1 ? (col / (cols - 1)) * 100 : 0;
+        const backgroundPositionY = rows > 1 ? (row / (rows - 1)) * 100 : 0;
 
         return (
           <div
             key={index}
             className={cn(
-              "relative w-full h-full bg-cover bg-no-repeat opacity-0 animate-tile-fade-in-up",
+              "relative w-full h-full bg-no-repeat opacity-0 animate-tile-fade-in-up", // Removed bg-cover
               tileClassName
             )}
             style={{
