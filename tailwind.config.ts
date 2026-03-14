@@ -67,6 +67,7 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        funkyGreen: "#00FF00", // Added funky green color
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -90,10 +91,17 @@ export default {
             height: "0",
           },
         },
+        "slide-in-out": { // New keyframe for dynamic text
+          "0%": { transform: "translateX(-100%)", opacity: "0" },
+          "10%": { transform: "translateX(0)", opacity: "1" },
+          "90%": { transform: "translateX(0)", opacity: "1" },
+          "100%": { transform: "translateX(100%)", opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "slide-in-out": "slide-in-out 4s ease-in-out infinite", // New animation
       },
     },
   },
