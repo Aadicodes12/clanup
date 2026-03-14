@@ -110,3 +110,18 @@
   background-size: 200% auto; /* Make the gradient wider than the text */
   animation: gradient-flow 3s linear infinite;
 }
+
+@keyframes tile-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-tile-fade-in-up {
+  animation: tile-fade-in-up 0.6s ease-out forwards;
+}
