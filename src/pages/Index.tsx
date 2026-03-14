@@ -24,7 +24,7 @@ const Index = () => {
           </p>
           {/* Image with reduced opacity */}
           <img
-            src="/www.beatsnoop.com-WrzvQ.jpg"
+            src="/www.beatsnoop.com-WrzvQ-removebg-preview.png"
             alt="Team collaboration illustration"
             className="mx-auto max-w-full h-auto mt-8 md:mt-12 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 rounded-lg shadow-lg opacity-90"
           />
