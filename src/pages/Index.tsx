@@ -71,11 +71,11 @@ const Index = () => {
               Sign Up
             </Button>
 
-            {/* Separator Line */}
-            <div className="w-12 h-[1px] bg-white/40 my-6"></div>
+            {/* Separator Line with increased top margin */}
+            <div className="w-12 h-[1px] bg-white/40 mt-8 mb-6"></div>
 
-            {/* Description Text */}
-            <p className="text-xs md:text-sm text- light white/80 font-calibri max-w-md leading-relaxed px-7">
+            {/* Description Text with increased size */}
+            <p className="text-sm md:text-base text-white/80 font-calibri max-w-md leading-relaxed px-6">
               Clanup matches you with other members who are actively looking to participate in hackathons, collab on projects and build something great together.
             </p>
           </div>
