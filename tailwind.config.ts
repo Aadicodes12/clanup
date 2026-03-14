@@ -38,8 +38,8 @@ export default {
           foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "0 84.2% 60.2%",
+          foreground: "210 40% 98%",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
@@ -91,7 +91,7 @@ export default {
             height: "0",
           },
         },
-        marquee: { // New keyframe for continuous scrolling
+        marquee: { // Keyframe for continuous scrolling
           '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-50%)' }, // Scrolls one full segment width
         },
