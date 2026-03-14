@@ -51,7 +51,7 @@ const Index = () => {
               className="w-full h-full object-cover"
               key="hero-video"
             >
-              <source src="/5530-184666657_small.mp4" type="video/pm4" />
+              <source src="/5530-184666657_small.mp4" type="video/mp4" />
               <p className="text-xs text-gray-500 p-4">Video not found. Please ensure the file is in the public folder.</p>
             </video>
           </div>
