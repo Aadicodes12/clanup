@@ -26,43 +26,43 @@ const Index = () => {
       <div className="border-b-2 border-white w-full"></div>
 
       {/* Main content area */}
-      <div className="flex flex-col items-center px-4 py-8 md:py-16 flex-grow">
+      <div className="flex flex-col items-center px-4 py-10 md:py-16 flex-grow">
         <div className="text-center w-full max-w-2xl flex flex-col items-center">
-          <div className="text-3xl md:text-5xl font-bold font-sans leading-tight">
+          <div className="text-4xl md:text-6xl font-bold font-sans leading-tight mb-4">
             <AnimatedText>Great hacks start with</AnimatedText>
             <br />
             <AnimatedText>Great teams</AnimatedText>
           </div>
           
-          <div className="h-12 mt-4 md:mt-6 mb-6 md:mb-8 w-full flex items-center justify-center overflow-hidden">
+          <div className="h-12 w-full flex items-center justify-center overflow-hidden mb-8">
             <TextMarquee
               messages={marqueeMessages}
-              className="text-xs md:text-base font-sora font-bold text-amber-400"
-              duration="20s"
+              className="text-sm md:text-lg font-sora font-bold text-amber-400"
+              duration="25s"
             />
           </div>
 
-          <div className="w-full max-w-lg mx-auto mb-8">
+          <div className="w-full max-w-lg mx-auto mb-10 px-2">
             <VideoFrame />
           </div>
 
-          <div className="w-full max-w-[280px] md:max-w-sm mx-auto mb-8">
+          <div className="w-full max-w-[300px] md:max-w-md mx-auto mb-10">
             <img
               src="/www.beatsnoop.com-WrzvQ-removebg-preview.png"
-              alt="Team collaborating on a hackathon project"
+              alt="Team collaborating"
               className="w-full h-auto"
             />
           </div>
           
-          <div className="flex flex-col w-full items-center mt-6 md:mt-8 space-y-4">
+          <div className="flex flex-col w-full items-center space-y-4 px-6">
             <Button 
-              className="bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-full max-w-[260px]"
+              className="bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-4 px-8 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-full max-w-[280px]"
               onClick={() => navigate('/hackathons')}
             >
               Browse Hackathons
             </Button>
             <Button 
-              className="bg-black border border-gray-400 text-white font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-full max-w-[260px]"
+              className="bg-black border border-gray-500 text-white font-bold py-4 px-8 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-full max-w-[280px]"
               onClick={() => console.log('Sign Up clicked')}
             >
               Sign Up
