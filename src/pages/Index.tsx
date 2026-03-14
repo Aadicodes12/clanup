@@ -51,7 +51,7 @@ const Index = () => {
               className="w-full h-full object-cover"
               key="hero-video"
             >
-              <source src="/5530-184666657_small.mp4" type="video/mp4" />
+              <source src="/5530-184666657_small.mp4" type="video/pm4" />
               <p className="text-xs text-gray-500 p-4">Video not found. Please ensure the file is in the public folder.</p>
             </video>
           </div>
@@ -71,11 +71,11 @@ const Index = () => {
               Sign Up
             </Button>
 
-            {/* Separator Line with even more top margin */}
-            <div className="w-12 h-[1px] bg-white/40 mt-12 mb-6"></div>
+            {/* Separator Line shifted significantly downwards */}
+            <div className="w-12 h-[1px] bg-white/40 mt-24 mb-6"></div>
 
-            {/* Description Text with further increased size */}
-            <p className="text-base md:text-lg text-white/90 font-calibri max-w-md leading-relaxed px-6">
+            {/* Description Text with increased size */}
+            <p className="text-lg md:text-xl text-white/90 font-calibri max-w-md leading-relaxed px-6">
               Clanup matches you with other members who are actively looking to participate in hackathons, collab on projects and build something great together.
             </p>
           </div>
