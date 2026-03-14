@@ -21,8 +21,8 @@ const Index = () => {
       <div className="border-b-2 border-white w-full"></div>
 
       {/* Main content area */}
-      <div className="flex flex-col items-center p-4 pt-16">
-        <div className="text-center">
+      <div className="flex flex-col items-center p-4 pt-16 flex-grow">
+        <div className="text-center w-full max-w-2xl">
           <div className="text-4xl md:text-5xl font-bold font-sans">
             <AnimatedText>Great hacks start with</AnimatedText>
             <br />
@@ -48,6 +48,13 @@ const Index = () => {
             variant="outline"
             className="mt-4 border border-gray-400 bg-black text-white font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-arial w-64 max-w-full"
             onClick={() => console.log('Sign Up clicked')}
+          >
+            Sign Up
+          </Button>
+          {/* New Sign Up button below the existing ones */}
+          <Button 
+            className="mt-4 bg-black border border-gray-400 text-white font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-arial w-64 max-w-full"
+            onClick={() => console.log('New Sign Up clicked')}
           >
             Sign Up
           </Button>
