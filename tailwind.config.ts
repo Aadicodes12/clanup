@@ -22,6 +22,7 @@ export default {
         sans: ["Bebas Neue", "sans-serif"], // Using Bebas Neue as the default sans font
         arial: ["Arial", "sans-serif"], // Adding Arial font family
         sora: ["Sora", "sans-serif"], // Adding Sora font family
+        calibri: ["Calibri", "Candara", "Segoe", "Segoe UI", "Optima", "Arial", "sans-serif"], // Adding Calibri font family
       },
       colors: {
         border: "hsl(var(--border))",
