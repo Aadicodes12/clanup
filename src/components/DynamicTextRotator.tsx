@@ -1,37 +1,49 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
 interface DynamicTextRotatorProps {
   texts: string[];
   className?: string;
-  interval?: number; // Interval in milliseconds for text change
+  speed?: number; // pixels per second
 }
 
 const DynamicTextRotator: React.FC<DynamicTextRotatorProps> = ({
   texts,
   className,
-  interval = 4000, // Default to 4 seconds, matching animation duration
+  speed = 50, // default speed in pixels per second
 }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [marqueeDuration, setMarqueeDuration] = useState('0s');
+
+  const joinedText = texts.join(" • "); // Join texts with a separator
 
   useEffect(() => {
-    const textChangeTimer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
-    }, interval);
-
-    return () => clearInterval(textChangeTimer);
-  }, [texts, interval]);
+    if (contentRef.current) {
+      // The contentRef.current is the div that contains the two spans.
+      // We want to scroll one full cycle of `joinedText` (plus its padding).
+      // So, the distance to scroll is half of the `scrollWidth` of the inner div.
+      const distanceToScroll = contentRef.current.scrollWidth / 2;
+      const calculatedDuration = distanceToScroll / speed; // seconds
+      setMarqueeDuration(`${calculatedDuration}s`);
+    }
+  }, [texts, speed]);
 
   return (
-    <div className={cn("overflow-hidden h-8 flex justify-center items-center", className)}>
-      <span
-        key={currentIndex} // Key change forces re-render and animation restart
-        className="inline-block text-funkyGreen font-sora text-lg md:text-xl animate-slide-in-out"
+    <div className={cn("overflow-hidden h-8 flex items-center", className)}>
+      <div
+        ref={contentRef}
+        className="flex flex-row whitespace-nowrap" // Use flex to keep spans inline, whitespace-nowrap to prevent wrapping
+        style={{ '--marquee-duration': marqueeDuration, animation: `marquee var(--marquee-duration) linear infinite` } as React.CSSProperties}
       >
-        {texts[currentIndex]}
-      </span>
+        <span className="text-funkyGreen font-sora text-lg md:text-xl pr-8"> {/* Add some padding to the right of each segment */}
+          {joinedText}
+        </span>
+        <span className="text-funkyGreen font-sora text-lg md:text-xl pr-8">
+          {joinedText}
+        </span>
+      </div>
     </div>
   );
 };
