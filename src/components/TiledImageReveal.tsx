@@ -38,21 +38,23 @@ const TiledImageReveal: React.FC<TiledImageRevealProps> = ({
         const row = Math.floor(index / cols);
         const col = index % cols;
 
-        // Prevent division by zero if rows or cols is 1
-        const backgroundPositionX = cols > 1 ? (col / (cols - 1)) * 100 : 0;
-        const backgroundPositionY = rows > 1 ? (row / (rows - 1)) * 100 : 0;
+        // Calculate background position to show the correct segment of the image
+        // We need to shift the background image by a negative percentage of its own size
+        // relative to the tile's width/height.
+        const backgroundPositionX = -col * (100 / cols);
+        const backgroundPositionY = -row * (100 / rows);
 
         return (
           <div
             key={index}
             className={cn(
-              "relative w-full h-full bg-no-repeat opacity-0 animate-tile-fade-in-up", // Removed bg-cover
+              "relative w-full h-full bg-no-repeat opacity-0 animate-tile-fade-in-up",
               tileClassName
             )}
             style={{
               backgroundImage: `url(${src})`,
-              backgroundSize: `${cols * 100}% ${rows * 100}%`,
-              backgroundPosition: `${backgroundPositionX}% ${backgroundPositionY}%`,
+              backgroundSize: `${cols * 100}% ${rows * 100}%`, // Scale the background image to cover the entire grid
+              backgroundPosition: `${backgroundPositionX}% ${backgroundPositionY}%`, // Position the scaled image within each tile
               animationDelay: `${row * 0.08 + col * 0.03}s`, // Staggered delay
             }}
             aria-label={alt} // Accessible alternative for the image part
