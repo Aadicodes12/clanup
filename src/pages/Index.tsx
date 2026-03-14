@@ -49,9 +49,8 @@ const Index = () => {
               muted 
               playsInline 
               className="w-full h-full object-cover aspect-video"
-              poster="/www.beatsnoop.com-WrzvQ-removebg-preview.png"
             >
-              <source src="https://cdn.pixabay.com/video/2021/04/12/70884-537392456_large.mp4" type="video/mp4" />
+              <source src="/5530-184666657_small.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
