@@ -14,8 +14,8 @@ const TextMarquee: React.FC<TextMarqueeProps> = ({ messages, className, duration
   return (
     <div className={cn("relative w-full overflow-hidden", className)}>
       <div
-        className="flex whitespace-nowrap w-max animate-marquee-scroll"
-        style={{ '--marquee-duration': duration } as React.CSSProperties} // Use CSS variable for duration
+        className="flex whitespace-nowrap w-max animate-slide-continuous" // Using the correct animation class
+        style={{ '--marquee-duration': duration } as React.CSSProperties} // Pass duration via CSS variable
       >
         {repeatedMessages.map((message, index) => (
           <span key={index} className="inline-block mx-4">

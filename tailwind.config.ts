@@ -98,7 +98,7 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "slide-continuous": "slide-continuous 15s linear infinite", // Continuous slide
+        "slide-continuous": "slide-continuous var(--marquee-duration, 15s) linear infinite", // Use CSS variable for duration
       },
     },
   },
