@@ -75,7 +75,7 @@ const Index = () => {
             <div className="w-12 h-[1px] bg-white/40 my-4"></div>
 
             {/* Description Text */}
-            <p className="text-xs md:text-sm text-white/60 font-calibri max-w-md leading-relaxed px-4">
+            <p className="text-xs md:text-sm text- light white/60 font-calibri max-w-md leading-relaxed px-4">
               Clanup matches you with other members who are actively looking to participate in hackathons, collab on projects and build something great together.
             </p>
           </div>
