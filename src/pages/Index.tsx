@@ -4,6 +4,7 @@ import React from 'react';
 import AnimatedText from '@/components/AnimatedText';
 import { Button } from '@/components/ui/button';
 import TextMarquee from '@/components/TextMarquee';
+import HowItWorks from '@/components/HowItWorks';
 import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
@@ -71,13 +72,18 @@ const Index = () => {
               Sign Up
             </Button>
 
-            {/* Separator Line with significantly increased top and bottom margins */}
+            {/* Separator Line */}
             <div className="w-12 h-[1px] bg-white/40 mt-40 mb-12"></div>
 
-            {/* Description Text with increased size */}
+            {/* Description Text */}
             <p className="text-lg md:text-xl text-white/90 font-calibri max-w-md leading-relaxed px-6">
               Clanup matches you with other members who are actively looking to participate in hackathons, collab on projects and build something great together.
             </p>
+
+            {/* Extra gap before How It Works */}
+            <div className="h-24"></div>
+            
+            <HowItWorks />
           </div>
         </div>
       </div>
