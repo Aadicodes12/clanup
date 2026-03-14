@@ -71,8 +71,8 @@ const Index = () => {
               Sign Up
             </Button>
 
-            {/* Separator Line shifted significantly downwards */}
-            <div className="w-12 h-[1px] bg-white/40 mt-24 mb-6"></div>
+            {/* Separator Line with significantly increased top and bottom margins */}
+            <div className="w-12 h-[1px] bg-white/40 mt-40 mb-12"></div>
 
             {/* Description Text with increased size */}
             <p className="text-lg md:text-xl text-white/90 font-calibri max-w-md leading-relaxed px-6">
