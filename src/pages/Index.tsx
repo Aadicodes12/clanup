@@ -29,7 +29,7 @@ const Index = () => {
             alt="Team collaboration illustration"
             rows={5}
             cols={8}
-            className="mx-auto max-w-full h-auto mt-8 md:mt-12 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 rounded-lg shadow-lg"
+            className="mx-auto max-w-full h-auto mt-8 md:mt-12 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 rounded-lg shadow-lg aspect-video"
             tileClassName="bg-neutral-800" // Optional: add a background to tiles before image appears
           />
         </div>
