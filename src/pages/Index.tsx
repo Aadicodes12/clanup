@@ -23,7 +23,7 @@ const Index = () => {
       {/* Main content area */}
       <div className="flex flex-col items-center p-4 pt-16">
         <div className="text-center">
-          <div className="text-3xl md:text-4xl font-bold font-sans">
+          <div className="text-4xl md:text-5xl font-bold font-sans">
             <AnimatedText>Great hacks start with</AnimatedText>
             <br />
             <AnimatedText>Great teams</AnimatedText>
