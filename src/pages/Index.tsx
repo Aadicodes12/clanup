@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import AnimatedText from '@/components/AnimatedText';
 import { Button } from '@/components/ui/button';
@@ -23,37 +25,39 @@ const Index = () => {
       <div className="border-b-2 border-white w-full"></div>
 
       {/* Main content area */}
-      <div className="flex flex-col items-center p-4 pt-16 flex-grow">
-        <div className="text-center w-full max-w-2xl">
-          <div className="text-4xl md:text-5xl font-bold font-sans leading-tight">
+      <div className="flex flex-col items-center px-4 py-8 md:py-16 flex-grow">
+        <div className="text-center w-full max-w-2xl flex flex-col items-center">
+          <div className="text-3xl md:text-5xl font-bold font-sans leading-tight">
             <AnimatedText>Great hacks start with</AnimatedText>
             <br />
             <AnimatedText>Great teams</AnimatedText>
           </div>
           
-          <div className="h-12 mt-6 mb-8 flex items-center justify-center">
+          <div className="h-12 mt-4 md:mt-6 mb-6 md:mb-8 w-full flex items-center justify-center overflow-hidden">
             <TextMarquee
               messages={marqueeMessages}
-              className="text-sm md:text-base font-sora font-bold text-amber-400"
+              className="text-xs md:text-base font-sora font-bold text-amber-400"
               duration="20s"
             />
           </div>
 
-          <img
-            src="/www.beatsnoop.com-WrzvQ-removebg-preview.png"
-            alt="Team collaborating on a hackathon project"
-            className="mt-4 max-w-sm h-auto mx-auto"
-          />
+          <div className="w-full max-w-[280px] md:max-w-sm mx-auto">
+            <img
+              src="/www.beatsnoop.com-WrzvQ-removebg-preview.png"
+              alt="Team collaborating on a hackathon project"
+              className="w-full h-auto"
+            />
+          </div>
           
-          <div className="flex flex-col w-full items-center mt-8">
+          <div className="flex flex-col w-full items-center mt-6 md:mt-8 space-y-4">
             <Button 
-              className="bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-64 max-w-full"
+              className="bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-full max-w-[260px]"
               onClick={() => navigate('/hackathons')}
             >
               Browse Hackathons
             </Button>
             <Button 
-              className="mt-4 bg-black border border-gray-400 text-white font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-64 max-w-full"
+              className="bg-black border border-gray-400 text-white font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-full max-w-[260px]"
               onClick={() => console.log('Sign Up clicked')}
             >
               Sign Up
