@@ -29,7 +29,7 @@ const Index = () => {
           <TextMarquee
             messages={marqueeMessages}
             className="text-sm md:text-base font-sora font-bold text-orange-300 mt-6 mb-12"
-            duration="30s" // Changed duration to 30s
+            duration="60s" // Increased duration to 60s for better readability
           />
           <img
             src="/www.beatsnoop.com-WrzvQ-removebg-preview.png"
