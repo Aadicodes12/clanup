@@ -72,7 +72,7 @@ const Index = () => {
             </Button>
 
             {/* Separator Line */}
-            <div className="w-12 h-[1px] bg-white/40 my-4"></div>
+            <div className="w-12 h-[1px] bg-white/40 my-6"></div>
 
             {/* Description Text */}
             <p className="text-xs md:text-sm text- light white/60 font-calibri max-w-md leading-relaxed px-4">
