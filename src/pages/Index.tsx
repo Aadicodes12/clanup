@@ -1,11 +1,8 @@
 import React from 'react';
 import AnimatedText from '@/components/AnimatedText';
-import DynamicTextRotator from '@/components/DynamicTextRotator'; // Import the new component
 import { Button } from '@/components/ui/button'; // Import the Button component
 
 const Index = () => {
-  const roles = ["frontend dev", "backend dev", "pitch specialist", "case comp strategist", "ML expert"];
-
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
       {/* Navbar */}
@@ -31,10 +28,6 @@ const Index = () => {
             alt="Team collaboration illustration"
             className="mx-auto max-w-full h-auto mt-8 md:mt-12 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 rounded-lg shadow-lg opacity-90"
           />
-          {/* Dynamic text rotator */}
-          <div className="mt-8">
-            <DynamicTextRotator texts={roles} className="text-2xl font-bold" />
-          </div>
         </div>
       </div>
     </div>

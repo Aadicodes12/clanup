@@ -38,8 +38,8 @@ export default {
           foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
-          DEFAULT: "0 84.2% 60.2%",
-          foreground: "210 40% 98%",
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
@@ -67,7 +67,6 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        funkyGreen: "#00FF00", // Added funky green color
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -91,15 +90,10 @@ export default {
             height: "0",
           },
         },
-        marquee: { // Keyframe for continuous scrolling
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-50%)' }, // Scrolls one full segment width
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        marquee: 'marquee var(--marquee-duration) linear infinite', // Use CSS variable for duration
       },
     },
   },
