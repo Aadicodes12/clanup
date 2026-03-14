@@ -13,18 +13,18 @@ const Index = () => {
       {/* Thicker horizontal line */}
       <div className="border-b-2 border-white w-full"></div>
 
-      {/* Main content area */}
-      <div className="flex flex-col items-center p-4 pt-16">
+      {/* Main content area with white background */}
+      <div className="flex flex-col items-center p-4 pt-16 bg-white text-black flex-grow">
         <div className="text-center">
           <AnimatedText className="text-4xl font-bold font-sans">
             Great hacks start with great teams
           </AnimatedText>
-          <p className="text-sm md:text-base font-sora font-bold text-orange-300 mt-6 mb-12">
+          <p className="text-sm md:text-base font-sora font-bold text-orange-600 mt-6 mb-12">
             Build your hackathon team in minutes
           </p>
           {/* Image added below the orange text */}
           <img
-            src="/wmremove-transformed.png"
+            src="/wmremove-transformed-removebg-preview.png"
             alt="Team collaboration"
             className="mx-auto max-w-full h-auto mt-8 md:mt-12 w-3/4 md:w-1/2 lg:w-1/3 rounded-lg"
           />
