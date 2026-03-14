@@ -26,7 +26,7 @@ const Index = () => {
           <img
             src="/wmremove-transformed-removebg-preview.png"
             alt="Team collaboration"
-            className="mx-auto max-w-full h-auto mt-8 md:mt-12 w-3/4 md:w-1/2 lg:w-1/3 rounded-lg"
+            className="mx-auto max-w-full h-auto mt-8 md:mt-12 w-full md:w-3/4 lg:w-2/3 rounded-lg"
           />
         </div>
       </div>
