@@ -110,8 +110,3 @@
   background-size: 200% auto; /* Make the gradient wider than the text */
   animation: gradient-flow 3s linear infinite;
 }
-
-@keyframes slide-continuous {
-  0% { transform: translateX(100%); } /* Start off-screen right */
-  100% { transform: translateX(-100%); } /* Slide to off-screen left */
-}
