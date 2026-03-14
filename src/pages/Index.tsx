@@ -49,7 +49,7 @@ font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform h
               Browse Hackathons
             </Button>
             <Button 
-              className="mt-4 bg-black border border-gray-400 text-white font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-64 max-w-full"
+              className="mt-4 bg-black border border-gray-400 text-grey font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-64 max-w-full"
               onClick={() => console.log('Sign Up clicked')}
             >
               Sign Up
