@@ -38,19 +38,20 @@ const Index = () => {
             alt="Team collaborating on a hackathon project"
             className="mt-8 max-w-sm h-auto mx-auto"
           />
-          <Button 
-            className="mt-8 bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-arial w-64 max-w-full"
-            onClick={() => console.log('Browse Teams clicked')}
-          >
-            Browse Teams
-          </Button>
-          {/* New Sign Up button - kept only this one */}
-          <Button 
-            className="mt-4 bg-black border border-gray-400 text-white font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-arial w-64 max-w-full"
-            onClick={() => console.log('Sign Up clicked')}
-          >
-            Sign Up
-          </Button>
+          <div className="flex flex-col w-full items-center">
+            <Button 
+              className="mt-8 bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-arial w-64 max-w-full"
+              onClick={() => console.log('Browse Teams clicked')}
+            >
+              Browse Teams
+            </Button>
+            <Button 
+              className="mt-4 bg-black border border-gray-400 text-white font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-arial w-64 max-w-full"
+              onClick={() => console.log('Sign Up clicked')}
+            >
+              Sign Up
+            </Button>
+          </div>
         </div>
       </div>
     </div>
