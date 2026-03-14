@@ -35,7 +35,7 @@ const Index = () => {
             <TextMarquee
               messages={marqueeMessages}
               className="text-sm md:text-base font-sora font-bold text-amber-400"
-              duration="15s"
+              duration="20s"
             />
           </div>
 
