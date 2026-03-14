@@ -4,6 +4,7 @@ import React from 'react';
 import AnimatedText from '@/components/AnimatedText';
 import { Button } from '@/components/ui/button';
 import TextMarquee from '@/components/TextMarquee';
+import VideoFrame from '@/components/VideoFrame';
 import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
@@ -41,7 +42,11 @@ const Index = () => {
             />
           </div>
 
-          <div className="w-full max-w-[280px] md:max-w-sm mx-auto">
+          <div className="w-full max-w-lg mx-auto mb-8">
+            <VideoFrame />
+          </div>
+
+          <div className="w-full max-w-[280px] md:max-w-sm mx-auto mb-8">
             <img
               src="/www.beatsnoop.com-WrzvQ-removebg-preview.png"
               alt="Team collaborating on a hackathon project"
