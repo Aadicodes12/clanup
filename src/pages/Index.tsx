@@ -2,8 +2,10 @@ import React from 'react';
 import AnimatedText from '@/components/AnimatedText';
 import { Button } from '@/components/ui/button';
 import TextMarquee from '@/components/TextMarquee';
+import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
+  const navigate = useNavigate();
   const marqueeMessages = [
     "Build your hackathon team in minutes",
     "Find skilled teammates for your next project",
@@ -41,9 +43,9 @@ const Index = () => {
           <div className="flex flex-col w-full items-center">
             <Button 
               className="mt-8 bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-64 max-w-full"
-              onClick={() => console.log('Browse Teams clicked')}
+              onClick={() => navigate('/hackathons')}
             >
-              Browse Teams
+              Browse Hackathons
             </Button>
             <Button 
               className="mt-4 bg-black border border-gray-400 text-white font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-64 max-w-full"
