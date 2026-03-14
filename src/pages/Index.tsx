@@ -22,7 +22,12 @@ const Index = () => {
           <p className="text-sm md:text-base font-sora font-bold text-orange-300 mt-6 mb-12">
             Build your hackathon team in minutes
           </p>
-          {/* Image removed */}
+          {/* New image added below the orange text */}
+          <img
+            src="/www.beatsnoop.com-WrzvQ.jpg"
+            alt="Team collaboration illustration"
+            className="mx-auto max-w-full h-auto mt-8 md:mt-12 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 rounded-lg shadow-lg"
+          />
         </div>
       </div>
     </div>
