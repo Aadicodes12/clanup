@@ -44,17 +44,10 @@ const Index = () => {
           >
             Browse Teams
           </Button>
-          <Button 
-            variant="outline"
-            className="mt-4 border border-gray-400 bg-black text-white font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-arial w-64 max-w-full"
-            onClick={() => console.log('Sign Up clicked')}
-          >
-            Sign Up
-          </Button>
-          {/* New Sign Up button below the existing ones */}
+          {/* New Sign Up button - kept only this one */}
           <Button 
             className="mt-4 bg-black border border-gray-400 text-white font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-arial w-64 max-w-full"
-            onClick={() => console.log('New Sign Up clicked')}
+            onClick={() => console.log('Sign Up clicked')}
           >
             Sign Up
           </Button>
