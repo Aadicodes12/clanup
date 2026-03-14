@@ -91,8 +91,8 @@ export default {
           },
         },
         "slide-continuous": {
-          "0%": { transform: "translateX(100%)" },
-          "100%": { transform: "translateX(-100%)" },
+          "0%": { transform: "translateX(0%)" }, // Start immediately visible
+          "100%": { transform: "translateX(-50%)" }, // Move left by half the total width for seamless loop
         },
       },
       animation: {
