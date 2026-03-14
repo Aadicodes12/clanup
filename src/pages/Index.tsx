@@ -41,20 +41,27 @@ const Index = () => {
             />
           </div>
 
-          <div className="w-full max-w-[280px] md:max-w-sm mx-auto">
-            <img
-              src="/www.beatsnoop.com-WrzvQ-removebg-preview.png"
-              alt="Team collaborating on a hackathon project"
+          {/* Video Section Example */}
+          <div className="w-full max-w-[280px] md:max-w-sm mx-auto mb-6 rounded-xl overflow-hidden border border-neutral-800">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
               className="w-full h-auto"
-            />
+              poster="/www.beatsnoop.com-WrzvQ-removebg-preview.png"
+            >
+              <source src="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-screen-close-up-1728-large.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
           
           <div className="flex flex-col w-full items-center mt-6 md:mt-8 space-y-4">
             <Button 
               className="bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-full max-w-[260px]"
-              onClick={() => navigate('/hackathons')}
+              onClick={() => navigate('/teams')}
             >
-              Browse Hackathons
+              Browse Teams
             </Button>
             <Button 
               className="bg-black border border-gray-400 text-white font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-full max-w-[260px]"

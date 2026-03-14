@@ -6,7 +6,7 @@ import { Loader2, ChevronLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
-const Hackathons = () => {
+const Teams = () => {
   const { data: hackathons, isLoading, error } = useQuery({
     queryKey: ['hackathons'],
     queryFn: async () => {
@@ -26,7 +26,7 @@ const Hackathons = () => {
                 <ChevronLeft className="w-6 h-6" />
               </Button>
             </Link>
-            <h1 className="text-4xl font-bold font-sans tracking-tight">Explore Hackathons</h1>
+            <h1 className="text-4xl font-bold font-sans tracking-tight">Find Your Team</h1>
           </div>
           <div className="text-sm font-sora text-gray-500">
             Powered by Unstop
@@ -36,11 +36,11 @@ const Hackathons = () => {
         {isLoading ? (
           <div className="flex flex-col items-center justify-center py-20">
             <Loader2 className="w-12 h-12 text-[#7be382] animate-spin mb-4" />
-            <p className="text-gray-400 font-sora">Scraping latest hackathons...</p>
+            <p className="text-gray-400 font-sora">Finding active teams...</p>
           </div>
         ) : error ? (
           <div className="text-center py-20">
-            <p className="text-red-400 font-sora mb-4">Failed to load hackathons.</p>
+            <p className="text-red-400 font-sora mb-4">Failed to load teams.</p>
             <p className="text-sm text-gray-500">Make sure APIFY_API_TOKEN is set in Supabase secrets.</p>
           </div>
         ) : (
@@ -48,7 +48,7 @@ const Hackathons = () => {
             {hackathons?.map((hackathon: any, index: number) => (
               <HackathonCard
                 key={index}
-                title={hackathon.title || 'Untitled Hackathon'}
+                title={hackathon.title || 'Untitled Team Project'}
                 organization={hackathon.organization || 'Unknown Org'}
                 location={hackathon.location || 'Online'}
                 date={hackathon.date || 'TBD'}
@@ -63,4 +63,4 @@ const Hackathons = () => {
   );
 };
 
-export default Hackathons;
+export default Teams;
