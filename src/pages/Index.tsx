@@ -41,30 +41,31 @@ const Index = () => {
             />
           </div>
 
-          {/* Video Section Example */}
-          <div className="w-full max-w-[280px] md:max-w-sm mx-auto mb-6 rounded-xl overflow-hidden border border-neutral-800">
+          {/* Video Section */}
+          <div className="w-full max-w-[320px] md:max-w-md mx-auto mb-8 rounded-2xl overflow-hidden border-2 border-neutral-800 bg-neutral-900 shadow-2xl shadow-[#7be382]/10">
             <video 
               autoPlay 
               loop 
               muted 
               playsInline 
-              className="w-full h-auto"
+              className="w-full h-full object-cover aspect-video"
               poster="/www.beatsnoop.com-WrzvQ-removebg-preview.png"
             >
-              <source src="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-screen-close-up-1728-large.mp4" type="video/mp4" />
+              <source src="https://cdn.pixabay.com/video/2021/04/12/70884-537392456_large.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
           
-          <div className="flex flex-col w-full items-center mt-6 md:mt-8 space-y-4">
+          <div className="flex flex-col w-full items-center mt-4 space-y-4">
             <Button 
-              className="bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-full max-w-[260px]"
+              className="bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-4 px-8 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-full max-w-[280px]"
               onClick={() => navigate('/teams')}
             >
               Browse Teams
             </Button>
             <Button 
-              className="bg-black border border-gray-400 text-white font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-full max-w-[260px]"
+              variant="outline"
+              className="bg-transparent border-2 border-white/20 hover:border-white/40 text-white font-bold py-4 px-8 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-full max-w-[280px]"
               onClick={() => console.log('Sign Up clicked')}
             >
               Sign Up
