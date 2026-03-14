@@ -39,7 +39,7 @@ const Index = () => {
             className="mt-8 max-w-sm h-auto mx-auto"
           />
           <Button 
-            className="mt-8 bg-green-400 hover:bg-green-300 text-black font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-arial w-full max-w-md"
+            className="mt-8 bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-3 px-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105 font-arial w-full max-w-md"
             onClick={() => console.log('Browse Teams clicked')}
           >
             Browse Teams
