@@ -28,13 +28,13 @@ const Index = () => {
       {/* Main content area */}
       <div className="flex flex-col items-center px-4 py-10 md:py-16 flex-grow">
         <div className="text-center w-full max-w-2xl flex flex-col items-center">
-          <div className="text-4xl md:text-6xl font-bold font-sans leading-tight mb-4">
+          <div className="text-4xl md:text-6xl font-bold font-sans leading-tight mb-6">
             <AnimatedText>Great hacks start with</AnimatedText>
             <br />
             <AnimatedText>Great teams</AnimatedText>
           </div>
           
-          <div className="h-12 w-full flex items-center justify-center overflow-hidden mb-8">
+          <div className="h-12 w-full flex items-center justify-center overflow-hidden mb-10">
             <TextMarquee
               messages={marqueeMessages}
               className="text-sm md:text-lg font-sora font-bold text-amber-400"
@@ -42,11 +42,11 @@ const Index = () => {
             />
           </div>
 
-          <div className="w-full max-w-lg mx-auto mb-10 px-2">
+          <div className="w-full max-w-lg mx-auto mb-12 px-2">
             <VideoFrame />
           </div>
 
-          <div className="w-full max-w-[300px] md:max-w-md mx-auto mb-10">
+          <div className="w-full max-w-[280px] md:max-w-md mx-auto mb-12">
             <img
               src="/www.beatsnoop.com-WrzvQ-removebg-preview.png"
               alt="Team collaborating"
@@ -54,7 +54,7 @@ const Index = () => {
             />
           </div>
           
-          <div className="flex flex-col w-full items-center space-y-4 px-6">
+          <div className="flex flex-col w-full items-center space-y-4 px-6 pb-10">
             <Button 
               className="bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-4 px-8 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-full max-w-[280px]"
               onClick={() => navigate('/hackathons')}

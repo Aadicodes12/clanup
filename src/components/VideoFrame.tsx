@@ -15,9 +15,10 @@ const VideoFrame: React.FC<VideoFrameProps> = ({ className }) => {
         loop 
         muted 
         playsInline 
+        preload="auto"
         className="absolute top-0 left-0 w-full h-full object-cover"
       >
-        <source src="https://cdn.pixabay.com/video/2016/09/13/5530-183805460_tiny.mp4" type="video/mp4" />
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-laser-lights-background-34429-large.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="absolute inset-0 bg-black/10 pointer-events-none"></div>
