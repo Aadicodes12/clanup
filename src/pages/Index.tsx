@@ -34,7 +34,7 @@ const Index = () => {
           <img
             src="/www.beatsnoop.com-WrzvQ-removebg-preview.png"
             alt="Team collaborating on a hackathon project"
-            className="mt-8 max-w-md h-auto mx-auto" // Added max-w-md to make it smaller
+            className="mt-8 max-w-sm h-auto mx-auto" // Changed to max-w-sm for a smaller size
           />
         </div>
       </div>
