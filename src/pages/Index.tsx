@@ -1,8 +1,15 @@
 import React from 'react';
 import AnimatedText from '@/components/AnimatedText';
 import { Button } from '@/components/ui/button'; // Import the Button component
+import TextMarquee from '@/components/TextMarquee'; // Import the new TextMarquee component
 
 const Index = () => {
+  const marqueeMessages = [
+    "Build your hackathon team in minutes",
+    "Find skilled teammates for your next project",
+    "Connect with innovators and problem-solvers",
+  ];
+
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
       {/* Navbar */}
@@ -19,9 +26,11 @@ const Index = () => {
           <AnimatedText className="text-4xl font-bold font-sans">
             Great hacks start with great teams
           </AnimatedText>
-          <p className="text-sm md:text-base font-sora font-bold text-orange-300 mt-6 mb-12 animate-slide-continuous relative overflow-hidden whitespace-nowrap">
-            Build your hackathon team in minutes
-          </p>
+          <TextMarquee
+            messages={marqueeMessages}
+            className="text-sm md:text-base font-sora font-bold text-orange-300 mt-6 mb-12"
+            duration="20s" // Adjust duration as needed for speed
+          />
           {/* Image with reduced opacity */}
           <img
             src="/www.beatsnoop.com-WrzvQ-removebg-preview.png"
