@@ -31,7 +31,11 @@ const Index = () => {
             className="text-sm md:text-base font-sora font-bold text-orange-300 mt-6 mb-12"
             duration="20s"
           />
-          {/* Image removed */}
+          <img
+            src="/www.beatsnoop.com-WrzvQ-removebg-preview.png"
+            alt="Team collaborating on a hackathon project"
+            className="mt-8 max-w-full h-auto mx-auto" // Added styling for responsiveness and centering
+          />
         </div>
       </div>
     </div>
