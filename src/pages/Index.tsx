@@ -42,16 +42,17 @@ const Index = () => {
           </div>
 
           {/* Video Section */}
-          <div className="w-full max-w-[320px] md:max-w-md mx-auto mb-8 rounded-2xl overflow-hidden border-2 border-neutral-800 bg-neutral-900 shadow-2xl shadow-[#7be382]/10">
+          <div className="w-full max-w-[320px] md:max-w-md mx-auto mb-8 rounded-2xl overflow-hidden border-2 border-neutral-800 bg-neutral-900 shadow-2xl shadow-[#7be382]/10 relative aspect-video">
             <video 
               autoPlay 
               loop 
               muted 
               playsInline 
-              className="w-full h-full object-cover aspect-video"
+              className="w-full h-full object-cover"
+              key="hero-video"
             >
               <source src="/5530-184666657_small.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
+              <p className="text-xs text-gray-500 p-4">Video not found. Please ensure the file is in the public folder.</p>
             </video>
           </div>
           
