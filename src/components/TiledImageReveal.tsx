@@ -29,20 +29,16 @@ const TiledImageReveal: React.FC<TiledImageRevealProps> = ({
         `grid-rows-${rows} grid-cols-${cols}`, // Dynamically set grid rows/cols
         className
       )}
-      style={{
-        // Ensure the grid container maintains aspect ratio if needed, or just let it flow
-        // For simplicity, we'll let the parent define the overall size
-      }}
     >
       {Array.from({ length: totalTiles }).map((_, index) => {
         const row = Math.floor(index / cols);
         const col = index % cols;
 
         // Calculate background position to show the correct segment of the image
-        // We need to shift the background image by a negative percentage of its own size
-        // relative to the tile's width/height.
-        const backgroundPositionX = -col * (100 / cols);
-        const backgroundPositionY = -row * (100 / rows);
+        // The background image is scaled to be `cols` times wider and `rows` times taller than the entire grid.
+        // For each tile, we shift the background by -col * 100% and -row * 100% relative to the tile's size.
+        const backgroundPositionX = `${-col * 100}%`;
+        const backgroundPositionY = `${-row * 100}%`;
 
         return (
           <div
@@ -54,7 +50,7 @@ const TiledImageReveal: React.FC<TiledImageRevealProps> = ({
             style={{
               backgroundImage: `url(${src})`,
               backgroundSize: `${cols * 100}% ${rows * 100}%`, // Scale the background image to cover the entire grid
-              backgroundPosition: `${backgroundPositionX}% ${backgroundPositionY}%`, // Position the scaled image within each tile
+              backgroundPosition: `${backgroundPositionX} ${backgroundPositionY}`, // Position the scaled image within each tile
               animationDelay: `${row * 0.08 + col * 0.03}s`, // Staggered delay
             }}
             aria-label={alt} // Accessible alternative for the image part
