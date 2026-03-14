@@ -110,3 +110,26 @@
   background-size: 200% auto; /* Make the gradient wider than the text */
   animation: gradient-flow 3s linear infinite;
 }
+
+@keyframes slide-in-out {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  40% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(100%); /* Reset for next cycle */
+    opacity: 0;
+  }
+}

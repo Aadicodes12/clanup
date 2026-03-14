@@ -90,10 +90,18 @@ export default {
             height: "0",
           },
         },
+        "slide-in-out": {
+          "0%": { transform: "translateX(100%)", opacity: "0" },
+          "10%": { transform: "translateX(0%)", opacity: "1" },
+          "40%": { transform: "translateX(0%)", opacity: "1" },
+          "50%": { transform: "translateX(-100%)", opacity: "0" },
+          "100%": { transform: "translateX(100%)", opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "slide-in-out": "slide-in-out 8s infinite", // 8 seconds duration, infinite loop
       },
     },
   },
