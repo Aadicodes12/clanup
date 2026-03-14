@@ -7,12 +7,11 @@ interface TextMarqueeProps {
   duration?: string;
 }
 
-const TextMarquee: React.FC<TextMarqueeProps> = ({ messages, className, duration = "20s" }) => {
-  // We create a single group of messages
+const TextMarquee: React.FC<TextMarqueeProps> = ({ messages, className, duration = "15s" }) => {
   const MessageGroup = () => (
     <div className="flex items-center">
       {messages.map((message, index) => (
-        <span key={index} className="inline-block mx-8 whitespace-nowrap">
+        <span key={index} className="inline-block mx-4 whitespace-nowrap">
           {message}
         </span>
       ))}
@@ -25,10 +24,8 @@ const TextMarquee: React.FC<TextMarqueeProps> = ({ messages, className, duration
         className="flex w-max animate-slide-continuous"
         style={{ '--marquee-duration': duration } as React.CSSProperties}
       >
-        {/* Render the group twice for a seamless loop */}
         <MessageGroup />
         <MessageGroup />
-        {/* Add a few more just in case the screen is ultra-wide */}
         <MessageGroup />
         <MessageGroup />
       </div>
