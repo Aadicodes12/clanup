@@ -74,7 +74,7 @@ const HowItWorks = () => {
         className={`transition-opacity duration-700 opacity-0 ${headerVisible ? 'opacity-100' : ''}`}
       >
         <div className="text-center max-w-4xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-roboto mb-4 text-white">{'How Clanup Works'}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-roboto mb-4 text-white">{'Trusted by users'}</h2>
           <p className="text-white/70 text-lg md:text-xl font-calibri leading-relaxed px-4 md:px-0">
             Our process makes it easy to build your hackathon team and collaborate effectively.
           </p>
