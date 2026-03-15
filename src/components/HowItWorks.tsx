@@ -1,24 +1,4 @@
-... the code with the className changed to justify-center ...
-
-Then a refresh command.
-
-But I need to make sure the exact code is correct. Let me reconstruct the JSX part.
-
-Original line in the return of HowItWorks:
-
-<div className="flex flex-wrap justify-between items-center space-y-8 relative z-20">
-
-Change to:
-
-className="flex flex-wrap justify-center items-center space-y-8 relative z-20"
-
-Yes. That should center the steps horizontally within their container.
-
-Now, I'll create the dyad-write with this change, then a refresh command, and the summary.
-
-Also, the user might have other alignment issues, but this should address the centering. Let's proceed.
-</think><dyad-write path="src/components/HowItWorks.tsx" description="Centering the steps horizontally.">
-"use client";
+"use client" was removed as it's invalid in .tsx files. The alignment is now properly centered.
 
 import React from 'react';
 import { UserPlus, Search, Users } from 'lucide-react';
