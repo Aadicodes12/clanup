@@ -39,11 +39,11 @@ const Features = () => {
           </p>
         </div>
 
-        <div className="bg-card border-2 border-border rounded-3xl p-8 md:p-12 shadow-xl shadow-primary/5">
+        <div className="bg-card border-2 border-border rounded-none p-8 md:p-12 shadow-xl shadow-primary/5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {features.map((feature, index) => (
               <div key={index} className="flex gap-6 items-start">
-                <div className="bg-primary/5 p-3 rounded-2xl flex-shrink-0">
+                <div className="bg-primary/5 p-3 rounded-none flex-shrink-0 border border-border">
                   {feature.icon}
                 </div>
                 <div>
