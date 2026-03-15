@@ -1,8 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Box } from "@chakra-ui/react"; // This is used for layout container
-import { StarIcon } from '@chakra-ui/icons'; // The icon used above header
+import { Star } from 'lucide-react'; // Using lucide-react for the icon
 import AnimatedText from '@/components/AnimatedText';
 import { Button } from '@/components/ui/button';
 import TextMarquee from '@/components/TextMarquee';
@@ -19,10 +18,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
-      {/* Chakra icon above header */}
-      <Box className="flex justify-center my-4">
-        <StarIcon boxSize={8} color="yellow.400" />
-      </Box>
+      {/* Icon above header using lucide-react */}
+      <div className="flex justify-center my-4">
+        <Star size={32} color="yellow" /> {/* Adjust size and color as needed */}
+      </div>
       {/* Navbar */}
       <nav className="bg-neutral-900 p-4 flex justify-between items-center">
         <div className="text-lg font-bold font-sans">Clanup</div>
@@ -63,6 +62,7 @@ const Index = () => {
             </video>
           </div>
           
+          {/* Buttons */}
           <div className="flex flex-col w-full items-center mt-4 space-y-4">
             <Button 
               className="bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-4 px-8 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-full max-w-[280px]"
