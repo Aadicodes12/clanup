@@ -58,11 +58,11 @@ const HowItWorksSteps = () => {
 
         <div className="relative max-w-2xl mx-auto py-8"> {/* Container for steps and line */}
           {/* Vertical Line Container (static background) - visible only on medium screens and up */}
-          <div className="absolute hidden md:block left-[26px] top-0 bottom-0 w-[2px] bg-[#7be382]/30"></div>
+          <div className="absolute hidden md:block left-[27px] top-0 bottom-0 w-[2px] bg-[#7be382]/30"></div>
           {/* Animated Vertical Line (foreground) - visible only on medium screens and up */}
           <div
             className={cn(
-              "absolute hidden md:block left-[26px] top-0 w-[2px] bg-[#7be382]",
+              "absolute hidden md:block left-[27px] top-0 w-[2px] bg-[#7be382]",
               isVisible ? "animate-draw-line-vertical" : "h-0"
             )}
             style={{ transition: isVisible ? '' : 'none' }} // Remove transition if animation is active
@@ -72,7 +72,7 @@ const HowItWorksSteps = () => {
             {steps.map((step, index) => (
               <div key={index} className="relative flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-8 w-full">
                 {/* Circle with step number */}
-                <div className="relative z-10 w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#7be382] flex items-center justify-center text-black font-bold text-xl md:text-2xl flex-shrink-0 -ml-[2px] md:-ml-[28px] md:mr-0">
+                <div className="relative z-10 w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#7be382] flex items-center justify-center text-black font-bold text-xl md:text-2xl flex-shrink-0">
                   {index + 1}
                 </div>
                 <Card
