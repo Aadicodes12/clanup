@@ -1,13 +1,6 @@
 /* Import Roboto font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-:root {
-  /* existing variables */
-}
-
 body {
-  /* Apply roboto font globally */
   font-family: 'Roboto', sans-serif;
 }
-
-/* No change in HowItWorks.tsx needed, just ensure the title uses the correct class */
