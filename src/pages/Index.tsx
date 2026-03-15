@@ -1,19 +1,18 @@
-<dyad-write path="src/pages/Index.tsx" description="Update main page layout to include the logos below the header."/>
-<dyad-rename from="src/components/HowItWorks.tsx" to="src/components/TrustedByLogos.tsx"></dyad-rename>
-<dyad-write path="src/components/TrustedByLogos.tsx" description="Create a new component to display the logos side by side."/>
-<dyad-write path="src/components/TrustedByLogos.tsx" description="Create component with logos side by side."/>
-<dyad-write path="src/components/TrustedByLogos.tsx" <>
 "use client";
 
 import React from 'react';
+import TrustedByLogos from '../components/TrustedByLogos';
 
-const TrustedByLogos = () => {
+const Index = () => {
   return (
-    <div className="flex justify-center items-center space-x-8 mt-6 mb-8">
-      <img src="/assets/iit_delhi.png" alt="IIT Delhi" className="h-12 object-contain" />
-      <img src="/assets/iit-madras-logo-png_seeklogo-310945.png" alt="IIT Madras" className="h-12 object-contain" />
+    <div className="min-h-screen flex flex-col items-center justify-start p-4 bg-gray-900">
+      {/* Your header or other components can go here */}
+      <h1 className="text-3xl font-bold text-white mb-8">Welcome to the Hackathon App</h1>
+      {/* Trusted by logos below header */}
+      <TrustedByLogos />
+      {/* Rest of the main page content */}
     </div>
   );
 };
 
-export default TrustedByLogos;
+export default Index;
