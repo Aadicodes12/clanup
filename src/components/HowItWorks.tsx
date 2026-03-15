@@ -4,7 +4,8 @@ import React, { useRef, useEffect, useState } from 'react';
 import iitDelhiLogo from '@/assets/iit_delhi.png';
 import iitMadrasLogo from '@/assets/iit-madras-logo-png_seeklogo-310945.png';
 import iitKanpurLogo from '@/assets/iit_kanpur.png';
-import whiteBackground from '@/assets/white-background.jpg'; // Import the new white background image
+import whiteBackground from '@/assets/white-background.jpg';
+import LogoMarquee from './LogoMarquee'; // Import the new LogoMarquee component
 
 const HowItWorks = () => {
   const [headerVisible, setHeaderVisible] = useState(false);
@@ -30,6 +31,15 @@ const HowItWorks = () => {
     };
   }, [headerVisible]);
 
+  const logos = [
+    { src: iitDelhiLogo, alt: "IIT Delhi Logo" },
+    { src: iitMadrasLogo, alt: "IIT Madras Logo" },
+    { src: iitKanpurLogo, alt: "IIT Kanpur Logo" },
+    { src: iitDelhiLogo, alt: "IIT Delhi Logo" }, // Duplicate to ensure continuous loop
+    { src: iitMadrasLogo, alt: "IIT Madras Logo" },
+    { src: iitKanpurLogo, alt: "IIT Kanpur Logo" },
+  ];
+
   return (
     <section
       ref={sectionRef}
@@ -46,19 +56,17 @@ const HowItWorks = () => {
           </p>
           {/* Logos added here with white background */}
           <div 
-            className="flex justify-center items-center space-x-8 mt-8 p-6 rounded-lg relative overflow-hidden"
+            className="mt-8 p-6 rounded-lg relative overflow-hidden" // Removed flex and justify-center
             style={{ 
               backgroundImage: `url(${whiteBackground})`, 
               backgroundSize: 'cover', 
               backgroundPosition: 'center',
-              minHeight: '120px' // Ensure enough height for the background to show
+              minHeight: '120px'
             }}
           >
             {/* Overlay to reduce intensity of white background and make logos pop */}
             <div className="absolute inset-0 bg-white opacity-90"></div> 
-            <img src={iitDelhiLogo} alt="IIT Delhi Logo" className="h-16 w-auto relative z-10 opacity-70 hover:opacity-100 transition-opacity duration-300" />
-            <img src={iitMadrasLogo} alt="IIT Madras Logo" className="h-16 w-auto relative z-10 opacity-70 hover:opacity-100 transition-opacity duration-300" />
-            <img src={iitKanpurLogo} alt="IIT Kanpur Logo" className="h-16 w-auto relative z-10 opacity-70 hover:opacity-100 transition-opacity duration-300" />
+            <LogoMarquee logos={logos} className="relative z-10" duration="30s" />
           </div>
         </div>
       </div>
