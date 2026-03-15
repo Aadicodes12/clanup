@@ -12,24 +12,20 @@ interface StepProps {
 }
 
 const Step = ({ icon: Icon, title, description, index }: StepProps) => (
-  <div
-    className={cn(
-      "flex flex-col items-center text-center p-6 bg-neutral-900/50 rounded-2xl relative z-20",
-      "step-animated-card"
-    )}
-    style={{ animationDelay: `${index * 0.5}s` }}
-  >
+  <div className="flex items-start space-x-4 relative z-20">
     <div
       className={cn(
-        "w-12 h-12 rounded-full flex items-center justify-center mb-4",
+        "flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center",
         "step-animated-icon"
       )}
       style={{ animationDelay: `${index * 0.5}s` }}
     >
-      <Icon className="w-6 h-6" />
+      <Icon className="w-5 h-5" />
     </div>
-    <h3 className="text-xl font-bold font-sans mb-2 text-white">{title}</h3>
-    <p className="text-sm text-white/60 font-sora leading-relaxed">{description}</p>
+    <div>
+      <h3 className="text-lg font-bold font-sans text-white">{title}</h3>
+      <p className="text-sm text-white/60 font-sora leading-relaxed">{description}</p>
+    </div>
   </div>
 );
 
@@ -40,23 +36,23 @@ const HowItWorks = () => {
       <h2 className="text-3xl md:text-4xl font-bold font-sans text-center mb-12 text-white relative z-20">
         How Clanup Works
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-20">
+      <div className="flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0 md:space-x-6 relative z-20">
         <Step 
           icon={UserPlus}
           title="Create Profile"
-          description="Set up your profile with your tech stack, interests, and past projects to stand out."
+          description="Set up your profile with your tech stack and interests."
           index={0}
         />
         <Step 
           icon={Search}
           title="Discover Projects"
-          description="Browse through active hackathons and projects looking for specific skills like yours."
+          description="Browse through active hackathons and projects."
           index={1}
         />
         <Step 
           icon={Users}
           title="Form Your Clan"
-          description="Connect with potential teammates, chat, and build your dream team in minutes."
+          description="Connect with potential teammates and build your team."
           index={2}
         />
       </div>
