@@ -103,9 +103,9 @@ export default {
           "0%": { backgroundPosition: "200% center" },
           "100%": { backgroundPosition: "-200% center" },
         },
-        "draw-line": { // Keyframe for line drawing animation
-          "0%": { "stroke-dashoffset": "100" },
-          "100%": { "stroke-dashoffset": "0" },
+        "draw-line-vertical": { // Keyframe for vertical line drawing animation
+          "0%": { height: "0%" },
+          "100%": { height: "100%" },
         },
       },
       animation: {
@@ -114,7 +114,7 @@ export default {
         "slide-continuous": "slide-continuous var(--marquee-duration, 15s) linear infinite",
         "slide-rtl-continuous": "slide-rtl-continuous var(--marquee-duration-rtl, 30s) linear infinite", // New animation
         "gradient-flow": "gradient-flow 4s ease infinite", // Apply new animation
-        "draw-line": "draw-line 1.5s ease-out forwards", // Apply new animation
+        "draw-line-vertical": "draw-line-vertical 1.5s ease-out forwards", // Apply new animation
       },
       backgroundSize: { // Added for gradient animation
         "200%": "200%",

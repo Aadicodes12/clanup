@@ -56,41 +56,39 @@ const HowItWorksSteps = () => {
           How It Works
         </h2>
 
-        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8 pt-12"> {/* Added pt-12 for space above circles */}
-          {/* SVG line - visible only on medium screens and up */}
-          <div className="absolute hidden md:block w-full h-px top-[70px] left-0"> {/* Position the line slightly above the circles' center */}
-            <svg className="w-full h-full" viewBox="0 0 100 2">
-              <line
-                x1="0" y1="1" x2="100" y2="1"
-                stroke="#7be382"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeDasharray="100" // Set total length
-                strokeDashoffset="100" // Start hidden
-                className={cn(isVisible ? "animate-draw-line" : "transition-none")} // Apply animation conditionally
-              />
-            </svg>
-          </div>
+        <div className="relative max-w-2xl mx-auto py-8"> {/* Container for steps and line */}
+          {/* Vertical Line Container (static background) - visible only on medium screens and up */}
+          <div className="absolute hidden md:block left-[26px] top-0 bottom-0 w-[2px] bg-[#7be382]/30"></div>
+          {/* Animated Vertical Line (foreground) - visible only on medium screens and up */}
+          <div
+            className={cn(
+              "absolute hidden md:block left-[26px] top-0 w-[2px] bg-[#7be382]",
+              isVisible ? "animate-draw-line-vertical" : "h-0"
+            )}
+            style={{ transition: isVisible ? '' : 'none' }} // Remove transition if animation is active
+          ></div>
 
-          {steps.map((step, index) => (
-            <div key={index} className="relative flex flex-col items-center text-center">
-              {/* Circle with step number */}
-              <div className="relative z-10 w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#7be382] flex items-center justify-center text-black font-bold text-xl md:text-2xl mb-6 shadow-md">
-                {index + 1}
+          <div className="flex flex-col items-center md:items-start gap-y-12"> {/* Stacked steps */}
+            {steps.map((step, index) => (
+              <div key={index} className="relative flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-8 w-full">
+                {/* Circle with step number */}
+                <div className="relative z-10 w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#7be382] flex items-center justify-center text-black font-bold text-xl md:text-2xl flex-shrink-0 -ml-[2px] md:-ml-[28px] md:mr-0">
+                  {index + 1}
+                </div>
+                <Card
+                  className="flex-grow bg-neutral-900 border-neutral-800 p-5 transition-transform duration-300 hover:scale-105 hover:border-[#7be382] max-w-xs md:max-w-none text-center md:text-left"
+                >
+                  <div className="mb-4 flex justify-center md:justify-start">{step.icon}</div>
+                  <CardTitle className="text-xl font-bold font-sora mb-3 text-white">
+                    {step.title}
+                  </CardTitle>
+                  <CardContent className="p-0 text-gray-400 font-sora text-sm">
+                    {step.description}
+                  </CardContent>
+                </Card>
               </div>
-              <Card
-                className="bg-neutral-900 border-neutral-800 flex flex-col items-center text-center p-5 transition-transform duration-300 hover:scale-105 hover:border-[#7be382] max-w-xs mx-auto"
-              >
-                <div className="mb-4">{step.icon}</div>
-                <CardTitle className="text-xl font-bold font-sora mb-3 text-white">
-                  {step.title}
-                </CardTitle>
-                <CardContent className="p-0 text-gray-400 font-sora text-sm">
-                  {step.description}
-                </CardContent>
-              </Card>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
