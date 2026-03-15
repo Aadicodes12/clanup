@@ -3,7 +3,29 @@
 import React from 'react';
 
 const logos = [
-  "/images/0c5d28a81498a17c28da77ddd41e8236.jpg", // Path relative to 'public' folder
+  "/images/iit-bangalore.png",
+  "/images/iit-bhilai.png",
+  "/images/iit-bhubaneswar.png",
+  "/images/iit-bombay.png",
+  "/images/iit-delhi.png",
+  "/images/iit-dharwad.png",
+  "/images/iit-ism-dhanbad.png",
+  "/images/iit-gandhinagar.png",
+  "/images/iit-goa.png",
+  "/images/iit-guwahati.png",
+  "/images/iit-hyderabad.png",
+  "/images/iit-indore.png",
+  "/images/iit-jodhpur.png",
+  "/images/iit-kurukshetra.png",
+  "/images/iit-kharagpur.png",
+  "/images/iit-madras.png",
+  "/images/iit-mandi.png",
+  "/images/iit-patna.png",
+  "/images/iit-roorkee.png",
+  "/images/iit-ropar.png",
+  "/images/iit-jammu.png",
+  "/images/iit-palakkad.png",
+  "/images/iit-tirupati.png",
 ];
 
 const TrustedLogos = () => (
