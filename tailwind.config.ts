@@ -99,13 +99,22 @@ export default {
           "0%": { transform: "translateX(-50%)" },
           "100%": { transform: "translateX(0%)" },
         },
+        "gradient-flow": { // New keyframe for gradient text animation
+          "0%": { backgroundPosition: "200% center" },
+          "100%": { backgroundPosition: "-200% center" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "slide-continuous": "slide-continuous var(--marquee-duration, 15s) linear infinite",
         "slide-rtl-continuous": "slide-rtl-continuous var(--marquee-duration-rtl, 30s) linear infinite", // New animation
+        "gradient-flow": "gradient-flow 4s ease infinite", // Apply new animation
       },
+      backgroundSize: { // Added for gradient animation
+        "200%": "200%",
+        "400%": "400%",
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
