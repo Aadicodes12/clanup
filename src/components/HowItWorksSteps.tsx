@@ -92,10 +92,10 @@ const HowItWorksSteps = () => {
                     style={{ transitionDelay: `${index * 200}ms` }}
                   >
                     <div className="mb-2 md:mb-4 flex justify-start">{step.icon}</div>
-                    <CardTitle className="text-xs md:text-xl font-bold font-sora mb-1 md:mb-3 text-white leading-tight">
+                    <CardTitle className="text-sm md:text-2xl font-bold font-sora mb-1 md:mb-3 text-white leading-tight">
                       {step.title}
                     </CardTitle>
-                    <CardContent className="p-0 text-gray-400 font-sora text-[10px] md:text-sm leading-relaxed">
+                    <CardContent className="p-0 text-white font-sora text-xs md:text-base leading-relaxed">
                       {step.description}
                     </CardContent>
                   </Card>
