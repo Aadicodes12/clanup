@@ -1,51 +1,52 @@
-/* ... existing code ... */
-@keyframes scan-line-sweep {
-  0% {
-    transform: translateX(-100%);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ... existing variables ... */
   }
-  100% {
-    transform: translateX(100%);
+
+  .dark {
+    /* ... existing variables ... */
   }
 }
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html, body {
+    @apply bg-background text-foreground;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+}
+
+@keyframes scan-line-sweep {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 .animate-scan-line-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100%; /* Full width of parent container */
   height: 100%;
   pointer-events: none;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1) 20%,
-    rgba(255, 255, 255, 0.9) 50%,
-    rgba(255, 255, 255, 0.1) 80%,
-    transparent
-  );
-  animation: scan-line-sweep 3s linear infinite;
-  z-index: 10;
+  /* ... existing styles ... */
+  animation: scan-line-sweep 5s linear infinite;
 }
-/* ... existing animations ... */
-@keyframes step-icon-glow {
-  0%, 10% {
-    box-shadow: 0 0 0px rgba(123, 227, 130, 0);
-    background-color: rgba(123, 227, 130, 0.1);
-    color: rgba(123, 227, 130, 0.6);
-  }
-  50% {
-    box-shadow: 0 0 0px 8px rgba(123, 227, 130, 0.3);
-    background-color: rgba(123, 227, 130, 0.3);
-    color: rgba(123, 227, 130, 1);
-  }
-  90%, 100% {
-    box-shadow: 0 0 0px 0px rgba(123, 227, 130, 0);
-    background-color: rgba(123, 227, 130, 0.1);
-    color: rgba(123, 227, 130, 0.6);
-  }
-}
-.step-animated-icon {
-  background-color: rgba(123, 227, 130, 0.1);
-  color: rgba(123, 227, 130, 0.6);
-  transition: all 0.3s ease;
-  animation: step-icon-glow 3s ease-in-out infinite;
-}
+
+/* ... rest of existing animations and styles ... */
