@@ -33,7 +33,7 @@ const HowItWorks = () => {
   return (
     <section className="w-full max-w-5xl mx-auto px-6 py-20 relative overflow-hidden">
       <div className="animate-scan-line-overlay"></div>
-      <h2 className="text-3xl md:text-4xl font-bold font-roboto text-center mb-12 text-white relative z-20">
+      <h2 className="text-3xl md:text-4xl font-bold font-robototext-center mb-12 text-white relative z-20">
         How Clanup Works
       </h2>
       <div className="flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0 md:space-x-6 relative z-20">
