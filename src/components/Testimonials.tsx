@@ -43,12 +43,12 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({ text, author, side, delay }) =>
     >
       <div 
         className={cn(
-          "max-w-[75%] md:max-w-[45%] p-4 md:p-5 rounded-2xl shadow-sm bg-white dark:bg-neutral-900 text-black dark:text-white border border-gray-300 dark:border-neutral-700",
+          "max-w-[75%] md:max-w-[45%] p-4 md:p-5 rounded-2xl shadow-md bg-white text-black border-2 border-gray-200",
           side === 'left' ? "rounded-bl-none" : "rounded-br-none"
         )}
       >
         <p className="text-sm md:text-base font-sora mb-2 leading-relaxed">"{text}"</p>
-        <p className="text-[10px] md:text-xs font-bold font-sora uppercase tracking-widest text-gray-500 dark:text-gray-400">
+        <p className="text-[10px] md:text-xs font-bold font-sora uppercase tracking-widest text-gray-500">
           — {author}
         </p>
       </div>
@@ -79,7 +79,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="w-full max-w-4xl mx-auto px-6 py-4 overflow-hidden -mt-8">
+    <section className="w-full max-w-4xl mx-auto px-6 py-4 overflow-hidden -mt-20 relative z-30">
       <h2 className="text-2xl md:text-3xl font-bold font-sora text-center mb-8 text-foreground tracking-tight">
         What our members say
       </h2>
