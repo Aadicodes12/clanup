@@ -7,6 +7,7 @@ import TextMarquee from '@/components/TextMarquee';
 import HowItWorks from '@/components/HowItWorks';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
 import Testimonials from '@/components/Testimonials';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
@@ -19,34 +20,39 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
+    <div className="min-h-screen bg-background text-foreground flex flex-col transition-colors duration-300">
       {/* Navbar */}
-      <nav className="bg-neutral-900 p-4 flex justify-between items-center">
+      <nav className="bg-card p-4 flex justify-between items-center border-b border-border">
         <div className="text-lg font-bold font-sans">Clanup</div>
-        <div className="text-lg font-sans">About</div>
+        <div className="flex items-center gap-4">
+          <div className="text-lg font-sans cursor-pointer hover:opacity-70">About</div>
+          <ThemeToggle />
+        </div>
       </nav>
-      {/* Thicker horizontal line */}
-      <div className="border-b-2 border-white w-full"></div>
 
       {/* Hero Section */}
       <div className="flex flex-col items-center px-4 py-8 md:py-16">
         <div className="text-center w-full max-w-2xl flex flex-col items-center">
           <div className="text-3xl md:text-5xl font-bold font-sans leading-tight">
-            <AnimatedText>Great hacks start with</AnimatedText>
+            <AnimatedText className="dark:from-white dark:via-gray-300 dark:to-white from-black via-gray-600 to-black">
+              Great hacks start with
+            </AnimatedText>
             <br />
-            <AnimatedText>Great teams</AnimatedText>
+            <AnimatedText className="dark:from-white dark:via-gray-300 dark:to-white from-black via-gray-600 to-black">
+              Great teams
+            </AnimatedText>
           </div>
           
           <div className="h-12 mt-4 md:mt-6 mb-6 md:mb-8 w-full flex items-center justify-center overflow-hidden">
             <TextMarquee
               messages={marqueeMessages}
-              className="text-xs md:text-base font-sora font-bold text-amber-400"
+              className="text-xs md:text-base font-sora font-bold text-amber-500 dark:text-amber-400"
               duration="20s"
             />
           </div>
 
           {/* Video Section */}
-          <div className="w-full max-w-[320px] md:max-w-md mx-auto mb-8 rounded-2xl overflow-hidden border-2 border-neutral-800 bg-neutral-900 shadow-2xl shadow-[#7be382]/10 relative aspect-video">
+          <div className="w-full max-w-[320px] md:max-w-md mx-auto mb-8 rounded-2xl overflow-hidden border-2 border-border bg-card shadow-2xl shadow-primary/10 relative aspect-video">
             <video 
               autoPlay 
               loop 
@@ -56,7 +62,7 @@ const Index = () => {
               key="hero-video"
             >
               <source src="/5530-184666657_small.mp4" type="video/mp4" />
-              <p className="text-xs text-gray-500 p-4">Video not found. Please ensure the file is in the public folder.</p>
+              <p className="text-xs text-muted-foreground p-4">Video not found.</p>
             </video>
           </div>
           
@@ -69,17 +75,17 @@ const Index = () => {
             </Button>
             <Button 
               variant="outline"
-              className="bg-transparent border-2 border-white/20 hover:border-white/40 text-white font-bold py-4 px-8 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-full max-w-[280px]"
+              className="bg-transparent border-2 border-foreground/20 hover:border-foreground/40 text-foreground font-bold py-4 px-8 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-full max-w-[280px]"
               onClick={() => console.log('Sign Up clicked')}
             >
               Sign Up
             </Button>
 
             {/* Separator Line */}
-            <div className="w-12 h-[1px] bg-white/40 mt-16 mb-8"></div>
+            <div className="w-12 h-[1px] bg-foreground/40 mt-16 mb-8"></div>
 
             {/* Description Text */}
-            <p className="text-lg md:text-xl text-white/90 font-calibri max-w-md leading-relaxed px-6 mb-12">
+            <p className="text-lg md:text-xl text-foreground/90 font-calibri max-w-md leading-relaxed px-6 mb-12">
               Clanup matches you with other members who are actively looking to participate in hackathons, collab on projects and build something great together.
             </p>
           </div>
@@ -101,8 +107,8 @@ const Index = () => {
       </div>
 
       {/* Section Break */}
-      <div className="w-full px-4 md:px-24 mb-16">
-        <div className="border-t-2 border-white w-full"></div>
+      <div className="w-full px-4 md:px-24 mb-12">
+        <div className="border-t-2 border-foreground/20 w-full"></div>
       </div>
 
       {/* Testimonials Section */}

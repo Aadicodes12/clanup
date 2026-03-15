@@ -36,19 +36,19 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({ text, author, side, delay }) =>
     <div 
       ref={bubbleRef}
       className={cn(
-        "flex w-full mb-6 transition-all duration-700 ease-out",
+        "flex w-full mb-4 transition-all duration-700 ease-out",
         side === 'left' ? "justify-start" : "justify-end",
         isVisible ? "opacity-100 translate-x-0" : cn("opacity-0", side === 'left' ? "-translate-x-12" : "translate-x-12")
       )}
     >
       <div 
         className={cn(
-          "max-w-[75%] md:max-w-[45%] p-4 md:p-5 rounded-2xl shadow-lg bg-white/95 text-black border border-gray-200",
+          "max-w-[75%] md:max-w-[45%] p-4 md:p-5 rounded-2xl shadow-sm bg-white dark:bg-neutral-900 text-black dark:text-white border border-gray-300 dark:border-neutral-700",
           side === 'left' ? "rounded-bl-none" : "rounded-br-none"
         )}
       >
         <p className="text-sm md:text-base font-sora mb-2 leading-relaxed">"{text}"</p>
-        <p className="text-[10px] md:text-xs font-bold font-sora uppercase tracking-widest text-gray-500">
+        <p className="text-[10px] md:text-xs font-bold font-sora uppercase tracking-widest text-gray-500 dark:text-gray-400">
           — {author}
         </p>
       </div>
@@ -79,11 +79,11 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="w-full max-w-4xl mx-auto px-6 py-12 overflow-hidden">
-      <h2 className="text-2xl md:text-3xl font-bold font-sora text-center mb-12 text-white tracking-tight">
+    <section className="w-full max-w-4xl mx-auto px-6 py-4 overflow-hidden -mt-8">
+      <h2 className="text-2xl md:text-3xl font-bold font-sora text-center mb-8 text-foreground tracking-tight">
         What our members say
       </h2>
-      <div className="flex flex-col space-y-2">
+      <div className="flex flex-col space-y-1">
         {testimonials.map((t, i) => (
           <ChatBubble key={i} {...t} />
         ))}
