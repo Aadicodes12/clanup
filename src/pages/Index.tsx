@@ -18,9 +18,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
-      {/* Icon above header using lucide-react */}
+      {/* Moved Star icon above */}
       <div className="flex justify-center my-4">
-        <Star size={32} color="yellow" /> {/* Adjust size and color as needed */}
+        <Star size={32} color="yellow" />
       </div>
       {/* Navbar */}
       <nav className="bg-neutral-900 p-4 flex justify-between items-center">
@@ -88,7 +88,13 @@ const Index = () => {
 
             {/* Extra gap before How It Works */}
             <div className="h-24"></div>
-            
+
+            {/* "How Clanup Works" header with the icon above */}
+            <div className="flex flex-col items-center mb-8">
+              <Star size={40} color="yellow" className="mb-4" />
+              <h2 className="text-4xl md:text-4xl font-bold font-roboto mb-4 text-white">{'How Clanup Works'}</h2>
+            </div>
+
             <div className="w-full max-w-6xl mx-auto px-4">
               <HowItWorks />
             </div>
