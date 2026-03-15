@@ -15,7 +15,7 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({ logos, className, duration = 
       {logos.map((logo, index) => (
         <div 
           key={index} 
-          className="flex items-center justify-center h-24 w-40 mx-3 flex-shrink-0" // Increased size (h-24 w-40) and decreased margin (mx-3)
+          className="flex items-center justify-center h-20 w-36 mx-6 flex-shrink-0" // Fixed container for each logo
         >
           <img 
             src={logo.src} 
