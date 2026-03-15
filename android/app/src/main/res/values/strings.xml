@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">clanup</string>
+    <string name="title_activity_main">clanup</string>
+    <string name="package_name">com.example.clanup</string>
+    <string name="custom_url_scheme">com.example.clanup</string>
+</resources>
