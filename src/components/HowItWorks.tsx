@@ -3,7 +3,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import iitDelhiLogo from '@/assets/iit_delhi.png';
 import iitMadrasLogo from '@/assets/iit-madras-logo-png_seeklogo-310945.png';
-import iimCalcuttaLogo from '@/assets/iim_calcutta.webp'; // Removed iitKanpurLogo import
+import iimCalcuttaLogo from '@/assets/iim_calcutta.webp';
+import iitKharagpurLogo from '@/assets/iit_kharagpur.jpg'; // New import for IIT Kharagpur logo
 import whiteBackground from '@/assets/white-background.jpg';
 import LogoMarquee from './LogoMarquee';
 
@@ -34,7 +35,8 @@ const HowItWorks = () => {
   const logos = [
     { src: iitDelhiLogo, alt: "IIT Delhi Logo" },
     { src: iitMadrasLogo, alt: "IIT Madras Logo" },
-    { src: iimCalcuttaLogo, alt: "IIM Calcutta Logo" }, // Removed IIT Kanpur logo
+    { src: iitKharagpurLogo, alt: "IIT Kharagpur Logo" }, // Added IIT Kharagpur logo
+    { src: iimCalcuttaLogo, alt: "IIM Calcutta Logo" },
   ];
 
   return (
