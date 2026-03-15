@@ -43,16 +43,15 @@ const HowItWorks = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full py-12 relative" // Reduced vertical padding to shift it upwards
+      className="w-full py-6 relative" // Reduced vertical padding
     >
       {/* Header text, centered within its own container */}
       <div 
-        className={`transition-opacity duration-700 ${headerVisible ? 'opacity-100' : 'opacity-0'} max-w-4xl mx-auto text-center relative z-20 px-4 mb-8`} // Reduced margin-bottom
+        className={`transition-opacity duration-700 ${headerVisible ? 'opacity-100' : 'opacity-0'} max-w-4xl mx-auto text-center relative z-20 px-4 mb-8`} 
       >
         <h2 className="text-3xl md:text-4xl font-bold font-roboto mb-4 text-white">
           Trusted by users <br/> from
         </h2>
-        {/* Paragraph removed */}
       </div>
 
       {/* Full width background and logos */}
