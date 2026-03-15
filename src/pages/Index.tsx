@@ -1,6 +1,9 @@
 "use client";
 
 import React from 'react';
+import { Box } from "@chakra-ui/react"; // Import Chakra UI Box for layout
+import { Icon } from '@chakra-ui/react'; // Import icon component
+import { StarIcon } from '@chakra-ui/icons'; // Example icon
 import AnimatedText from '@/components/AnimatedText';
 import { Button } from '@/components/ui/button';
 import TextMarquee from '@/components/TextMarquee';
@@ -17,6 +20,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
+      {/* Chakra icon above header */}
+      <Box className="flex justify-center my-4">
+        <Icon as={StarIcon} boxSize={8} color="yellow.400" />
+      </Box>
       {/* Navbar */}
       <nav className="bg-neutral-900 p-4 flex justify-between items-center">
         <div className="text-lg font-bold font-sans">Clanup</div>
