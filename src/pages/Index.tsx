@@ -6,7 +6,9 @@ import { Button } from '@/components/ui/button';
 import TextMarquee from '@/components/TextMarquee';
 import HowItWorks from '@/components/HowItWorks';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
+import Testimonials from '@/components/Testimonials';
 import { useNavigate } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -88,15 +90,25 @@ const Index = () => {
       <HowItWorks />
       <HowItWorksSteps />
 
-      {/* Explore Button at the bottom */}
-      <div className="flex justify-center pb-24 pt-8">
+      {/* Explore Button Section */}
+      <div className="flex flex-col items-center pb-12 pt-8">
         <Button 
-          className="bg-[#FF8C42] hover:bg-[#ff7a21] text-black font-bold py-6 px-12 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-wide shadow-lg shadow-orange-500/20"
+          className="bg-[#FFB347] hover:bg-[#ffa526] text-black font-bold py-6 px-12 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-wide shadow-lg shadow-orange-500/20 flex items-center gap-2"
           onClick={() => navigate('/teams')}
         >
-          Explore
+          Explore <ArrowRight className="w-6 h-6" />
         </Button>
       </div>
+
+      {/* Section Break */}
+      <div className="w-full px-4 md:px-24 mb-16">
+        <div className="border-t-2 border-white w-full"></div>
+      </div>
+
+      {/* Testimonials Section */}
+      <Testimonials />
+      
+      <div className="h-24"></div>
     </div>
   );
 };
