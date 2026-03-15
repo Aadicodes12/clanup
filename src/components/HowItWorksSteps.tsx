@@ -50,8 +50,8 @@ const HowItWorksSteps = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="w-full py-16 md:py-24 bg-black text-white relative z-20 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section ref={sectionRef} className="w-full py-16 md:py-24 bg-black text-white relative z-20">
+      <div className="max-w-6xl mx-auto px-4"> {/* Added px-4 here for consistent padding */}
         <h2 className="text-3xl md:text-4xl font-bold font-sora text-center mb-12 tracking-tight">
           How It Works
         </h2>
@@ -62,10 +62,9 @@ const HowItWorksSteps = () => {
           {/* Animated Vertical Line (foreground) - visible only on medium screens and up */}
           <div
             className={cn(
-              "absolute hidden md:block left-[27px] top-0 w-[2px] bg-[#7be382]",
-              isVisible ? "animate-draw-line-vertical" : "h-0"
+              "absolute hidden md:block left-[27px] top-0 bottom-0 w-[2px] bg-[#7be382]",
+              isVisible ? "animate-draw-line-vertical" : "" // Only apply animation when visible
             )}
-            style={{ transition: isVisible ? '' : 'none' }} // Remove transition if animation is active
           ></div>
 
           <div className="flex flex-col items-center md:items-start gap-y-12"> {/* Stacked steps */}
