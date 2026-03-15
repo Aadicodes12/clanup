@@ -23,8 +23,8 @@ const Step = ({ icon: Icon, title, description, index }: StepProps) => (
       <Icon className="w-5 h-5" />
     </div>
     <div>
-      <h3 className="text-lg font-bold font-Roboto text-white">{title}</h3>
-      <p className="text-sm text-white/60 font-Roboto leading-relaxed">{description}</p>
+      <h3 className="text-lg font-bold font-sans text-white">{title}</h3>
+      <p className="text-sm text-white/60 font-sora leading-relaxed">{description}</p>
     </div>
   </div>
 );
@@ -33,7 +33,7 @@ const HowItWorks = () => {
   return (
     <section className="w-full max-w-5xl mx-auto px-6 py-20 relative overflow-hidden">
       <div className="animate-scan-line-overlay"></div>
-      <h2 className="text-3xl md:text-4xl font-bold font-sans text-center mb-12 text-white relative z-20">
+      <h2 className="text-3xl md:text-4xl font-bold font-roboto text-center mb-12 text-white relative z-20">
         How Clanup Works
       </h2>
       <div className="flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0 md:space-x-6 relative z-20">
