@@ -15,14 +15,14 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({ logos, className, duration = 
       {logos.map((logo, index) => (
         <div 
           key={index} 
-          className="flex items-center justify-center h-20 w-36 mx-6 flex-shrink-0" // Fixed container for each logo
+          className="flex items-center justify-center h-20 w-36 mx-4 flex-shrink-0" // Changed mx-6 to mx-4
         >
           <img 
             src={logo.src} 
             alt={logo.alt} 
             className={cn(
               "h-full w-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300",
-              logo.alt === "IIT Kharagpur Logo" && "scale-[1.25]" // Apply specific scale to IIT Kharagpur logo
+              logo.alt === "IIT Kharagpur Logo" && "scale-[1.25]" 
             )}
           />
         </div>
