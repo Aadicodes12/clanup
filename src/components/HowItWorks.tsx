@@ -24,7 +24,7 @@ const Step = ({ icon: Icon, title, description, index }: StepProps) => (
     </div>
     <div>
       <h3 className="text-lg font-bold font-Roboto text-white">{title}</h3>
-      <p className="text-sm text-white/60 font-sora leading-relaxed">{description}</p>
+      <p className="text-sm text-white/60 font-Roboto leading-relaxed">{description}</p>
     </div>
   </div>
 );
