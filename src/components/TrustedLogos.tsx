@@ -1,7 +1,3 @@
-"use client";
-
-import React from 'react';
-
 const logos = [
   "/images/iit-bangalore.png",
   "/images/iit-bhilai.png",
@@ -26,32 +22,5 @@ const logos = [
   "/images/iit-jammu.png",
   "/images/iit-palakkad.png",
   "/images/iit-tirupati.png",
-  "/images/iit-madras-logo-png_seeklogo-310945.png",  // Added your uploaded IIT Madras logo
+  "https://via.placeholder.com/150", // Test placeholder
 ];
-
-const TrustedLogos = () => (
-  <div className="overflow-hidden w-full relative py-8 bg-transparent">
-    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-center text-white">Trusted by hackers from</h3>
-    <div className="absolute top-0 left-0 w-full h-full animate-slide-left whitespace-nowrap flex items-center">
-      {logos.concat(logos).map((logo, index) => (
-        <img
-          key={index}
-          src={logo}
-          alt="Logo"
-          className="mx-4 h-12 md:h-16 object-contain"
-        />
-      ))}
-    </div>
-    <style jsx>{`
-      @keyframes slide-left {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-      }
-      .animate-slide-left {
-        animation: slide-left 30s linear infinite;
-      }
-    `}</style>
-  </div>
-);
-
-export default TrustedLogos;
