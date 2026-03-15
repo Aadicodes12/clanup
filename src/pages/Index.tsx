@@ -5,7 +5,7 @@ import AnimatedText from '@/components/AnimatedText';
 import { Button } from '@/components/ui/button';
 import TextMarquee from '@/components/TextMarquee';
 import HowItWorks from '@/components/HowItWorks';
-import HowItWorksSteps from '@/components/HowItWorksSteps'; // Import the new component
+import HowItWorksSteps from '@/components/HowItWorksSteps';
 import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
@@ -26,8 +26,8 @@ const Index = () => {
       {/* Thicker horizontal line */}
       <div className="border-b-2 border-white w-full"></div>
 
-      {/* Main content area (constrained for most content) */}
-      <div className="flex flex-col items-center px-4 py-8 md:py-16 flex-grow">
+      {/* Hero Section */}
+      <div className="flex flex-col items-center px-4 py-8 md:py-16">
         <div className="text-center w-full max-w-2xl flex flex-col items-center">
           <div className="text-3xl md:text-5xl font-bold font-sans leading-tight">
             <AnimatedText>Great hacks start with</AnimatedText>
@@ -74,20 +74,29 @@ const Index = () => {
             </Button>
 
             {/* Separator Line */}
-            <div className="w-12 h-[1px] bg-white/40 mt-16 mb-8"></div> {/* Adjusted margins here */}
+            <div className="w-12 h-[1px] bg-white/40 mt-16 mb-8"></div>
 
             {/* Description Text */}
-            <p className="text-lg md:text-xl text-white/90 font-calibri max-w-md leading-relaxed px-6 mb-12"> {/* Added bottom margin to description */}
+            <p className="text-lg md:text-xl text-white/90 font-calibri max-w-md leading-relaxed px-6 mb-12">
               Clanup matches you with other members who are actively looking to participate in hackathons, collab on projects and build something great together.
             </p>
-
-            {/* Removed the 'h-24' div spacer */}
-            
           </div>
         </div>
       </div>
+
+      {/* How It Works Sections */}
       <HowItWorks />
       <HowItWorksSteps />
+
+      {/* Explore Button at the bottom */}
+      <div className="flex justify-center pb-24 pt-8">
+        <Button 
+          className="bg-[#FF8C42] hover:bg-[#ff7a21] text-black font-bold py-6 px-12 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-wide shadow-lg shadow-orange-500/20"
+          onClick={() => navigate('/teams')}
+        >
+          Explore
+        </Button>
+      </div>
     </div>
   );
 };
