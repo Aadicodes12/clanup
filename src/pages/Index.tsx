@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import TextMarquee from '@/components/TextMarquee';
 import HowItWorks from '@/components/HowItWorks';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
-import Testimonials from '@/components/Testimonials';
+import Features from '@/components/Features';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -107,8 +107,8 @@ const Index = () => {
         <div className="border-t-2 border-foreground/10 w-full"></div>
       </div>
 
-      {/* Testimonials Section */}
-      <Testimonials />
+      {/* Features Section */}
+      <Features />
       
       <div className="h-24"></div>
     </div>
