@@ -74,21 +74,20 @@ const Index = () => {
             </Button>
 
             {/* Separator Line */}
-            <div className="w-12 h-[1px] bg-white/40 mt-40 mb-12"></div>
+            <div className="w-12 h-[1px] bg-white/40 mt-16 mb-8"></div> {/* Adjusted margins here */}
 
             {/* Description Text */}
-            <p className="text-lg md:text-xl text-white/90 font-calibri max-w-md leading-relaxed px-6">
+            <p className="text-lg md:text-xl text-white/90 font-calibri max-w-md leading-relaxed px-6 mb-12"> {/* Added bottom margin to description */}
               Clanup matches you with other members who are actively looking to participate in hackathons, collab on projects and build something great together.
             </p>
 
-            {/* Extra gap before How It Works */}
-            <div className="h-24"></div>
+            {/* Removed the 'h-24' div spacer */}
             
           </div>
         </div>
       </div>
       <HowItWorks />
-      <HowItWorksSteps /> {/* Added the new HowItWorksSteps component here */}
+      <HowItWorksSteps />
     </div>
   );
 };
