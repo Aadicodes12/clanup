@@ -75,7 +75,7 @@ const HowItWorksSteps = () => {
             {steps.map((step, index) => (
               <div key={index} className="relative flex items-start gap-4 md:gap-8 w-full">
                 {/* Circle with step number */}
-                <div className="relative z-10 w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#7be382] flex items-center justify-center text-black font-bold text-xl md:text-2xl flex-shrink-0">
+                <div className="relative z-10 w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#7be382] flex items-center justify-center text-black font-bold text-lg md:text-xl flex-shrink-0"> {/* Adjusted w, h, and text size */}
                   {index + 1}
                 </div>
                 <Card
@@ -86,7 +86,7 @@ const HowItWorksSteps = () => {
                   <CardTitle className="text-lg font-bold font-sora mb-3 text-white">
                     {step.title}
                   </CardTitle>
-                  <CardContent className="p-0 text-white font-sora text-xs"> {/* Changed text-gray-400 to text-white */}
+                  <CardContent className="p-0 text-white font-sora text-xs">
                     {step.description}
                   </CardContent>
                 </Card>
