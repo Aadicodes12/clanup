@@ -83,7 +83,9 @@ const Index = () => {
             {/* Extra gap before How It Works */}
             <div className="h-24"></div>
             
-            <HowItWorks />
+            <div className="w-full max-w-6xl mx-auto px-4">
+              <HowItWorks />
+            </div>
           </div>
         </div>
       </div>
