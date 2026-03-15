@@ -7,6 +7,7 @@ import TextMarquee from '@/components/TextMarquee';
 import HowItWorks from '@/components/HowItWorks';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
 import Features from '@/components/Features';
+import VideoShowcase from '@/components/VideoShowcase';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -106,6 +107,9 @@ const Index = () => {
       <div className="w-full px-6 md:px-24 mb-16">
         <div className="border-t-2 border-foreground/10 w-full"></div>
       </div>
+
+      {/* Video Showcase Section */}
+      <VideoShowcase />
 
       {/* Features Section */}
       <Features />
