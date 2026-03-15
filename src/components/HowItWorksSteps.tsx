@@ -60,7 +60,7 @@ const HowItWorksSteps = () => {
           <div className="flex-grow border-t-2 border-white max-w-[10%] md:max-w-[20%]"></div>
         </div>
 
-        <div className="relative max-w-2xl mx-auto py-8">
+        <div className="relative max-w-lg mx-auto py-8"> {/* Changed max-w-2xl to max-w-lg */}
           {/* Vertical Line Container (static background) - visible on all screen sizes */}
           <div className="absolute left-[23px] md:left-[27px] top-0 bottom-0 w-[2px] bg-[#7be382]/30"></div>
           {/* Animated Vertical Line (foreground) - visible on all screen sizes */}
@@ -80,7 +80,7 @@ const HowItWorksSteps = () => {
                 </div>
                 <Card
                   className="flex-grow bg-neutral-900 border-neutral-800 p-5 transition-transform duration-300 hover:scale-105 hover:border-[#7be382] text-left
-                  max-w-[calc(100% - 48px - 1rem)] md:max-w-none" // Calculated width for mobile card to prevent overflow
+                  max-w-[calc(100% - 48px - 1rem)] md:max-w-none"
                 >
                   <div className="mb-4 flex justify-start">{step.icon}</div>
                   <CardTitle className="text-xl font-bold font-sora mb-3 text-white">
