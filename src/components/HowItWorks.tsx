@@ -23,10 +23,10 @@ const Step = ({ icon: Icon, title, description, index }: StepProps) => (
       <Icon className="w-5 h-5" />
     </div>
     <div>
-      <h3 className="text-lg font-bold how-it-works-subheader text-white">{title}</h3>
+      <h3 className="text-lg font-bold font-sans text-white">{title}</h3>
       <p className="text-sm text-white/60 font-sora leading-relaxed">{description}</p>
     </div>
-  </div>;
+  </div>
 );
 
 const HowItWorks = () => {
