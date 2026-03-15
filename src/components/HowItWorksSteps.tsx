@@ -26,20 +26,20 @@ const HowItWorksSteps = () => {
   return (
     <section className="w-full py-16 md:py-24 bg-black text-white relative z-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold font-sora text-center mb-12 tracking-tight"> {/* Changed font-sans to font-sora */}
+        <h2 className="text-3xl md:text-4xl font-bold font-sora text-center mb-12 tracking-tight"> {/* Smaller header font size */}
           How It Works
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {steps.map((step, index) => (
             <Card 
               key={index} 
-              className="bg-neutral-900 border-neutral-800 flex flex-col items-center text-center p-6 transition-transform duration-300 hover:scale-105 hover:border-[#7be382]"
+              className="bg-neutral-900 border-neutral-800 flex flex-col items-center text-center p-5 transition-transform duration-300 hover:scale-105 hover:border-[#7be382]" // Reduced padding
             >
               <div className="mb-4">{step.icon}</div>
-              <CardTitle className="text-2xl font-bold font-sora mb-3 text-white"> {/* Changed font-sans to font-sora and added font-bold */}
+              <CardTitle className="text-xl font-bold font-sora mb-3 text-white"> {/* Reduced card title font size */}
                 {step.title}
               </CardTitle>
-              <CardContent className="p-0 text-gray-400 font-sora text-base">
+              <CardContent className="p-0 text-gray-400 font-sora text-sm"> {/* Reduced card content font size */}
                 {step.description}
               </CardContent>
             </Card>
