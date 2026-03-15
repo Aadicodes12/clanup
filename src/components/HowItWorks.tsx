@@ -12,7 +12,6 @@ const HowItWorks = () => {
   const [headerVisible, setHeaderVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  // Trigger header animation when section enters viewport
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -36,7 +35,7 @@ const HowItWorks = () => {
     { src: iitDelhiLogo, alt: "IIT Delhi Logo" },
     { src: iitMadrasLogo, alt: "IIT Madras Logo" },
     { src: iitKanpurLogo, alt: "IIT Kanpur Logo" },
-    { src: iimCalcuttaLogo, alt: "IIM Calcutta Logo" },
+    { src: iimCalcuttaLogo, alt: "IIM Calcutta Logo", sizeClass: "h-24 w-48" }, // IIM Calcutta logo is now larger
   ];
 
   return (
@@ -44,7 +43,6 @@ const HowItWorks = () => {
       ref={sectionRef}
       className="w-full py-12 relative" 
     >
-      {/* Header text, centered within its own container */}
       <div 
         className={`transition-opacity duration-700 ${headerVisible ? 'opacity-100' : 'opacity-0'} max-w-4xl mx-auto text-center relative z-20 px-4 mb-8`} 
       >
@@ -53,7 +51,6 @@ const HowItWorks = () => {
         </h2>
       </div>
 
-      {/* Full width background and logos */}
       <div 
         className="w-full py-6 relative z-10 overflow-hidden" 
         style={{ 
@@ -63,7 +60,6 @@ const HowItWorks = () => {
           minHeight: '120px'
         }}
       >
-        {/* Overlay to reduce intensity of white background and make logos pop */}
         <div className="absolute inset-0 bg-white opacity-90"></div> 
         <LogoMarquee logos={logos} className="relative z-10" duration="30s" />
       </div>

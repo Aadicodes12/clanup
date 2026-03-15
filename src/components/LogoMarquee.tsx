@@ -4,7 +4,7 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 
 interface LogoMarqueeProps {
-  logos: { src: string; alt: string }[];
+  logos: { src: string; alt: string; sizeClass?: string }[]; // Added sizeClass
   className?: string;
   duration?: string;
 }
@@ -15,7 +15,10 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({ logos, className, duration = 
       {logos.map((logo, index) => (
         <div 
           key={index} 
-          className="flex items-center justify-center h-20 w-36 mx-6 flex-shrink-0" // Fixed container for each logo
+          className={cn(
+            "flex items-center justify-center mx-6 flex-shrink-0", // Common classes
+            logo.sizeClass || "h-20 w-36" // Apply sizeClass or default size
+          )} 
         >
           <img 
             src={logo.src} 
