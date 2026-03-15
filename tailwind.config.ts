@@ -19,10 +19,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Bebas Neue", "sans-serif"], // Using Bebas Neue as the default sans font
-        arial: ["Arial", "sans-serif"], // Adding Arial font family
-        sora: ["Sora", "sans-serif"], // Adding Sora font family
-        calibri: ["Calibri", "Candara", "Segoe", "Segoe UI", "Optima", "Arial", "sans-serif"], // Adding Calibri font family
+        sans: ["Bebas Neue", "sans-serif"],
+        arial: ["Arial", "sans-serif"],
+        sora: ["Sora", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
+        calibri: ["Calibri", "Candara", "Segoe", "Segoe UI", "Optima", "Arial", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -92,14 +93,14 @@ export default {
           },
         },
         "slide-continuous": {
-          "0%": { transform: "translateX(0%)" }, // Start immediately visible
-          "100%": { transform: "translateX(-50%)" }, // Move left by half the total width for seamless loop
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "slide-continuous": "slide-continuous var(--marquee-duration, 15s) linear infinite", // Use CSS variable for duration
+        "slide-continuous": "slide-continuous var(--marquee-duration, 15s) linear infinite",
       },
     },
   },
