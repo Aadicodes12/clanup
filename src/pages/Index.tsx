@@ -25,7 +25,7 @@ const Index = () => {
       {/* Thicker horizontal line */}
       <div className="border-b-2 border-white w-full"></div>
 
-      {/* Main content area */}
+      {/* Main content area (constrained for most content) */}
       <div className="flex flex-col items-center px-4 py-8 md:py-16 flex-grow">
         <div className="text-center w-full max-w-2xl flex flex-col items-center">
           <div className="text-3xl md:text-5xl font-bold font-sans leading-tight">
@@ -83,12 +83,11 @@ const Index = () => {
             {/* Extra gap before How It Works */}
             <div className="h-24"></div>
             
-            <div className="w-full max-w-6xl mx-auto px-4">
-              <HowItWorks />
-            </div>
+            {/* HowItWorks component moved outside the constrained div */}
           </div>
         </div>
       </div>
+      <HowItWorks /> 
     </div>
   );
 };
