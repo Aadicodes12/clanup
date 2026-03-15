@@ -1,52 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Import Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-@layer base {
-  :root {
-    /* ... existing variables ... */
-  }
-
-  .dark {
-    /* ... existing variables ... */
-  }
+:root {
+  /* existing variables */
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  html, body {
-    @apply bg-background text-foreground;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
-  }
-
-  html::-webkit-scrollbar,
-  body::-webkit-scrollbar {
-    display: none; /* Chrome, Safari and Opera */
-  }
+body {
+  /* Apply roboto font globally */
+  font-family: 'Roboto', sans-serif;
 }
 
-@keyframes scan-line-sweep {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.animate-scan-line-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; /* Full width of parent container */
-  height: 100%;
-  pointer-events: none;
-  /* ... existing styles ... */
-  animation: scan-line-sweep 5s linear infinite;
-}
-
-/* ... rest of existing animations and styles ... */
+/* No change in HowItWorks.tsx needed, just ensure the title uses the correct class */
