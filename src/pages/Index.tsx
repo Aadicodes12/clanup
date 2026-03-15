@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import { Star } from 'lucide-react'; // Using lucide-react for the icon
 import AnimatedText from '@/components/AnimatedText';
 import { Button } from '@/components/ui/button';
 import TextMarquee from '@/components/TextMarquee';
@@ -18,10 +17,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
-      {/* Moved Star icon above */}
-      <div className="flex justify-center my-4">
-        <Star size={32} color="yellow" />
-      </div>
       {/* Navbar */}
       <nav className="bg-neutral-900 p-4 flex justify-between items-center">
         <div className="text-lg font-bold font-sans">Clanup</div>
@@ -62,7 +57,6 @@ const Index = () => {
             </video>
           </div>
           
-          {/* Buttons */}
           <div className="flex flex-col w-full items-center mt-4 space-y-4">
             <Button 
               className="bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-4 px-8 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-roboto tracking-wider w-full max-w-[280px]"
@@ -88,13 +82,7 @@ const Index = () => {
 
             {/* Extra gap before How It Works */}
             <div className="h-24"></div>
-
-            {/* "How Clanup Works" header with the icon above */}
-            <div className="flex flex-col items-center mb-8">
-              <Star size={40} color="yellow" className="mb-4" />
-              <h2 className="text-4xl md:text-4xl font-bold font-roboto mb-4 text-white">{'How Clanup Works'}</h2>
-            </div>
-
+            
             <div className="w-full max-w-6xl mx-auto px-4">
               <HowItWorks />
             </div>
