@@ -95,7 +95,7 @@ const Index = () => {
       {/* Explore Button Section */}
       <div className="flex flex-col items-center pb-12 pt-8">
         <Button 
-          className="bg-[#FF8C00] hover:bg-[#FF7F00] text-black font-bold py-5 px-12 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center gap-3"
+          className="bg-[#FF7A00] hover:bg-[#FF8A00] text-black font-bold py-5 px-12 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center gap-3"
           onClick={() => navigate('/teams')}
         >
           Explore <ArrowUpRight className="w-6 h-6" />
