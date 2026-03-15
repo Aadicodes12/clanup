@@ -33,9 +33,14 @@ const HowItWorks = () => {
   return (
     <section className="w-full max-w-5xl mx-auto px-6 py-20 relative overflow-hidden">
       <div className="animate-scan-line-overlay"></div>
-      <h2 className="text-3xl md:text-4xl font-bold font-roboto text-center mb-12 text-white relative z-20">
-        How Clanup Works
-      </h2>
+      <div className="text-center max-w-4xl mx-auto mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold font-roboto mb-4 text-white">
+          How Clanup Works
+        </h2>
+        <p className="text-white/70 text-lg md:text-xl font-calibri leading-relaxed">
+          Our process makes it easy to build your hackathon team and collaborate effectively.
+        </p>
+      </div>
       <div className="flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0 md:space-x-6 relative z-20">
         <Step 
           icon={UserPlus}
