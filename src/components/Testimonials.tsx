@@ -36,24 +36,19 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({ text, author, side, delay }) =>
     <div 
       ref={bubbleRef}
       className={cn(
-        "flex w-full mb-8 transition-all duration-700 ease-out",
+        "flex w-full mb-6 transition-all duration-700 ease-out",
         side === 'left' ? "justify-start" : "justify-end",
-        isVisible ? "opacity-100 translate-x-0" : cn("opacity-0", side === 'left' ? "-translate-x-20" : "translate-x-20")
+        isVisible ? "opacity-100 translate-x-0" : cn("opacity-0", side === 'left' ? "-translate-x-12" : "translate-x-12")
       )}
     >
       <div 
         className={cn(
-          "max-w-[80%] md:max-w-[60%] p-6 rounded-2xl shadow-xl",
-          side === 'left' 
-            ? "bg-neutral-800 text-white rounded-bl-none border-l-4 border-[#7be382]" 
-            : "bg-[#7be382] text-black rounded-br-none"
+          "max-w-[75%] md:max-w-[45%] p-4 md:p-5 rounded-2xl shadow-lg bg-white/95 text-black border border-gray-200",
+          side === 'left' ? "rounded-bl-none" : "rounded-br-none"
         )}
       >
-        <p className="text-lg font-sora mb-3 italic">"{text}"</p>
-        <p className={cn(
-          "text-sm font-bold font-sora uppercase tracking-wider",
-          side === 'left' ? "text-[#7be382]" : "text-black/70"
-        )}>
+        <p className="text-sm md:text-base font-sora mb-2 leading-relaxed">"{text}"</p>
+        <p className="text-[10px] md:text-xs font-bold font-sora uppercase tracking-widest text-gray-500">
           — {author}
         </p>
       </div>
@@ -73,22 +68,22 @@ const Testimonials = () => {
       text: "Clanup made it so easy to find developers who actually share my passion for AI. We won our first competition together!",
       author: "Priya M., BITS Pilani",
       side: 'right' as const,
-      delay: 300
+      delay: 200
     },
     {
       text: "The best platform for students to network and build real-world projects outside of the classroom.",
       author: "Arjun K., NIT Trichy",
       side: 'left' as const,
-      delay: 600
+      delay: 400
     }
   ];
 
   return (
-    <section className="w-full max-w-5xl mx-auto px-4 py-12 overflow-hidden">
-      <h2 className="text-3xl md:text-4xl font-bold font-sora text-center mb-16 text-white">
+    <section className="w-full max-w-4xl mx-auto px-6 py-12 overflow-hidden">
+      <h2 className="text-2xl md:text-3xl font-bold font-sora text-center mb-12 text-white tracking-tight">
         What our members say
       </h2>
-      <div className="flex flex-col">
+      <div className="flex flex-col space-y-2">
         {testimonials.map((t, i) => (
           <ChatBubble key={i} {...t} />
         ))}
