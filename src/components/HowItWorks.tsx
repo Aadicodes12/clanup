@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import iitDelhiLogo from '@/assets/iit_delhi.png';
 import iitMadrasLogo from '@/assets/iit-madras-logo-png_seeklogo-310945.png';
 import iitKanpurLogo from '@/assets/iit_kanpur.png';
+import iimCalcuttaLogo from '@/assets/iim_calcutta.webp'; // Import the new logo
 import whiteBackground from '@/assets/white-background.jpg';
 import LogoMarquee from './LogoMarquee';
 
@@ -35,24 +36,25 @@ const HowItWorks = () => {
     { src: iitDelhiLogo, alt: "IIT Delhi Logo" },
     { src: iitMadrasLogo, alt: "IIT Madras Logo" },
     { src: iitKanpurLogo, alt: "IIT Kanpur Logo" },
-    { src: iitDelhiLogo, alt: "IIT Delhi Logo" }, // Duplicate to ensure continuous loop
+    { src: iimCalcuttaLogo, alt: "IIM Calcutta Logo" }, // Added the new logo
+    { src: iitDelhiLogo, alt: "IIT Delhi Logo" }, 
     { src: iitMadrasLogo, alt: "IIT Madras Logo" },
     { src: iitKanpurLogo, alt: "IIT Kanpur Logo" },
+    { src: iimCalcuttaLogo, alt: "IIM Calcutta Logo" }, // Duplicated for continuous loop
   ];
 
   return (
     <section
       ref={sectionRef}
-      className="w-full py-12 relative" // Reduced vertical padding to shift it upwards
+      className="w-full py-12 relative" 
     >
       {/* Header text, centered within its own container */}
       <div 
-        className={`transition-opacity duration-700 ${headerVisible ? 'opacity-100' : 'opacity-0'} max-w-4xl mx-auto text-center relative z-20 px-4 mb-8`} // Reduced margin-bottom
+        className={`transition-opacity duration-700 ${headerVisible ? 'opacity-100' : 'opacity-0'} max-w-4xl mx-auto text-center relative z-20 px-4 mb-8`} 
       >
         <h2 className="text-3xl md:text-4xl font-bold font-roboto mb-4 text-white">
           Trusted by users <br/> from
         </h2>
-        {/* Paragraph removed */}
       </div>
 
       {/* Full width background and logos */}
