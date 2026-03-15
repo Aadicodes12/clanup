@@ -26,6 +26,7 @@ const logos = [
   "/images/iit-jammu.png",
   "/images/iit-palakkad.png",
   "/images/iit-tirupati.png",
+  "/images/iit-madras-logo-png_seeklogo-310945.png",  // Added your uploaded IIT Madras logo
 ];
 
 const TrustedLogos = () => (
