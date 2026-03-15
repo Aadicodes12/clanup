@@ -1,4 +1,3 @@
-// Removed the step icons and lines; retain only header section.
 "use client";
 
 import React, { useRef, useEffect, useState } from 'react';
@@ -38,7 +37,15 @@ const HowItWorks = () => {
       >
         <div className="text-center max-w-4xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-roboto mb-4 text-white">{'Trusted by users'}</h2>
-          <p className="text-white/70 text-lg md:text-xl font-calibri leading-relaxed px-4 md:px-0">
+          
+          {/* Logos Container */}
+          <div className="flex justify-center items-center space-x-8 mt-6">
+            <img src="/assets/iit_delhi.png" alt="IIT Delhi" className="h-12 object-contain" />
+            <img src="/assets/iit-madras-logo-png_seeklogo-310945.png" alt="IIT Madras" className="h-12 object-contain" />
+          </div>
+
+          {/* Description */}
+          <p className="text-white/70 text-lg md:text-xl font-calibri leading-relaxed px-4 md:px-0 mt-8">
             Our process makes it easy to build your hackathon team and collaborate effectively.
           </p>
         </div>
