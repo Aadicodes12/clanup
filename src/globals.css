@@ -49,4 +49,8 @@
   animation: scan-line-sweep 5s linear infinite;
 }
 
+.how-it-works-subheader {
+  font-family: 'Roboto', sans-serif;
+}
+
 /* ... rest of existing animations and styles ... */
