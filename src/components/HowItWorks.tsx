@@ -32,11 +32,21 @@ const Step = ({ icon: Icon, title, description, index, animateLine }: StepProps)
 
 const HowItWorks = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [headerVisible, setHeaderVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
 
-  // Animate line when section comes into view
+  // Trigger header and line animation when section enters viewport
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const sectionObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !headerVisible) {
+          setHeaderVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    const headerObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated) {
           setHasAnimated(true);
@@ -45,26 +55,32 @@ const HowItWorks = () => {
       { threshold: 0.3 }
     );
     if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+      sectionRef.current && sectionObserver.observe(sectionRef.current);
+    }
+    if (headerRef.current) {
+      headerRef.current && headerObserver.observe(headerRef.current);
     }
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      if (sectionRef.current) sectionObserver.unobserve(sectionRef.current);
+      if (headerRef.current) headerObserver.unobserve(headerRef.current);
     };
-  }, [hasAnimated]);
+  }, [hasAnimated, headerVisible]);
 
   return (
     <section ref={sectionRef} className="w-full max-w-5xl mx-auto px-6 py-20 relative overflow-hidden">
+      {/* Header appears on scroll */}
       <div
-        className={`animate-scan-line-overlay ${hasAnimated ? 'opacity-0' : 'opacity-100'}`}
-      ></div>
-      <div className="text-center max-w-4xl mx-auto mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold font-roboto mb-4 text-white">{'How Clanup Works'}</h2>
-        <p className="text-white/70 text-lg md:text-xl font-calibri leading-relaxed px-4 md:px-0">
-          Our process makes it easy to build your hackathon team and collaborate effectively.
-        </p>
+        ref={headerRef}
+        className={`transition-opacity duration-700 opacity-0 ${headerVisible ? 'opacity-100' : ''}`}
+      >
+        <div className="text-center max-w-4xl mx-auto mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold font-roboto mb-4 text-white">{'How Clanup Works'}</h2>
+          <p className="text-white/70 text-lg md:text-xl font-calibri leading-relaxed px-4 md:px-0">
+            Our process makes it easy to build your hackathon team and collaborate effectively.
+          </p>
+        </div>
       </div>
+      
       {/* Icons with animated line */}
       <div className="relative flex flex-col items-center space-y-8 md:space-y-20">
         <Step
