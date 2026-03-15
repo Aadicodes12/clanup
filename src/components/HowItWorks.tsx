@@ -43,21 +43,23 @@ const HowItWorks = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full py-20 relative" // Section now spans full width, content will be centered within it
+      className="w-full py-20 relative" 
     >
       {/* Header and description text, centered within its own container */}
       <div 
         className={`transition-opacity duration-700 ${headerVisible ? 'opacity-100' : 'opacity-0'} max-w-4xl mx-auto text-center relative z-20 px-4 mb-12`} 
       >
-        <h2 className="text-3xl md:text-4xl font-bold font-roboto mb-4 text-white">{'Trusted by users'}</h2>
+        <h2 className="text-3xl md:text-4xl font-bold font-roboto mb-4 text-white">
+          Trusted by users <br/> from
+        </h2>
         <p className="text-white/70 text-lg md:text-xl font-calibri leading-relaxed">
-          Our process makes it easy to build your hackathon team and collaborate effectively.
+          Students from premier institutes are already on Clanup.
         </p>
       </div>
 
       {/* Full width background and logos */}
       <div 
-        className="w-full py-6 relative z-10 overflow-hidden" // This div now correctly spans the full width of its parent (the section)
+        className="w-full py-6 relative z-10 overflow-hidden" 
         style={{ 
           backgroundImage: `url(${whiteBackground})`, 
           backgroundSize: 'cover', 
