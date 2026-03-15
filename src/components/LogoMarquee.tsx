@@ -13,12 +13,16 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({ logos, className, duration = 
   const LogoGroup = () => (
     <div className="flex items-center py-2">
       {logos.map((logo, index) => (
-        <img 
+        <div 
           key={index} 
-          src={logo.src} 
-          alt={logo.alt} 
-          className="h-16 w-auto mx-8 opacity-70 hover:opacity-100 transition-opacity duration-300 flex-shrink-0" 
-        />
+          className="flex items-center justify-center h-20 w-36 mx-6 flex-shrink-0" // Fixed container for each logo
+        >
+          <img 
+            src={logo.src} 
+            alt={logo.alt} 
+            className="h-full w-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" 
+          />
+        </div>
       ))}
     </div>
   );
