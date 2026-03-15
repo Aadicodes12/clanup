@@ -60,7 +60,7 @@ const HowItWorksSteps = () => {
           <div className="flex-grow border-t-2 border-white max-w-[10%] md:max-w-[20%]"></div>
         </div>
 
-        <div className="relative max-w-lg mx-auto py-8"> {/* Changed max-w-2xl to max-w-lg */}
+        <div className="relative max-w-md mx-auto py-8"> {/* Changed max-w-lg to max-w-md */}
           {/* Vertical Line Container (static background) - visible on all screen sizes */}
           <div className="absolute left-[23px] md:left-[27px] top-0 bottom-0 w-[2px] bg-[#7be382]/30"></div>
           {/* Animated Vertical Line (foreground) - visible on all screen sizes */}
