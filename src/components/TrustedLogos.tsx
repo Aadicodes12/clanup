@@ -3,13 +3,13 @@
 import React from 'react';
 
 const logos = [
-  "/iits/iiit-hyderabad.png",
-  "/nits/nit-trichy.png",
-  "/iits/iiit-bharti.png",
-  "/nits/nit-surathkal.png",
-  "/iits/iiit-delhi.png",
-  "/nits/nit-kurukshetra.png",
-  // Add more logo URLs as needed
+  "https://via.placeholder.com/150x50?text=IIIT-Hyderabad",
+  "https://via.placeholder.com/150x50?text=NIT-Trichy",
+  "https://via.placeholder.com/150x50?text=IIIT-Bharti",
+  "https://via.placeholder.com/150x50?text=NIT-Surathkal",
+  "https://via.placeholder.com/150x50?text=IIIT-Delhi",
+  "https://via.placeholder.com/150x50?text=NIT-Kurukshetra",
+  // Fallback placeholders for missing images
 ];
 
 const TrustedLogos = () => (
