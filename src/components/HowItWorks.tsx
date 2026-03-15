@@ -4,7 +4,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import iitDelhiLogo from '@/assets/iit_delhi.png';
 import iitMadrasLogo from '@/assets/iit-madras-logo-png_seeklogo-310945.png';
 import iitKanpurLogo from '@/assets/iit_kanpur.png';
-import iimCalcuttaLogo from '@/assets/iim_calcutta.webp'; // Import the new logo
+import iimCalcuttaLogo from '@/assets/iim_calcutta.webp';
 import whiteBackground from '@/assets/white-background.jpg';
 import LogoMarquee from './LogoMarquee';
 
@@ -36,11 +36,7 @@ const HowItWorks = () => {
     { src: iitDelhiLogo, alt: "IIT Delhi Logo" },
     { src: iitMadrasLogo, alt: "IIT Madras Logo" },
     { src: iitKanpurLogo, alt: "IIT Kanpur Logo" },
-    { src: iimCalcuttaLogo, alt: "IIM Calcutta Logo" }, // Added the new logo
-    { src: iitDelhiLogo, alt: "IIT Delhi Logo" }, 
-    { src: iitMadrasLogo, alt: "IIT Madras Logo" },
-    { src: iitKanpurLogo, alt: "IIT Kanpur Logo" },
-    { src: iimCalcuttaLogo, alt: "IIM Calcutta Logo" }, // Duplicated for continuous loop
+    { src: iimCalcuttaLogo, alt: "IIM Calcutta Logo" },
   ];
 
   return (
