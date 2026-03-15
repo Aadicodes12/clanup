@@ -43,18 +43,16 @@ const HowItWorks = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full py-20 relative" 
+      className="w-full py-12 relative" // Reduced vertical padding to shift it upwards
     >
-      {/* Header and description text, centered within its own container */}
+      {/* Header text, centered within its own container */}
       <div 
-        className={`transition-opacity duration-700 ${headerVisible ? 'opacity-100' : 'opacity-0'} max-w-4xl mx-auto text-center relative z-20 px-4 mb-12`} 
+        className={`transition-opacity duration-700 ${headerVisible ? 'opacity-100' : 'opacity-0'} max-w-4xl mx-auto text-center relative z-20 px-4 mb-8`} // Reduced margin-bottom
       >
         <h2 className="text-3xl md:text-4xl font-bold font-roboto mb-4 text-white">
           Trusted by users <br/> from
         </h2>
-        <p className="text-white/70 text-lg md:text-xl font-calibri leading-relaxed">
-          Students from premier institutes are already on Clanup.
-        </p>
+        {/* Paragraph removed */}
       </div>
 
       {/* Full width background and logos */}
