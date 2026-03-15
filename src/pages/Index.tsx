@@ -5,6 +5,7 @@ import AnimatedText from '@/components/AnimatedText';
 import { Button } from '@/components/ui/button';
 import TextMarquee from '@/components/TextMarquee';
 import HowItWorks from '@/components/HowItWorks';
+import HowItWorksSteps from '@/components/HowItWorksSteps'; // Import the new component
 import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
@@ -83,11 +84,11 @@ const Index = () => {
             {/* Extra gap before How It Works */}
             <div className="h-24"></div>
             
-            {/* HowItWorks component moved outside the constrained div */}
           </div>
         </div>
       </div>
-      <HowItWorks /> 
+      <HowItWorks />
+      <HowItWorksSteps /> {/* Added the new HowItWorksSteps component here */}
     </div>
   );
 };
