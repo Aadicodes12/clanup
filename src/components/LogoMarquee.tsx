@@ -17,7 +17,7 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({ logos, className, duration = 
           key={index} 
           src={logo.src} 
           alt={logo.alt} 
-          className="h-16 w-auto mx-8 opacity-70 hover:opacity-100 transition-opacity duration-300 flex-shrink-0" 
+          className="h-16 w-32 object-contain mx-12 opacity-70 hover:opacity-100 transition-opacity duration-300 flex-shrink-0" // Updated sizing and spacing
         />
       ))}
     </div>
