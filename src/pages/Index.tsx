@@ -4,7 +4,7 @@ import React from 'react';
 import AnimatedText from '@/components/AnimatedText';
 import { Button } from '@/components/ui/button';
 import TextMarquee from '@/components/TextMarquee';
-import TrustedLogos from '@/components/TrustedLogos';
+import HowItWorks from '@/components/HowItWorks';
 import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
@@ -80,14 +80,12 @@ const Index = () => {
               Clanup matches you with other members who are actively looking to participate in hackathons, collab on projects and build something great together.
             </p>
 
-            {/* Extra gap before trusted logos */}
+            {/* Extra gap before How It Works */}
             <div className="h-24"></div>
-
-            {/* Trusted Logos Section */}
-            <TrustedLogos />
-
-            {/* Extra gap after logos */}
-            <div className="h-24"></div>
+            
+            <div className="w-full max-w-6xl mx-auto px-4">
+              <HowItWorks />
+            </div>
           </div>
         </div>
       </div>
