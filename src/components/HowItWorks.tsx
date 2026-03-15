@@ -3,6 +3,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import iitDelhiLogo from '@/assets/iit_delhi.png';
 import iitMadrasLogo from '@/assets/iit-madras-logo-png_seeklogo-310945.png';
+import iitKanpurLogo from '@/assets/iit_kanpur.png'; // Import the new IIT Kanpur logo
 
 const HowItWorks = () => {
   const [headerVisible, setHeaderVisible] = useState(false);
@@ -46,6 +47,7 @@ const HowItWorks = () => {
           <div className="flex justify-center items-center space-x-8 mt-8">
             <img src={iitDelhiLogo} alt="IIT Delhi Logo" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
             <img src={iitMadrasLogo} alt="IIT Madras Logo" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
+            <img src={iitKanpurLogo} alt="IIT Kanpur Logo" className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
           </div>
         </div>
       </div>
