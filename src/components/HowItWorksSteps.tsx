@@ -3,7 +3,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
 import { Sparkles, Users, Code } from 'lucide-react';
-import { cn } from '@/lib/utils'; // Import cn for conditional classes
+import { cn } from '@/lib/utils';
 
 const HowItWorksSteps = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -51,33 +51,34 @@ const HowItWorksSteps = () => {
 
   return (
     <section ref={sectionRef} className="w-full py-16 md:py-24 bg-black text-white relative z-20">
-      <div className="max-w-6xl mx-auto px-4"> {/* Added px-4 here for consistent padding */}
+      <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold font-sora text-center mb-12 tracking-tight">
           How It Works
         </h2>
 
-        <div className="relative max-w-2xl mx-auto py-8"> {/* Container for steps and line */}
-          {/* Vertical Line Container (static background) - visible only on medium screens and up */}
-          <div className="absolute hidden md:block left-[27px] top-0 bottom-0 w-[2px] bg-[#7be382]/30"></div>
-          {/* Animated Vertical Line (foreground) - visible only on medium screens and up */}
+        <div className="relative max-w-2xl mx-auto py-8">
+          {/* Vertical Line Container (static background) - visible on all screen sizes */}
+          <div className="absolute left-[23px] md:left-[27px] top-0 bottom-0 w-[2px] bg-[#7be382]/30"></div>
+          {/* Animated Vertical Line (foreground) - visible on all screen sizes */}
           <div
             className={cn(
-              "absolute hidden md:block left-[27px] top-0 bottom-0 w-[2px] bg-[#7be382]",
-              isVisible ? "animate-draw-line-vertical" : "" // Only apply animation when visible
+              "absolute left-[23px] md:left-[27px] top-0 bottom-0 w-[2px] bg-[#7be382]",
+              isVisible ? "animate-draw-line-vertical" : "h-0"
             )}
           ></div>
 
-          <div className="flex flex-col items-center md:items-start gap-y-12"> {/* Stacked steps */}
+          <div className="flex flex-col gap-y-12">
             {steps.map((step, index) => (
-              <div key={index} className="relative flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-8 w-full">
+              <div key={index} className="relative flex items-start gap-4 md:gap-8 w-full">
                 {/* Circle with step number */}
                 <div className="relative z-10 w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#7be382] flex items-center justify-center text-black font-bold text-xl md:text-2xl flex-shrink-0">
                   {index + 1}
                 </div>
                 <Card
-                  className="flex-grow bg-neutral-900 border-neutral-800 p-5 transition-transform duration-300 hover:scale-105 hover:border-[#7be382] max-w-xs md:max-w-none text-center md:text-left"
+                  className="flex-grow bg-neutral-900 border-neutral-800 p-5 transition-transform duration-300 hover:scale-105 hover:border-[#7be382] text-left
+                  max-w-[calc(100% - 48px - 1rem)] md:max-w-none" // Calculated width for mobile card to prevent overflow
                 >
-                  <div className="mb-4 flex justify-center md:justify-start">{step.icon}</div>
+                  <div className="mb-4 flex justify-start">{step.icon}</div>
                   <CardTitle className="text-xl font-bold font-sora mb-3 text-white">
                     {step.title}
                   </CardTitle>
