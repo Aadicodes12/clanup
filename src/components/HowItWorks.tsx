@@ -48,7 +48,7 @@ const HowItWorks = () => {
       <div 
         className={`transition-opacity duration-700 ${headerVisible ? 'opacity-100' : 'opacity-0'} max-w-4xl mx-auto text-center relative z-20 px-4 mb-8`} 
       >
-        <h2 className="text-3xl md:text-4xl font-bold font-roboto mb-4 text-white">
+        <h2 className="text-3xl md:text-4xl font-bold font-roboto mb-4 text-foreground">
           Trusted by users <br/> from
         </h2>
       </div>
