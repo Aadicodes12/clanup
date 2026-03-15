@@ -20,7 +20,10 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({ logos, className, duration = 
           <img 
             src={logo.src} 
             alt={logo.alt} 
-            className="h-full w-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" 
+            className={cn(
+              "h-full w-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300",
+              logo.alt === "IIT Kharagpur Logo" && "scale-[1.25]" // Apply specific scale to IIT Kharagpur logo
+            )}
           />
         </div>
       ))}
