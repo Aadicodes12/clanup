@@ -53,11 +53,11 @@ const HowItWorksSteps = () => {
     <section ref={sectionRef} className="w-full py-16 md:py-24 bg-black text-white relative z-20">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-center mb-12">
-          <div className="flex-grow border-t-2 border-white/30 max-w-[10%] md:max-w-[20%]"></div>
+          <div className="flex-grow border-t-2 border-white max-w-[10%] md:max-w-[20%]"></div>
           <h2 className="text-3xl md:text-4xl font-bold font-sora text-center mx-4 tracking-tight whitespace-nowrap">
             How It Works
           </h2>
-          <div className="flex-grow border-t-2 border-white/30 max-w-[10%] md:max-w-[20%]"></div>
+          <div className="flex-grow border-t-2 border-white max-w-[10%] md:max-w-[20%]"></div>
         </div>
 
         <div className="relative max-w-2xl mx-auto py-8">
