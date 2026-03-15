@@ -60,7 +60,7 @@ const HowItWorksSteps = () => {
           <div className="flex-grow border-t-2 border-white max-w-[10%] md:max-w-[20%]"></div>
         </div>
 
-        <div className="relative max-w-md mx-auto py-8"> {/* Changed max-w-lg to max-w-md */}
+        <div className="relative max-w-sm mx-auto py-8"> {/* Changed max-w-md to max-w-sm */}
           {/* Vertical Line Container (static background) - visible on all screen sizes */}
           <div className="absolute left-[23px] md:left-[27px] top-0 bottom-0 w-[2px] bg-[#7be382]/30"></div>
           {/* Animated Vertical Line (foreground) - visible on all screen sizes */}
@@ -83,10 +83,10 @@ const HowItWorksSteps = () => {
                   max-w-[calc(100% - 48px - 1rem)] md:max-w-none"
                 >
                   <div className="mb-4 flex justify-start">{step.icon}</div>
-                  <CardTitle className="text-xl font-bold font-sora mb-3 text-white">
+                  <CardTitle className="text-lg font-bold font-sora mb-3 text-white"> {/* Changed text-xl to text-lg */}
                     {step.title}
                   </CardTitle>
-                  <CardContent className="p-0 text-gray-400 font-sora text-sm">
+                  <CardContent className="p-0 text-gray-400 font-sora text-xs"> {/* Changed text-sm to text-xs */}
                     {step.description}
                   </CardContent>
                 </Card>
