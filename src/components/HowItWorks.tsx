@@ -4,6 +4,8 @@ import React, { useRef, useEffect, useState } from 'react';
 import iitDelhiLogo from '@/assets/iit_delhi.png';
 import iitMadrasLogo from '@/assets/iit-madras-logo-png_seeklogo-310945.png';
 import iitKanpurLogo from '@/assets/iit_kanpur.png';
+import vnitLogo from '@/assets/vnit-logo-1.jpg'; // New import
+import iimAhmedabadLogo from '@/assets/iim-ahmedabad-logo.png'; // New import
 import whiteBackground from '@/assets/white-background.jpg';
 import LogoMarquee from './LogoMarquee';
 
@@ -35,15 +37,19 @@ const HowItWorks = () => {
     { src: iitDelhiLogo, alt: "IIT Delhi Logo" },
     { src: iitMadrasLogo, alt: "IIT Madras Logo" },
     { src: iitKanpurLogo, alt: "IIT Kanpur Logo" },
-    { src: iitDelhiLogo, alt: "IIT Delhi Logo" }, // Duplicate to ensure continuous loop
+    { src: vnitLogo, alt: "VNIT Nagpur Logo" }, // New logo added
+    { src: iimAhmedabadLogo, alt: "IIM Ahmedabad Logo" }, // New logo added
+    { src: iitDelhiLogo, alt: "IIT Delhi Logo" }, 
     { src: iitMadrasLogo, alt: "IIT Madras Logo" },
     { src: iitKanpurLogo, alt: "IIT Kanpur Logo" },
+    { src: vnitLogo, alt: "VNIT Nagpur Logo" }, // Duplicated for continuous loop
+    { src: iimAhmedabadLogo, alt: "IIM Ahmedabad Logo" }, // Duplicated for continuous loop
   ];
 
   return (
     <section
       ref={sectionRef}
-      className="w-full py-6 relative" // Reduced vertical padding
+      className="w-full py-6 relative" 
     >
       {/* Header text, centered within its own container */}
       <div 
