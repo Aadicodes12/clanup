@@ -34,11 +34,11 @@ const Index = () => {
       <div className="flex flex-col items-center px-4 py-12 md:py-20">
         <div className="text-center w-full max-w-3xl flex flex-col items-center">
           <div className="text-4xl md:text-6xl font-bold font-sans leading-tight mb-2">
-            <AnimatedText className="from-white via-neutral-400 to-white">
+            <AnimatedText className="from-white via-zinc-400 to-zinc-500">
               Great hacks start with
             </AnimatedText>
             <br />
-            <AnimatedText className="from-white via-neutral-400 to-white">
+            <AnimatedText className="from-white via-zinc-400 to-zinc-500">
               Great teams
             </AnimatedText>
           </div>
@@ -93,19 +93,21 @@ const Index = () => {
       <HowItWorksSteps />
 
       {/* Explore & Learn More Buttons Section */}
-      <div className="flex flex-row items-center justify-center gap-3 md:gap-6 pb-12 pt-8 px-4">
-        <Button 
-          className="bg-[#FF7A00] hover:bg-[#FF8A00] text-black font-bold py-4 md:py-5 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center justify-center gap-2 w-[150px] md:w-[220px]"
-          onClick={() => navigate('/teams')}
-        >
-          Explore <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
-        </Button>
-        <Button 
-          className="bg-foreground text-background hover:opacity-90 font-bold py-4 md:py-5 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center justify-center gap-2 w-[150px] md:w-[220px]"
-          onClick={() => console.log('Learn More clicked')}
-        >
-          Learn More <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
-        </Button>
+      <div className="flex justify-center pb-12 pt-8 px-4">
+        <div className="grid grid-cols-2 gap-3 md:gap-6 w-full max-w-[340px] md:max-w-[500px]">
+          <Button 
+            className="bg-[#FF7A00] hover:bg-[#FF8A00] text-black font-bold py-4 md:py-6 text-base md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center justify-center gap-2 w-full"
+            onClick={() => navigate('/teams')}
+          >
+            Explore <ArrowUpRight className="w-4 h-4 md:w-6 md:h-6" />
+          </Button>
+          <Button 
+            className="bg-foreground text-background hover:opacity-90 font-bold py-4 md:py-6 text-base md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center justify-center gap-2 w-full"
+            onClick={() => console.log('Learn More clicked')}
+          >
+            Learn More <ArrowUpRight className="w-4 h-4 md:w-6 md:h-6" />
+          </Button>
+        </div>
       </div>
 
       {/* Section Break */}
