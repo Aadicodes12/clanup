@@ -34,11 +34,11 @@ const Index = () => {
       <div className="flex flex-col items-center px-4 py-12 md:py-20">
         <div className="text-center w-full max-w-3xl flex flex-col items-center">
           <div className="text-4xl md:text-6xl font-bold font-sans leading-tight mb-2">
-            <AnimatedText className="dark:from-white dark:via-gray-400 dark:to-white from-black via-gray-600 to-black">
+            <AnimatedText className="from-white via-gray-400 to-white">
               Great hacks start with
             </AnimatedText>
             <br />
-            <AnimatedText className="dark:from-white dark:via-gray-400 dark:to-white from-black via-gray-600 to-black">
+            <AnimatedText className="from-white via-gray-400 to-white">
               Great teams
             </AnimatedText>
           </div>
@@ -101,10 +101,10 @@ const Index = () => {
           Explore <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
         </Button>
         <Button 
-          className="bg-foreground text-background hover:opacity-90 font-bold py-4 md:py-5 px-6 md:px-12 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight"
+          className="bg-foreground text-background hover:opacity-90 font-bold py-4 md:py-5 px-6 md:px-12 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center gap-2 md:gap-3"
           onClick={() => console.log('Learn More clicked')}
         >
-          Learn More
+          Learn More <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
         </Button>
       </div>
 
