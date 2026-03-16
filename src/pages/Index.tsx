@@ -25,7 +25,7 @@ const Index = () => {
       <nav className="bg-card p-4 flex justify-between items-center border-b border-border sticky top-0 z-50">
         <div className="text-xl font-bold font-sans tracking-tight h-8 flex items-center">Clanup</div>
         <div className="flex items-center gap-6">
-          <div className="text-sm font-medium cursor-pointer hover:opacity-70 transition-opacity h-8 flex items-center">About</div>
+          <div className="text-xl font-bold font-sans tracking-tight cursor-pointer hover:opacity-70 transition-opacity h-8 flex items-center">About</div>
           <ThemeToggle />
         </div>
       </nav>
