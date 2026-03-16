@@ -3,6 +3,7 @@
 import React from 'react';
 import { Search, Users, Zap, Shield, ArrowUpRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from "sonner";
 
 const Features = () => {
   const navigate = useNavigate();
@@ -12,25 +13,28 @@ const Features = () => {
       icon: <Search className="w-6 h-6 text-[#7be382]" />,
       title: "Smart Matching",
       description: "Our algorithm connects you with teammates based on complementary skills and shared interests.",
-      action: () => navigate('/teams')
+      action: () => {
+        toast.success("Opening Smart Matching...");
+        navigate('/teams');
+      }
     },
     {
       icon: <Users className="w-6 h-6 text-[#7be382]" />,
       title: "Team Management",
       description: "Easily create, join, and manage your hackathon teams all in one centralized dashboard.",
-      action: () => console.log('Team Management clicked')
+      action: () => toast.info("Team Management dashboard is coming soon!")
     },
     {
       icon: <Zap className="w-6 h-6 text-[#7be382]" />,
       title: "Real-time Collab",
       description: "Communicate instantly with potential teammates and coordinate your project ideas effectively.",
-      action: () => console.log('Real-time Collab clicked')
+      action: () => toast.info("Real-time collaboration tools are being integrated.")
     },
     {
       icon: <Shield className="w-6 h-6 text-[#7be382]" />,
       title: "Verified Profiles",
       description: "Connect with confidence knowing that every member's skills and background are verified.",
-      action: () => console.log('Verified Profiles clicked')
+      action: () => toast.info("Profile verification system is active for new members.")
     }
   ];
 
