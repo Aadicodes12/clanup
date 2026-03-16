@@ -23,9 +23,9 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground flex flex-col transition-colors duration-300">
       {/* Navbar */}
       <nav className="bg-card p-4 flex justify-between items-center border-b border-border sticky top-0 z-50">
-        <div className="text-xl font-bold font-sans tracking-tight">Clanup</div>
+        <div className="text-xl font-bold font-sans tracking-tight h-8 flex items-center">Clanup</div>
         <div className="flex items-center gap-6">
-          <div className="text-sm font-medium cursor-pointer hover:opacity-70 transition-opacity">About</div>
+          <div className="text-sm font-medium cursor-pointer hover:opacity-70 transition-opacity h-8 flex items-center">About</div>
           <ThemeToggle />
         </div>
       </nav>
@@ -92,13 +92,19 @@ const Index = () => {
       <HowItWorks />
       <HowItWorksSteps />
 
-      {/* Explore Button Section */}
-      <div className="flex flex-col items-center pb-12 pt-8">
+      {/* Explore & Learn More Buttons Section */}
+      <div className="flex flex-col md:flex-row items-center justify-center gap-4 pb-12 pt-8 px-4">
         <Button 
-          className="bg-[#FF7A00] hover:bg-[#FF8A00] text-black font-bold py-5 px-12 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center gap-3"
+          className="bg-[#FF7A00] hover:bg-[#FF8A00] text-black font-bold py-5 px-12 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center gap-3 w-full md:w-auto"
           onClick={() => navigate('/teams')}
         >
           Explore <ArrowUpRight className="w-6 h-6" />
+        </Button>
+        <Button 
+          className="bg-foreground text-background hover:opacity-90 font-bold py-5 px-12 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight w-full md:w-auto"
+          onClick={() => console.log('Learn More clicked')}
+        >
+          Learn More
         </Button>
       </div>
 
