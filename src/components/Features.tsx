@@ -1,57 +1,79 @@
 "use client";
 
-import React from 'react';
-import { Search, Users, Zap, Shield } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { cn } from '@/lib/utils';
 
 const Features = () => {
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const sectionRef = useRef<HTMLElement>(null);
+
   const features = [
-    {
-      icon: <Search className="w-6 h-6 text-[#7be382]" />,
-      title: "Smart Matching",
-      description: "Our algorithm connects you with teammates based on complementary skills and shared interests."
-    },
-    {
-      icon: <Users className="w-6 h-6 text-[#7be382]" />,
-      title: "Team Management",
-      description: "Easily create, join, and manage your hackathon teams all in one centralized dashboard."
-    },
-    {
-      icon: <Zap className="w-6 h-6 text-[#7be382]" />,
-      title: "Real-time Collab",
-      description: "Communicate instantly with potential teammates and coordinate your project ideas effectively."
-    },
-    {
-      icon: <Shield className="w-6 h-6 text-[#7be382]" />,
-      title: "Verified Profiles",
-      description: "Connect with confidence knowing that every member's skills and background are verified."
-    }
+    "Smart Matching Algorithm",
+    "Team Management Dashboard",
+    "Real-time Collaboration Tools",
+    "Verified Member Profiles",
+    "Hackathon Discovery Engine",
+    "Project Showcase Gallery"
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+      
+      const rect = sectionRef.current.getBoundingClientRect();
+      const sectionHeight = rect.height;
+      const scrollPosition = -rect.top;
+      
+      if (scrollPosition < 0) {
+        setActiveIndex(-1);
+        return;
+      }
+
+      // Calculate which feature should be active based on scroll progress through the section
+      const progress = scrollPosition / (sectionHeight - window.innerHeight * 0.5);
+      const index = Math.floor(progress * features.length);
+      
+      setActiveIndex(Math.min(index, features.length - 1));
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [features.length]);
+
   return (
-    <section className="w-full py-16 md:py-24 bg-background text-foreground relative z-30">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold font-sans tracking-tight mb-4 uppercase">
+    <section 
+      ref={sectionRef} 
+      className="w-full min-h-[150vh] bg-background relative z-30"
+    >
+      {/* Sticky Container for the Grid and Content */}
+      <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+        {/* Grid Background */}
+        <div className="absolute inset-0 z-0 opacity-20" 
+          style={{ 
+            backgroundImage: `linear-gradient(to right, #808080 1px, transparent 1px), linear-gradient(to bottom, #808080 1px, transparent 1px)`,
+            backgroundSize: '40px 40px'
+          }} 
+        />
+        
+        <div className="relative z-10 max-w-4xl w-full px-6">
+          <h2 className="text-4xl md:text-6xl font-bold font-sans tracking-tight mb-12 text-center uppercase">
             Features
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground font-sora">
-            Everything you need, nothing you don't
-          </p>
-        </div>
-
-        <div className="bg-card border-2 border-border rounded-3xl p-8 md:p-12 shadow-xl shadow-primary/5">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          
+          <div className="space-y-6 md:space-y-8">
             {features.map((feature, index) => (
-              <div key={index} className="flex gap-6 items-start">
-                <div className="bg-primary/5 p-3 rounded-2xl flex-shrink-0">
-                  {feature.icon}
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold font-sora mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground font-sora text-sm leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
+              <div 
+                key={index}
+                className={cn(
+                  "text-2xl md:text-4xl font-bold font-sora transition-all duration-500 flex items-center gap-4",
+                  index <= activeIndex ? "text-white translate-x-4" : "text-neutral-700"
+                )}
+              >
+                <div className={cn(
+                  "w-2 h-2 md:w-3 md:h-3 rounded-full transition-colors duration-500",
+                  index <= activeIndex ? "bg-[#7be382]" : "bg-neutral-800"
+                )} />
+                {feature}
               </div>
             ))}
           </div>

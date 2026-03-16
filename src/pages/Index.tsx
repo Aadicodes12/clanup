@@ -34,11 +34,11 @@ const Index = () => {
       <div className="flex flex-col items-center px-4 py-12 md:py-20">
         <div className="text-center w-full max-w-3xl flex flex-col items-center">
           <div className="text-4xl md:text-6xl font-bold font-sans leading-tight mb-2">
-            <AnimatedText className="from-white via-neutral-200 to-neutral-300">
+            <AnimatedText className="from-white via-neutral-200 to-neutral-400">
               Great hacks start with
             </AnimatedText>
             <br />
-            <AnimatedText className="from-white via-neutral-200 to-neutral-300">
+            <AnimatedText className="from-white via-neutral-200 to-neutral-400">
               Great teams
             </AnimatedText>
           </div>
