@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button';
 import TextMarquee from '@/components/TextMarquee';
 import HowItWorks from '@/components/HowItWorks';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
-import Features from '@/components/Features';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useNavigate } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
@@ -26,7 +25,6 @@ const Index = () => {
         <div className="text-xl font-bold font-sans tracking-tight h-8 flex items-center">Clanup</div>
         <div className="flex items-center gap-6">
           <div className="text-xl font-bold font-sans tracking-tight cursor-pointer hover:opacity-70 transition-opacity h-8 flex items-center">About</div>
-          <ThemeToggle />
         </div>
       </nav>
 
@@ -92,6 +90,90 @@ const Index = () => {
       <HowItWorks />
       <HowItWorksSteps />
 
+      {/* Purple Semicircle Section */}
+      <div className="relative overflow-hidden">
+        <div className="absolute bottom-0 left-0 right-0 h-[200px] bg-[#7be382] rounded-full" />
+        <div className="relative z-10">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="text-center py-16">
+              <h2 className="text-4xl md:text-5xl font-bold font-sora text-black mb-4">
+                Ready to find your perfect team?
+              </h2>
+              <p className="text-lg text-black/80 font-sora">
+                Join thousands of innovators building amazing projects together
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* New Cards Section */}
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground/10 via-transparent to-foreground/10" />
+        <div className="relative z-10">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Card 1 - Enters from right */}
+              <div className="col-span-1 relative group bg-white rounded-2xl p-8 shadow-2xl transform transition-all duration-700 hover:scale-105">
+                <div className="absolute -top-6 -right-6 w-16 h-16 bg-[#7be382] rounded-full flex items-center justify-center text-black text-xl font-bold">
+                  1
+                </div>
+                <h3 className="text-2xl font-bold font-sora mb-4">Smart Matching</h3>
+                <p className="text-gray-600 font-sora text-sm mb-6">
+                  Our algorithm connects you with teammates based on complementary skills and shared interests.
+                </p>
+                <button 
+                  onClick={() => console.log('Smart Matching clicked')}
+                  className="absolute bottom-6 right-6 p-3 rounded-full bg-white border border-gray-200 text-black transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:scale-110"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Card 2 - Enters from left */}
+              <div className="col-span-1 relative group bg-white rounded-2xl p-8 shadow-2xl transform transition-all duration-700 hover:scale-105">
+                <div className="absolute -top-6 -left-6 w-16 h-16 bg-[#7be382] rounded-full flex items-center justify-center text-black text-xl font-bold">
+                  2
+                </div>
+                <h3 className="text-2xl font-bold font-sora mb-4">Team Management</h3>
+                <p className="text-gray-600 font-sora text-sm mb-6">
+                  Easily create, join, and manage your hackathon teams all in one centralized dashboard.
+                </p>
+                <button 
+                  onClick={() => console.log('Team Management clicked')}
+                  className="absolute bottom-6 left-6 p-3 rounded-full bg-white border border-gray-200 text-black transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:scale-110"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Card 3 - Enters from right */}
+              <div className="col-span-1 relative group bg-white rounded-2xl p-8 shadow-2xl transform transition-all duration-700 hover:scale-105">
+                <div className="absolute -top-6 -right-6 w-16 h-16 bg-[#7be382] rounded-full flex items-center justify-center text-black text-xl font-bold">
+                  3
+                </div>
+                <h3 className="text-2xl font-bold font-sora mb-4">Verified Profiles</h3>
+                <p className="text-gray-600 font-sora text-sm mb-6">
+                  Connect with confidence knowing that every member's skills and background are verified.
+                </p>
+                <button 
+                  onClick={() => console.log('Verified Profiles clicked')}
+                  className="absolute bottom-6 right-6 p-3 rounded-full bg-white border border-gray-200 text-black transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:scale-110"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Explore & Learn More Buttons Section */}
       <div className="flex flex-row items-center justify-center gap-3 md:gap-6 pb-12 pt-8 px-4">
         <Button 
@@ -108,14 +190,6 @@ const Index = () => {
         </Button>
       </div>
 
-      {/* Section Break */}
-      <div className="w-full px-6 md:px-24 mb-16">
-        <div className="border-t-2 border-foreground/10 w-full"></div>
-      </div>
-
-      {/* Features Section */}
-      <Features />
-      
       <div className="h-24"></div>
     </div>
   );
