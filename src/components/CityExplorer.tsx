@@ -1,8 +1,9 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, MapPin as MapPinIcon } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
 
 // Import local assets
 import mumbaiImg from '@/assets/mumbai.jpg';
@@ -45,12 +46,48 @@ const cities = [
 ];
 
 const CityExplorer = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const headerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (headerRef.current) {
+      observer.observe(headerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="w-full py-12 md:py-16 bg-background">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-4xl font-bold font-helvetica tracking-tight mb-3 uppercase">
-            Explore <span className="font-calibri underline text-[#7be382] text-3xl md:text-5xl inline-block translate-y-[2px]">Clans</span> in your city
+        <div ref={headerRef} className="text-center mb-12 max-w-2xl mx-auto">
+          <h2 className="text-2xl md:text-4xl font-bold font-helvetica tracking-tight mb-3 uppercase leading-tight">
+            Explore{" "}
+            <span className="relative inline-block">
+              <span 
+                className="font-calibri text-[#7be382] text-3xl md:text-5xl inline-block translate-y-[2px]"
+                style={{ fontVariant: 'small-caps' }}
+              >
+                Clans
+              </span>
+              <div 
+                className={cn(
+                  "absolute bottom-0 left-0 h-[2px] md:h-[3px] bg-[#7be382] transition-all duration-1000 ease-out",
+                  isVisible ? "w-full" : "w-0"
+                )}
+              />
+            </span>{" "}
+            in your city
           </h2>
           <p className="text-base md:text-lg text-muted-foreground font-sora">
             Connect with local innovators and build together
