@@ -93,7 +93,31 @@ const Index = () => {
       {/* How It Works Steps Section */}
       <HowItWorksSteps />
 
-      {/* Features Section - Moved down with mt-24 */}
+      {/* Explore & Learn More Buttons Section - Positioned above CityExplorer */}
+      <div className="flex flex-row items-center justify-center gap-3 md:gap-6 pb-8 pt-16 px-4">
+        <Button
+          className="bg-[#FF7A00] hover:bg-[#FF8A00] text-black font-bold py-4 md:py-5 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center justify-center gap-2 w-[150px] md:w-[220px]"
+          onClick={() => navigate('/teams')}
+        >
+          Explore <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
+        </Button>
+        <Button
+          className="bg-foreground text-background hover:opacity-90 font-bold py-4 md:py-5 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center justify-center gap-2 w-[150px] md:w-[220px]"
+          onClick={() => console.log('Learn More clicked')}
+        >
+          Learn More <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
+        </Button>
+      </div>
+
+      {/* City Explorer Section */}
+      <div className="mt-12">
+        <CityExplorer />
+      </div>
+
+      {/* Feature Video Section */}
+      <FeatureVideo />
+
+      {/* Features Section - Moved to the end */}
       <div className="relative overflow-hidden pb-12 mt-24">
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/5 via-transparent to-foreground/5" />
         <div className="relative z-10">
@@ -162,30 +186,6 @@ const Index = () => {
           </div>
         </div>
       </div>
-
-      {/* Explore & Learn More Buttons Section - Positioned above CityExplorer */}
-      <div className="flex flex-row items-center justify-center gap-3 md:gap-6 pb-8 pt-16 px-4">
-        <Button
-          className="bg-[#FF7A00] hover:bg-[#FF8A00] text-black font-bold py-4 md:py-5 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center justify-center gap-2 w-[150px] md:w-[220px]"
-          onClick={() => navigate('/teams')}
-        >
-          Explore <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
-        </Button>
-        <Button
-          className="bg-foreground text-background hover:opacity-90 font-bold py-4 md:py-5 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center justify-center gap-2 w-[150px] md:w-[220px]"
-          onClick={() => console.log('Learn More clicked')}
-        >
-          Learn More <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
-        </Button>
-      </div>
-
-      {/* City Explorer Section - Moved down with mt-12 */}
-      <div className="mt-12">
-        <CityExplorer />
-      </div>
-
-      {/* Feature Video Section */}
-      <FeatureVideo />
 
       <div className="h-24"></div>
     </div>
