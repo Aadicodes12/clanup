@@ -7,6 +7,7 @@ import HowItWorks from '@/components/HowItWorks';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
 import FeatureVideo from '@/components/FeatureVideo';
 import CityExplorer from '@/components/CityExplorer';
+import Metrics from '@/components/Metrics';
 import { useNavigate } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -136,7 +137,7 @@ const Index = () => {
         <CityExplorer />
       </div>
 
-      {/* Features Section - Moved up to be closer to City Explorer */}
+      {/* Features Section */}
       <div className="relative overflow-hidden pb-12 mt-4">
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/5 via-transparent to-foreground/5" />
         <div className="relative z-10">
@@ -206,7 +207,10 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Feature Video Section - Moved to the end */}
+      {/* Metrics Section */}
+      <Metrics />
+
+      {/* Feature Video Section */}
       <FeatureVideo />
 
       <div className="h-24"></div>
