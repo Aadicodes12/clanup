@@ -92,7 +92,6 @@ const Index = () => {
 
       {/* Purple Semicircle Section */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#7be382] to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 h-[200px] bg-[#7be382] rounded-full" />
         <div className="relative z-10">
           <div className="max-w-6xl mx-auto px-4">
