@@ -20,7 +20,6 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Bebas Neue", "sans-serif"],
-        inter: ["Inter", "sans-serif"],
         arial: ["Arial", "sans-serif"],
         sora: ["Sora", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
