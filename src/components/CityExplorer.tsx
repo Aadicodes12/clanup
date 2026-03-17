@@ -4,16 +4,23 @@ import React from 'react';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
+// Import local assets
+import mumbaiImg from '@/assets/mumbai.jpg';
+import delhiImg from '@/assets/delhi.jpg';
+import hyderabadImg from '@/assets/hyderabad.jpg';
+import puneImg from '@/assets/pune.jpg';
+import kolkataImg from '@/assets/kolkata.jpg';
+
 const cities = [
   { 
     name: "Mumbai", 
     count: "120+ Teams",
-    image: "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=400&q=80"
+    image: mumbaiImg
   },
   { 
     name: "Delhi", 
     count: "95+ Teams",
-    image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&q=80"
+    image: delhiImg
   },
   { 
     name: "Bengaluru", 
@@ -23,17 +30,17 @@ const cities = [
   { 
     name: "Hyderabad", 
     count: "80+ Teams",
-    image: "https://images.unsplash.com/photo-1572445271230-a78b5944a659?w=400&q=80"
+    image: hyderabadImg
   },
   { 
     name: "Pune", 
     count: "65+ Teams",
-    image: "https://images.unsplash.com/photo-1562673005-7693bd6d6e54?w=400&q=80"
+    image: puneImg
   },
   { 
     name: "Kolkata", 
     count: "45+ Teams",
-    image: "https://images.unsplash.com/photo-1558431382-bb7b68c4b5d7?w=400&q=80"
+    image: kolkataImg
   },
 ];
 
