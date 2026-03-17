@@ -14,32 +14,32 @@ import kolkataImg from '@/assets/kolkata.jpg';
 const cities = [
   { 
     name: "Mumbai", 
-    count: "120+ Clans",
+    count: "20-30 Clans",
     image: mumbaiImg
   },
   { 
     name: "Delhi", 
-    count: "95+ Clans",
+    count: "20-30 Clans",
     image: delhiImg
   },
   { 
     name: "Bengaluru", 
-    count: "150+ Clans",
+    count: "20-30 Clans",
     image: "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=400&q=80"
   },
   { 
     name: "Hyderabad", 
-    count: "80+ Clans",
+    count: "20-30 Clans",
     image: hyderabadImg
   },
   { 
     name: "Pune", 
-    count: "65+ Clans",
+    count: "20-30 Clans",
     image: puneImg
   },
   { 
     name: "Kolkata", 
-    count: "45+ Clans",
+    count: "20-30 Clans",
     image: kolkataImg
   },
 ];
