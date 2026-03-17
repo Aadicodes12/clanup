@@ -93,8 +93,11 @@ const Index = () => {
       {/* How It Works Steps Section */}
       <HowItWorksSteps />
 
+      {/* City Explorer Section - MOVED UP */}
+      <CityExplorer />
+
       {/* Explore & Learn More Buttons Section */}
-      <div className="flex flex-row items-center justify-center gap-3 md:gap-6 pb-12 pt-16 px-4">
+      <div className="flex flex-row items-center justify-center gap-3 md:gap-6 pb-12 pt-8 px-4">
         <Button
           className="bg-[#FF7A00] hover:bg-[#FF8A00] text-black font-bold py-4 md:py-5 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center justify-center gap-2 w-[150px] md:w-[220px]"
           onClick={() => navigate('/teams')}
@@ -181,9 +184,6 @@ const Index = () => {
 
       {/* Feature Video Section */}
       <FeatureVideo />
-
-      {/* City Explorer Section */}
-      <CityExplorer />
 
       <div className="h-24"></div>
     </div>
