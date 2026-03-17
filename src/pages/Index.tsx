@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import TextMarquee from '@/components/TextMarquee';
 import HowItWorks from '@/components/HowItWorks';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
-import CanvaVideo from '@/components/CanvaVideo';
+import FeatureVideo from '@/components/FeatureVideo';
 import { useNavigate } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -49,7 +49,7 @@ const Index = () => {
             />
           </div>
 
-          {/* Video Section */}
+          {/* Hero Video Section */}
           <div className="w-full max-w-[340px] md:max-w-lg mx-auto mb-10 rounded-2xl overflow-hidden border-2 border-border bg-card shadow-2xl shadow-primary/5 relative aspect-video">
             <video
               autoPlay
@@ -178,8 +178,8 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Canva Video Section */}
-      <CanvaVideo />
+      {/* Feature Video Section */}
+      <FeatureVideo />
 
       <div className="h-24"></div>
     </div>
