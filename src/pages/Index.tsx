@@ -22,9 +22,9 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground flex flex-col transition-colors duration-300 overflow-x-hidden">
       {/* Navbar */}
       <nav className="bg-card p-4 flex justify-between items-center border-b border-border sticky top-0 z-50">
-        <div className="text-xl font-bold font-mono tracking-tight h-8 flex items-center">Clanup</div>
+        <div className="text-lg font-bold font-mono tracking-tight h-8 flex items-center">Clanup</div>
         <div className="flex items-center gap-6">
-          <div className="text-xl font-bold font-mono tracking-tight cursor-pointer hover:opacity-70 transition-opacity h-8 flex items-center">About</div>
+          <div className="text-lg font-bold font-mono tracking-tight cursor-pointer hover:opacity-70 transition-opacity h-8 flex items-center">About</div>
         </div>
       </nav>
 
