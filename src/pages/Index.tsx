@@ -113,10 +113,10 @@ const Index = () => {
         <div className="relative z-10">
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold font-sans tracking-tight mb-4 uppercase">
+              <h2 className="text-4xl md:text-5xl font-bold font-roboto tracking-tight mb-4 uppercase">
                 Features
               </h2>
-              <p className="text-lg md:text-xl text-muted-foreground font-sora">
+              <p className="text-lg md:text-xl text-muted-foreground font-roboto">
                 Everything you need, nothing you don't
               </p>
             </div>
@@ -127,8 +127,8 @@ const Index = () => {
                 <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   1
                 </div>
-                <h3 className="text-xl font-bold font-sora mb-3">Smart Matching</h3>
-                <p className="text-muted-foreground font-sora text-xs mb-6 leading-relaxed">
+                <h3 className="text-xl font-bold font-roboto mb-3">Smart Matching</h3>
+                <p className="text-muted-foreground font-roboto text-xs mb-6 leading-relaxed">
                   Our algorithm connects you with teammates based on complementary skills and shared interests.
                 </p>
                 <button
@@ -144,8 +144,8 @@ const Index = () => {
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   2
                 </div>
-                <h3 className="text-xl font-bold font-sora mb-3">Team Management</h3>
-                <p className="text-muted-foreground font-sora text-xs mb-6 leading-relaxed">
+                <h3 className="text-xl font-bold font-roboto mb-3">Team Management</h3>
+                <p className="text-muted-foreground font-roboto text-xs mb-6 leading-relaxed">
                   Easily create, join, and manage your hackathon teams all in one centralized dashboard.
                 </p>
                 <button
@@ -161,8 +161,8 @@ const Index = () => {
                 <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   3
                 </div>
-                <h3 className="text-xl font-bold font-sora mb-3">Real-time Collaboration</h3>
-                <p className="text-muted-foreground font-sora text-xs mb-6 leading-relaxed">
+                <h3 className="text-xl font-bold font-roboto mb-3">Real-time Collaboration</h3>
+                <p className="text-muted-foreground font-roboto text-xs mb-6 leading-relaxed">
                   Communicate and collaborate with your team members through our integrated chat and project tools.
                 </p>
                 <button

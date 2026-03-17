@@ -19,10 +19,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Bebas Neue", "sans-serif"], // Using Bebas Neue as the default sans font
-        arial: ["Arial", "sans-serif"], // Adding Arial font family
-        sora: ["Sora", "sans-serif"], // Adding Sora font family
-        calibri: ["Calibri", "Candara", "Segoe", "Segoe UI", "Optima", "Arial", "sans-serif"], // Adding Calibri font family
+        sans: ["Bebas Neue", "sans-serif"],
+        arial: ["Arial", "sans-serif"],
+        sora: ["Sora", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
+        calibri: ["Calibri", "Candara", "Segoe", "Segoe UI", "Optima", "Arial", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -95,15 +96,15 @@ export default {
           "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(-50%)" },
         },
-        "slide-rtl-continuous": { // New keyframe for right-to-left sliding
+        "slide-rtl-continuous": {
           "0%": { transform: "translateX(-50%)" },
           "100%": { transform: "translateX(0%)" },
         },
-        "gradient-flow": { // New keyframe for gradient text animation
+        "gradient-flow": {
           "0%": { backgroundPosition: "200% center" },
           "100%": { backgroundPosition: "-200% center" },
         },
-        "draw-line-vertical": { // Keyframe for vertical line drawing animation
+        "draw-line-vertical": {
           "0%": { height: "0%" },
           "100%": { height: "100%" },
         },
@@ -112,11 +113,11 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "slide-continuous": "slide-continuous var(--marquee-duration, 15s) linear infinite",
-        "slide-rtl-continuous": "slide-rtl-continuous var(--marquee-duration-rtl, 30s) linear infinite", // New animation
-        "gradient-flow": "gradient-flow 4s ease infinite", // Apply new animation
-        "draw-line-vertical": "draw-line-vertical 1.5s ease-out forwards", // Apply new animation
+        "slide-rtl-continuous": "slide-rtl-continuous var(--marquee-duration-rtl, 30s) linear infinite",
+        "gradient-flow": "gradient-flow 4s ease infinite",
+        "draw-line-vertical": "draw-line-vertical 1.5s ease-out forwards",
       },
-      backgroundSize: { // Added for gradient animation
+      backgroundSize: {
         "200%": "200%",
         "400%": "400%",
       }
