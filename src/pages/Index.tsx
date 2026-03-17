@@ -102,6 +102,12 @@ const Index = () => {
         </Button>
       </div>
 
+      {/* How It Works Section */}
+      <HowItWorks />
+
+      {/* How It Works Steps Section */}
+      <HowItWorksSteps />
+
       {/* Features Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/10 via-transparent to-foreground/10" />
