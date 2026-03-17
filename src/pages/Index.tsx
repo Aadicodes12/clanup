@@ -40,7 +40,7 @@ const Index = () => {
               Great teams
             </AnimatedText>
           </div>
-          
+
           <div className="h-12 mt-4 mb-8 w-full flex items-center justify-center overflow-hidden">
             <TextMarquee
               messages={marqueeMessages}
@@ -51,25 +51,25 @@ const Index = () => {
 
           {/* Video Section */}
           <div className="w-full max-w-[340px] md:max-w-lg mx-auto mb-10 rounded-2xl overflow-hidden border-2 border-border bg-card shadow-2xl shadow-primary/5 relative aspect-video">
-            <video 
-              autoPlay 
-              loop 
-              muted 
-              playsInline 
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover"
             >
               <source src="/5530-184666657_small.mp4" type="video/mp4" />
             </video>
           </div>
-          
+
           <div className="flex flex-col w-full items-center space-y-4">
-            <Button 
+            <Button
               className="bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-6 px-10 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight w-full max-w-[300px]"
               onClick={() => navigate('/teams')}
             >
               Browse Teams
             </Button>
-            <Button 
+            <Button
               variant="outline"
               className="border-2 border-foreground/10 hover:border-foreground/30 text-foreground font-bold py-6 px-10 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight w-full max-w-[300px]"
               onClick={() => console.log('Sign Up clicked')}
@@ -84,6 +84,22 @@ const Index = () => {
             </p>
           </div>
         </div>
+      </div>
+
+      {/* Explore & Learn More Buttons Section - MOVED ABOVE FEATURES */}
+      <div className="flex flex-row items-center justify-center gap-3 md:gap-6 pb-12 pt-8 px-4">
+        <Button
+          className="bg-[#FF7A00] hover:bg-[#FF8A00] text-black font-bold py-4 md:py-5 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center justify-center gap-2 w-[150px] md:w-[220px]"
+          onClick={() => navigate('/teams')}
+        >
+          Explore <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
+        </Button>
+        <Button
+          className="bg-foreground text-background hover:opacity-90 font-bold py-4 md:py-5 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center justify-center gap-2 w-[150px] md:w-[220px]"
+          onClick={() => console.log('Learn More clicked')}
+        >
+          Learn More <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
+        </Button>
       </div>
 
       {/* Features Section */}
@@ -110,13 +126,11 @@ const Index = () => {
                 <p className="text-gray-600 font-sora text-sm mb-6">
                   Our algorithm connects you with teammates based on complementary skills and shared interests.
                 </p>
-                <button 
+                <button
                   onClick={() => console.log('Smart Matching clicked')}
                   className="absolute bottom-6 right-6 p-3 rounded-full bg-white border border-gray-200 text-black transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:scale-110"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                  <ArrowUpRight className="w-5 h-5" />
                 </button>
               </div>
 
@@ -129,13 +143,11 @@ const Index = () => {
                 <p className="text-gray-600 font-sora text-sm mb-6">
                   Easily create, join, and manage your hackathon teams all in one centralized dashboard.
                 </p>
-                <button 
+                <button
                   onClick={() => console.log('Team Management clicked')}
                   className="absolute bottom-6 left-6 p-3 rounded-full bg-white border border-gray-200 text-black transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:scale-110"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                  <ArrowUpRight className="w-5 h-5" />
                 </button>
               </div>
 
@@ -148,34 +160,16 @@ const Index = () => {
                 <p className="text-gray-600 font-sora text-sm mb-6">
                   Communicate and collaborate with your team members through our integrated chat and project tools.
                 </p>
-                <button 
+                <button
                   onClick={() => console.log('Real-time Collaboration clicked')}
                   className="absolute bottom-6 right-6 p-3 rounded-full bg-white border border-gray-200 text-black transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:scale-110"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                  <ArrowUpRight className="w-5 h-5" />
                 </button>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Explore & Learn More Buttons Section */}
-      <div className="flex flex-row items-center justify-center gap-3 md:gap-6 pb-12 pt-8 px-4">
-        <Button 
-          className="bg-[#FF7A00] hover:bg-[#FF8A00] text-black font-bold py-4 md:py-5 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center justify-center gap-2 w-[150px] md:w-[220px]"
-          onClick={() => navigate('/teams')}
-        >
-          Explore <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
-        </Button>
-        <Button 
-          className="bg-foreground text-background hover:opacity-90 font-bold py-4 md:py-5 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center justify-center gap-2 w-[150px] md:w-[220px]"
-          onClick={() => console.log('Learn More clicked')}
-        >
-          Learn More <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
-        </Button>
       </div>
 
       <div className="h-24"></div>
