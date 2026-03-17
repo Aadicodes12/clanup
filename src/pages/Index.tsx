@@ -86,6 +86,12 @@ const Index = () => {
         </div>
       </div>
 
+      {/* How It Works Section */}
+      <HowItWorks />
+
+      {/* How It Works Steps Section */}
+      <HowItWorksSteps />
+
       {/* Explore & Learn More Buttons Section - MOVED ABOVE FEATURES */}
       <div className="flex flex-row items-center justify-center gap-3 md:gap-6 pb-12 pt-8 px-4">
         <Button
@@ -102,12 +108,6 @@ const Index = () => {
         </Button>
       </div>
 
-      {/* How It Works Section */}
-      <HowItWorks />
-
-      {/* How It Works Steps Section */}
-      <HowItWorksSteps />
-
       {/* Features Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/10 via-transparent to-foreground/10" />
@@ -123,8 +123,8 @@ const Index = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Card 1 - Enters from right */}
-              <div className="col-span-1 relative group bg-white rounded-2xl p-8 shadow-2xl transform transition-all duration-700 hover:scale-105">
+              {/* Card 1 - Shifted right to appear cut out */}
+              <div className="col-span-1 relative group bg-white rounded-2xl p-8 shadow-2xl transform transition-all duration-700 hover:scale-105 md:ml-12">
                 <div className="absolute -top-6 -right-6 w-16 h-16 bg-[#7be382] rounded-full flex items-center justify-center text-black text-xl font-bold">
                   1
                 </div>
@@ -140,8 +140,8 @@ const Index = () => {
                 </button>
               </div>
 
-              {/* Card 2 - Enters from left */}
-              <div className="col-span-1 relative group bg-white rounded-2xl p-8 shadow-2xl transform transition-all duration-700 hover:scale-105">
+              {/* Card 2 - Shifted left to appear cut out */}
+              <div className="col-span-1 relative group bg-white rounded-2xl p-8 shadow-2xl transform transition-all duration-700 hover:scale-105 md:mr-12">
                 <div className="absolute -top-6 -left-6 w-16 h-16 bg-[#7be382] rounded-full flex items-center justify-center text-black text-xl font-bold">
                   2
                 </div>
@@ -157,8 +157,8 @@ const Index = () => {
                 </button>
               </div>
 
-              {/* Card 3 - Enters from right */}
-              <div className="col-span-1 relative group bg-white rounded-2xl p-8 shadow-2xl transform transition-all duration-700 hover:scale-105">
+              {/* Card 3 - Shifted right to appear cut out */}
+              <div className="col-span-1 relative group bg-white rounded-2xl p-8 shadow-2xl transform transition-all duration-700 hover:scale-105 md:ml-12">
                 <div className="absolute -top-6 -right-6 w-16 h-16 bg-[#7be382] rounded-full flex items-center justify-center text-black text-xl font-bold">
                   3
                 </div>
