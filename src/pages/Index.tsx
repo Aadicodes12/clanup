@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button';
 import TextMarquee from '@/components/TextMarquee';
 import HowItWorks from '@/components/HowItWorks';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
-import { ThemeToggle } from '@/components/ThemeToggle';
 import { useNavigate } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -32,11 +31,11 @@ const Index = () => {
       <div className="flex flex-col items-center px-4 py-12 md:py-20">
         <div className="text-center w-full max-w-3xl flex flex-col items-center">
           <div className="text-4xl md:text-6xl font-bold font-sans leading-tight mb-2">
-            <AnimatedText className="from-white via-neutral-400 to-white">
+            <AnimatedText className="from-foreground via-muted-foreground to-foreground">
               Great hacks start with
             </AnimatedText>
             <br />
-            <AnimatedText className="from-white via-neutral-400 to-white">
+            <AnimatedText className="from-foreground via-muted-foreground to-foreground">
               Great teams
             </AnimatedText>
           </div>
@@ -110,65 +109,65 @@ const Index = () => {
 
       {/* Features Section */}
       <div className="relative overflow-hidden pb-24">
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground/10 via-transparent to-foreground/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground/5 via-transparent to-foreground/5" />
         <div className="relative z-10">
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold font-sans tracking-tight mb-4 uppercase">
                 Features
               </h2>
-              <p className="text-lg md:text-xl text-gray-400 font-sora">
+              <p className="text-lg md:text-xl text-muted-foreground font-sora">
                 Everything you need, nothing you don't
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
               {/* Card 1 - Shifted Right */}
-              <div className="col-span-1 relative group bg-white rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 translate-x-12 md:translate-x-8">
+              <div className="col-span-1 relative group bg-card text-card-foreground rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 translate-x-12 md:translate-x-8 border border-border">
                 <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   1
                 </div>
-                <h3 className="text-xl font-bold font-sora mb-3 text-black">Smart Matching</h3>
-                <p className="text-gray-600 font-sora text-xs mb-6 leading-relaxed">
+                <h3 className="text-xl font-bold font-sora mb-3">Smart Matching</h3>
+                <p className="text-muted-foreground font-sora text-xs mb-6 leading-relaxed">
                   Our algorithm connects you with teammates based on complementary skills and shared interests.
                 </p>
                 <button
                   onClick={() => console.log('Smart Matching clicked')}
-                  className="absolute bottom-4 right-4 p-2 rounded-full bg-white border border-gray-200 text-black transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:scale-110"
+                  className="absolute bottom-4 right-4 p-2 rounded-full bg-background border border-border text-foreground transition-all duration-300 group-hover:bg-foreground group-hover:text-background group-hover:scale-110"
                 >
                   <ArrowUpRight className="w-4 h-4" />
                 </button>
               </div>
 
               {/* Card 2 - Shifted Left */}
-              <div className="col-span-1 relative group bg-white rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 -translate-x-12 md:-translate-x-8">
+              <div className="col-span-1 relative group bg-card text-card-foreground rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 -translate-x-12 md:-translate-x-8 border border-border">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   2
                 </div>
-                <h3 className="text-xl font-bold font-sora mb-3 text-black">Team Management</h3>
-                <p className="text-gray-600 font-sora text-xs mb-6 leading-relaxed">
+                <h3 className="text-xl font-bold font-sora mb-3">Team Management</h3>
+                <p className="text-muted-foreground font-sora text-xs mb-6 leading-relaxed">
                   Easily create, join, and manage your hackathon teams all in one centralized dashboard.
                 </p>
                 <button
                   onClick={() => console.log('Team Management clicked')}
-                  className="absolute bottom-4 left-4 p-2 rounded-full bg-white border border-gray-200 text-black transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:scale-110"
+                  className="absolute bottom-4 left-4 p-2 rounded-full bg-background border border-border text-foreground transition-all duration-300 group-hover:bg-foreground group-hover:text-background group-hover:scale-110"
                 >
                   <ArrowUpRight className="w-4 h-4" />
                 </button>
               </div>
 
               {/* Card 3 - Shifted Right */}
-              <div className="col-span-1 relative group bg-white rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 translate-x-12 md:translate-x-8">
+              <div className="col-span-1 relative group bg-card text-card-foreground rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 translate-x-12 md:translate-x-8 border border-border">
                 <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   3
                 </div>
-                <h3 className="text-xl font-bold font-sora mb-3 text-black">Real-time Collaboration</h3>
-                <p className="text-gray-600 font-sora text-xs mb-6 leading-relaxed">
+                <h3 className="text-xl font-bold font-sora mb-3">Real-time Collaboration</h3>
+                <p className="text-muted-foreground font-sora text-xs mb-6 leading-relaxed">
                   Communicate and collaborate with your team members through our integrated chat and project tools.
                 </p>
                 <button
                   onClick={() => console.log('Real-time Collaboration clicked')}
-                  className="absolute bottom-4 right-4 p-2 rounded-full bg-white border border-gray-200 text-black transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:scale-110"
+                  className="absolute bottom-4 right-4 p-2 rounded-full bg-background border border-border text-foreground transition-all duration-300 group-hover:bg-foreground group-hover:text-background group-hover:scale-110"
                 >
                   <ArrowUpRight className="w-4 h-4" />
                 </button>

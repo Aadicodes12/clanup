@@ -50,14 +50,14 @@ const HowItWorksSteps = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="w-full py-16 md:py-24 bg-black text-white relative z-20 overflow-hidden">
+    <section ref={sectionRef} className="w-full py-16 md:py-24 bg-background text-foreground relative z-20 overflow-hidden">
       <div className="max-w-6xl mx-auto px-2 md:px-4">
         <div className="flex items-center justify-center mb-12 md:mb-16">
-          <div className="flex-grow border-t-2 border-white max-w-[10%] md:max-w-[20%]"></div>
+          <div className="flex-grow border-t-2 border-foreground/20 max-w-[10%] md:max-w-[20%]"></div>
           <h2 className="text-2xl md:text-4xl font-bold font-sora text-center mx-4 tracking-tight whitespace-nowrap">
             How It Works
           </h2>
-          <div className="flex-grow border-t-2 border-white max-w-[10%] md:max-w-[20%]"></div>
+          <div className="flex-grow border-t-2 border-foreground/20 max-w-[10%] md:max-w-[20%]"></div>
         </div>
 
         <div className="relative max-w-5xl mx-auto">
@@ -86,16 +86,16 @@ const HowItWorksSteps = () => {
                 )}>
                   <Card
                     className={cn(
-                      "w-full max-w-[180px] md:max-w-md bg-neutral-900 border-neutral-800 p-3 md:p-6 transition-all duration-500 hover:scale-105 hover:border-[#7be382] text-left",
+                      "w-full max-w-[180px] md:max-w-md bg-card border-border p-3 md:p-6 transition-all duration-500 hover:scale-105 hover:border-[#7be382] text-left",
                       isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                     )}
                     style={{ transitionDelay: `${index * 200}ms` }}
                   >
                     <div className="mb-2 md:mb-4 flex justify-start">{step.icon}</div>
-                    <CardTitle className="text-sm md:text-2xl font-bold font-sora mb-1 md:mb-3 text-white leading-tight">
+                    <CardTitle className="text-sm md:text-2xl font-bold font-sora mb-1 md:mb-3 text-card-foreground leading-tight">
                       {step.title}
                     </CardTitle>
-                    <CardContent className="p-0 text-white font-sora text-xs md:text-base leading-relaxed">
+                    <CardContent className="p-0 text-muted-foreground font-sora text-xs md:text-base leading-relaxed">
                       {step.description}
                     </CardContent>
                   </Card>
