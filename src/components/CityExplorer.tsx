@@ -1,8 +1,9 @@
 "use client";
 
 import React from 'react';
-import { MapPin, ArrowRight } from 'lucide-react';
+import { MapPin, ArrowRight } from 'lucide-center';
 import { Card, CardContent } from '@/components/ui/card';
+import { MapPin as MapPinIcon } from 'lucide-react';
 
 // Import local assets
 import mumbaiImg from '@/assets/mumbai.jpg';
@@ -50,7 +51,7 @@ const CityExplorer = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-4xl font-bold font-sora tracking-tight mb-3 uppercase">
-            Explore Clans in your city
+            Explore <span className="font-sans text-[#7be382] text-3xl md:text-5xl inline-block translate-y-[2px]">Clans</span> in your city
           </h2>
           <p className="text-base md:text-lg text-muted-foreground font-sora">
             Connect with local innovators and build together
@@ -77,7 +78,7 @@ const CityExplorer = () => {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 md:gap-3">
                     <div className="p-1.5 md:p-2 rounded-full bg-[#7be382]/10 text-[#7be382] group-hover:bg-[#7be382] group-hover:text-black transition-colors duration-300">
-                      <MapPin className="w-3 h-3 md:w-5 md:h-5" />
+                      <MapPinIcon className="w-3 h-3 md:w-5 md:h-5" />
                     </div>
                     <div>
                       <h3 className="text-sm md:text-lg font-bold font-sora text-foreground">{city.name}</h3>
