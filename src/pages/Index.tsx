@@ -49,15 +49,17 @@ const Index = () => {
             />
           </div>
 
-          {/* Hero Video Section (Replaced file with Canva embed) */}
+          {/* Video Section */}
           <div className="w-full max-w-[340px] md:max-w-lg mx-auto mb-10 rounded-2xl overflow-hidden border-2 border-border bg-card shadow-2xl shadow-primary/5 relative aspect-video">
-            <iframe
-              loading="lazy"
-              className="absolute inset-0 w-full h-full border-none"
-              src="https://www.canva.com/design/DAHEMGusUvQ/view?embed"
-              allowFullScreen
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            ></iframe>
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            >
+              <source src="/5530-184666657_small.mp4" type="video/mp4" />
+            </video>
           </div>
 
           <div className="flex flex-col w-full items-center space-y-4">
