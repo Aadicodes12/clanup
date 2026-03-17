@@ -97,10 +97,10 @@ const Index = () => {
         <div className="relative z-10">
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center py-16">
-              <h2 className="text-4xl md:text-5xl font-bold font-sora text-white mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold font-sora text-black mb-4">
                 Ready to find your perfect team?
               </h2>
-              <p className="text-lg text-white/80 font-sora">
+              <p className="text-lg text-black/80 font-sora">
                 Join thousands of innovators building amazing projects together
               </p>
             </div>
