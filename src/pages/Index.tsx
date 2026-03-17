@@ -86,22 +86,27 @@ const Index = () => {
         </div>
       </div>
 
-      {/* How It Works Sections */}
-      <HowItWorks />
-      <HowItWorksSteps />
-
-      {/* New Cards Section */}
+      {/* Features Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/10 via-transparent to-foreground/10" />
         <div className="relative z-10">
           <div className="max-w-6xl mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold font-sans tracking-tight mb-4 uppercase">
+                Features
+              </h2>
+              <p className="text-lg md:text-xl text-gray-500 font-sora">
+                Everything you need, nothing you don't
+              </p>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Card 1 - Enters from right */}
               <div className="col-span-1 relative group bg-white rounded-2xl p-8 shadow-2xl transform transition-all duration-700 hover:scale-105">
                 <div className="absolute -top-6 -right-6 w-16 h-16 bg-[#7be382] rounded-full flex items-center justify-center text-black text-xl font-bold">
                   1
                 </div>
-                <h3 className="text-2xl font-bold font-sora mb-4">Smart Matching</h3>
+                <h3 className="text-2xl font-bold font-sora mb-4 text-black">Smart Matching</h3>
                 <p className="text-gray-600 font-sora text-sm mb-6">
                   Our algorithm connects you with teammates based on complementary skills and shared interests.
                 </p>
@@ -120,7 +125,7 @@ const Index = () => {
                 <div className="absolute -top-6 -left-6 w-16 h-16 bg-[#7be382] rounded-full flex items-center justify-center text-black text-xl font-bold">
                   2
                 </div>
-                <h3 className="text-2xl font-bold font-sora mb-4">Team Management</h3>
+                <h3 className="text-2xl font-bold font-sora mb-4 text-black">Team Management</h3>
                 <p className="text-gray-600 font-sora text-sm mb-6">
                   Easily create, join, and manage your hackathon teams all in one centralized dashboard.
                 </p>
@@ -139,12 +144,12 @@ const Index = () => {
                 <div className="absolute -top-6 -right-6 w-16 h-16 bg-[#7be382] rounded-full flex items-center justify-center text-black text-xl font-bold">
                   3
                 </div>
-                <h3 className="text-2xl font-bold font-sora mb-4">Verified Profiles</h3>
+                <h3 className="text-2xl font-bold font-sora mb-4 text-black">Real-time Collaboration</h3>
                 <p className="text-gray-600 font-sora text-sm mb-6">
-                  Connect with confidence knowing that every member's skills and background are verified.
+                  Communicate and collaborate with your team members through our integrated chat and project tools.
                 </p>
                 <button 
-                  onClick={() => console.log('Verified Profiles clicked')}
+                  onClick={() => console.log('Real-time Collaboration clicked')}
                   className="absolute bottom-6 right-6 p-3 rounded-full bg-white border border-gray-200 text-black transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:scale-110"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
