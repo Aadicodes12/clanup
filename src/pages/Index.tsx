@@ -212,21 +212,21 @@ const Index = () => {
         <div className="flex flex-col items-start space-y-4">
           <Button 
             variant="outline" 
-            className="h-10 w-64 rounded-md border-border hover:bg-accent hover:text-accent-foreground font-sora text-sm transition-all"
+            className="h-10 px-6 rounded-md border-border hover:bg-accent hover:text-accent-foreground font-sora text-sm transition-all"
             onClick={() => navigate('/teams')}
           >
             Find Hackathons
           </Button>
           <Button 
             variant="outline" 
-            className="h-10 w-64 rounded-md border-border hover:bg-accent hover:text-accent-foreground font-sora text-sm transition-all"
+            className="h-10 px-6 rounded-md border-border hover:bg-accent hover:text-accent-foreground font-sora text-sm transition-all"
             onClick={() => console.log('Find Case Competitions clicked')}
           >
             Find Case Competitions
           </Button>
           <Button 
             variant="outline" 
-            className="h-10 w-64 rounded-md border-border hover:bg-accent hover:text-accent-foreground font-sora text-sm transition-all"
+            className="h-10 px-6 rounded-md border-border hover:bg-accent hover:text-accent-foreground font-sora text-sm transition-all"
             onClick={() => console.log('Find Ideathons clicked')}
           >
             Find Ideathons
