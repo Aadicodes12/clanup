@@ -1,17 +1,17 @@
 "use client";
 
-import React from 'react';
-import { MapPin, ArrowRight } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import React, { useMemo } from "react";
+import { MapPin, ArrowRight } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 // Import local assets
-import mumbaiImg from '@/assets/mumbai.jpg';
-import delhiImg from '@/assets/delhi.jpg';
-import hyderabadImg from '@/assets/hyderabad.jpg';
-import puneImg from '@/assets/pune.jpg';
-import kolkataImg from '@/assets/kolkata.jpg';
+import mumbaiImg from "@/assets/mumbai.jpg";
+import delhiImg from "@/assets/delhi.jpg";
+import hyderabadImg from "@/assets/hyderabad.jpg";
+import puneImg from "@/assets/pune.jpg";
+import kolkataImg from "@/assets/kolkata.jpg";
 
-const cities = [
+const baseCities = [
   { name: "Mumbai", image: mumbaiImg },
   { name: "Delhi", image: delhiImg },
   {
@@ -23,9 +23,20 @@ const cities = [
   { name: "Kolkata", image: kolkataImg },
 ];
 
-const getRandomCount = () => Math.floor(Math.random() * (30 - 15 + 1)) + 15; // 15‑30 inclusive
+// Helper to get a random integer between 15 and 30 (inclusive)
+const getRandomCount = () => Math.floor(Math.random() * (30 - 15 + 1)) + 15;
 
 const CityExplorer = () => {
+  // Generate a stable random count for each city only once
+  const cities = useMemo(
+    () =>
+      baseCities.map((city) => ({
+        ...city,
+        count: `${getRandomCount()} Clans`,
+      })),
+    [],
+  );
+
   return (
     <section className="w-full py-12 md:py-16 bg-background">
       <div className="max-w-6xl mx-auto px-4">
@@ -65,9 +76,7 @@ const CityExplorer = () => {
                     </div>
                     <div>
                       <h3 className="text-sm md:text-lg font-bold font-sora text-foreground">{city.name}</h3>
-                      <p className="text-[10px] md:text-xs text-muted-foreground font-sora">
-                        {getRandomCount()} Clans
-                      </p>
+                      <p className="text-[10px] md:text-xs text-muted-foreground font-sora">{city.count}</p>
                     </div>
                   </div>
                   <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-[#7be382] group-hover:translate-x-1 transition-all duration-300" />
