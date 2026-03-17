@@ -7,6 +7,7 @@ import HowItWorks from '@/components/HowItWorks';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
 import FeatureVideo from '@/components/FeatureVideo';
 import CityExplorer from '@/components/CityExplorer';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { useNavigate } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -30,15 +31,16 @@ const Index = () => {
       {/* Navbar */}
       <nav className="bg-card p-4 flex justify-between items-center border-b border-border sticky top-0 z-50">
         <div className="text-lg font-bold font-mono tracking-tight h-8 flex items-center">Clanup</div>
-        <div className="flex items-center gap-6">
-          <div className="text-lg font-bold font-mono tracking-tight cursor-pointer hover:opacity-70 transition-opacity h-8 flex items-center">About</div>
+        <div className="flex items-center gap-4 md:gap-6">
+          <div className="text-sm md:text-lg font-bold font-mono tracking-tight cursor-pointer hover:opacity-70 transition-opacity h-8 flex items-center">About</div>
+          <ThemeToggle />
         </div>
       </nav>
 
       {/* Hero Section */}
       <div className="flex flex-col items-center px-4 py-12 md:py-20">
         <div className="text-center w-full max-w-3xl flex flex-col items-center">
-          <div className="text-4xl md:text-6xl font-bold font-sans leading-tight mb-2 text-white">
+          <div className="text-4xl md:text-6xl font-bold font-sans leading-tight mb-2 text-foreground">
             Great hacks start with
             <br />
             Great <span className="relative inline-block">
