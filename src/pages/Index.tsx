@@ -19,7 +19,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col transition-colors duration-300">
+    <div className="min-h-screen bg-background text-foreground flex flex-col transition-colors duration-300 overflow-x-hidden">
       {/* Navbar */}
       <nav className="bg-card p-4 flex justify-between items-center border-b border-border sticky top-0 z-50">
         <div className="text-xl font-bold font-sans tracking-tight h-8 flex items-center">Clanup</div>
@@ -86,8 +86,14 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Explore & Learn More Buttons Section - MOVED ABOVE FEATURES */}
-      <div className="flex flex-row items-center justify-center gap-3 md:gap-6 pb-12 pt-8 px-4">
+      {/* How It Works Section */}
+      <HowItWorks />
+
+      {/* How It Works Steps Section */}
+      <HowItWorksSteps />
+
+      {/* Explore & Learn More Buttons Section - PLACED ABOVE FEATURES */}
+      <div className="flex flex-row items-center justify-center gap-3 md:gap-6 pb-12 pt-16 px-4">
         <Button
           className="bg-[#FF7A00] hover:bg-[#FF8A00] text-black font-bold py-4 md:py-5 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center justify-center gap-2 w-[150px] md:w-[220px]"
           onClick={() => navigate('/teams')}
@@ -102,14 +108,8 @@ const Index = () => {
         </Button>
       </div>
 
-      {/* How It Works Section */}
-      <HowItWorks />
-
-      {/* How It Works Steps Section */}
-      <HowItWorksSteps />
-
       {/* Features Section */}
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden pb-24">
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/10 via-transparent to-foreground/10" />
         <div className="relative z-10">
           <div className="max-w-6xl mx-auto px-4">
@@ -122,55 +122,55 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Card 1 - Enters from right */}
-              <div className="col-span-1 relative group bg-white rounded-2xl p-8 shadow-2xl transform transition-all duration-700 hover:scale-105">
-                <div className="absolute -top-6 -right-6 w-16 h-16 bg-[#7be382] rounded-full flex items-center justify-center text-black text-xl font-bold">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
+              {/* Card 1 - Shifted Right (Cut out effect) */}
+              <div className="col-span-1 relative group bg-white rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 translate-x-12 md:translate-x-8">
+                <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   1
                 </div>
-                <h3 className="text-2xl font-bold font-sora mb-4 text-black">Smart Matching</h3>
-                <p className="text-gray-600 font-sora text-sm mb-6">
+                <h3 className="text-xl font-bold font-sora mb-3 text-black">Smart Matching</h3>
+                <p className="text-gray-600 font-sora text-xs mb-6 leading-relaxed">
                   Our algorithm connects you with teammates based on complementary skills and shared interests.
                 </p>
                 <button
                   onClick={() => console.log('Smart Matching clicked')}
-                  className="absolute bottom-6 right-6 p-3 rounded-full bg-white border border-gray-200 text-black transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:scale-110"
+                  className="absolute bottom-4 right-4 p-2 rounded-full bg-white border border-gray-200 text-black transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:scale-110"
                 >
-                  <ArrowUpRight className="w-5 h-5" />
+                  <ArrowUpRight className="w-4 h-4" />
                 </button>
               </div>
 
-              {/* Card 2 - Enters from left */}
-              <div className="col-span-1 relative group bg-white rounded-2xl p-8 shadow-2xl transform transition-all duration-700 hover:scale-105">
-                <div className="absolute -top-6 -left-6 w-16 h-16 bg-[#7be382] rounded-full flex items-center justify-center text-black text-xl font-bold">
+              {/* Card 2 - Shifted Right (Cut out effect) */}
+              <div className="col-span-1 relative group bg-white rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 translate-x-12 md:translate-x-8">
+                <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   2
                 </div>
-                <h3 className="text-2xl font-bold font-sora mb-4 text-black">Team Management</h3>
-                <p className="text-gray-600 font-sora text-sm mb-6">
+                <h3 className="text-xl font-bold font-sora mb-3 text-black">Team Management</h3>
+                <p className="text-gray-600 font-sora text-xs mb-6 leading-relaxed">
                   Easily create, join, and manage your hackathon teams all in one centralized dashboard.
                 </p>
                 <button
                   onClick={() => console.log('Team Management clicked')}
-                  className="absolute bottom-6 left-6 p-3 rounded-full bg-white border border-gray-200 text-black transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:scale-110"
+                  className="absolute bottom-4 left-4 p-2 rounded-full bg-white border border-gray-200 text-black transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:scale-110"
                 >
-                  <ArrowUpRight className="w-5 h-5" />
+                  <ArrowUpRight className="w-4 h-4" />
                 </button>
               </div>
 
-              {/* Card 3 - Enters from right */}
-              <div className="col-span-1 relative group bg-white rounded-2xl p-8 shadow-2xl transform transition-all duration-700 hover:scale-105">
-                <div className="absolute -top-6 -right-6 w-16 h-16 bg-[#7be382] rounded-full flex items-center justify-center text-black text-xl font-bold">
+              {/* Card 3 - Shifted Left (Cut out effect) */}
+              <div className="col-span-1 relative group bg-white rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 -translate-x-12 md:-translate-x-8">
+                <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   3
                 </div>
-                <h3 className="text-2xl font-bold font-sora mb-4 text-black">Real-time Collaboration</h3>
-                <p className="text-gray-600 font-sora text-sm mb-6">
+                <h3 className="text-xl font-bold font-sora mb-3 text-black">Real-time Collaboration</h3>
+                <p className="text-gray-600 font-sora text-xs mb-6 leading-relaxed">
                   Communicate and collaborate with your team members through our integrated chat and project tools.
                 </p>
                 <button
                   onClick={() => console.log('Real-time Collaboration clicked')}
-                  className="absolute bottom-6 right-6 p-3 rounded-full bg-white border border-gray-200 text-black transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:scale-110"
+                  className="absolute bottom-4 right-4 p-2 rounded-full bg-white border border-gray-200 text-black transition-all duration-300 group-hover:bg-black group-hover:text-white group-hover:scale-110"
                 >
-                  <ArrowUpRight className="w-5 h-5" />
+                  <ArrowUpRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
