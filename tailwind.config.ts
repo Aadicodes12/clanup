@@ -23,7 +23,6 @@ export default {
         arial: ["Arial", "sans-serif"],
         sora: ["Sora", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
-        helvetica: ["Helvetica", "Arial", "sans-serif"],
         calibri: ["Calibri", "Candara", "Segoe", "Segoe UI", "Optima", "Arial", "sans-serif"],
       },
       colors: {
@@ -109,10 +108,6 @@ export default {
           "0%": { height: "0%" },
           "100%": { height: "100%" },
         },
-        "draw-line-horizontal": {
-          "0%": { width: "0%" },
-          "100%": { width: "100%" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -121,7 +116,6 @@ export default {
         "slide-rtl-continuous": "slide-rtl-continuous var(--marquee-duration-rtl, 30s) linear infinite",
         "gradient-flow": "gradient-flow 4s ease infinite",
         "draw-line-vertical": "draw-line-vertical 1.5s ease-out forwards",
-        "draw-line-horizontal": "draw-line-horizontal 1s ease-out forwards",
       },
       backgroundSize: {
         "200%": "200%",

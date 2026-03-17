@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, MapPin as MapPinIcon } from 'lucide-react';
+import React from 'react';
+import { MapPin, ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import { cn } from '@/lib/utils';
 
 // Import local assets
 import mumbaiImg from '@/assets/mumbai.jpg';
@@ -15,79 +14,43 @@ import kolkataImg from '@/assets/kolkata.jpg';
 const cities = [
   { 
     name: "Mumbai", 
-    count: "120+ Clans",
+    count: "120+ Teams",
     image: mumbaiImg
   },
   { 
     name: "Delhi", 
-    count: "95+ Clans",
+    count: "95+ Teams",
     image: delhiImg
   },
   { 
     name: "Bengaluru", 
-    count: "150+ Clans",
+    count: "150+ Teams",
     image: "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=400&q=80"
   },
   { 
     name: "Hyderabad", 
-    count: "80+ Clans",
+    count: "80+ Teams",
     image: hyderabadImg
   },
   { 
     name: "Pune", 
-    count: "65+ Clans",
+    count: "65+ Teams",
     image: puneImg
   },
   { 
     name: "Kolkata", 
-    count: "45+ Clans",
+    count: "45+ Teams",
     image: kolkataImg
   },
 ];
 
 const CityExplorer = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const headerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (headerRef.current) {
-      observer.observe(headerRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section className="w-full py-12 md:py-16 bg-background">
       <div className="max-w-6xl mx-auto px-4">
-        <div ref={headerRef} className="text-center mb-12 max-w-2xl mx-auto">
-          <h2 className="text-2xl md:text-4xl font-bold font-helvetica tracking-tight mb-3 uppercase leading-tight">
-            Explore{" "}
-            <span className="relative inline-block">
-              <span 
-                className="font-calibri text-[#7be382] text-3xl md:text-5xl inline-block translate-y-[2px]"
-                style={{ fontVariant: 'small-caps' }}
-              >
-                Clans
-              </span>
-              <div 
-                className={cn(
-                  "absolute bottom-0 left-0 h-[2px] md:h-[3px] bg-[#7be382] transition-all duration-1000 ease-out",
-                  isVisible ? "w-full" : "w-0"
-                )}
-              />
-            </span>{" "}
-            in your city
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-4xl font-bold font-sora tracking-tight mb-3 uppercase">
+            Explore teams in your city
           </h2>
           <p className="text-base md:text-lg text-muted-foreground font-sora">
             Connect with local innovators and build together
@@ -114,7 +77,7 @@ const CityExplorer = () => {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 md:gap-3">
                     <div className="p-1.5 md:p-2 rounded-full bg-[#7be382]/10 text-[#7be382] group-hover:bg-[#7be382] group-hover:text-black transition-colors duration-300">
-                      <MapPinIcon className="w-3 h-3 md:w-5 md:h-5" />
+                      <MapPin className="w-3 h-3 md:w-5 md:h-5" />
                     </div>
                     <div>
                       <h3 className="text-sm md:text-lg font-bold font-sora text-foreground">{city.name}</h3>
