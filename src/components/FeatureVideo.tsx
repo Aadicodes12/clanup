@@ -14,6 +14,7 @@ const FeatureVideo = () => {
             playsInline
             className="w-full h-full object-cover"
           >
+            {/* This path correctly fetches the file from the public directory */}
             <source src="/untitled.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
