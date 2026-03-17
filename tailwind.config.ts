@@ -23,6 +23,7 @@ export default {
         arial: ["Arial", "sans-serif"],
         sora: ["Sora", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
+        mono: ["Roboto Mono", "monospace"],
         calibri: ["Calibri", "Candara", "Segoe", "Segoe UI", "Optima", "Arial", "sans-serif"],
       },
       colors: {

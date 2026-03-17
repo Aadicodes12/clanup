@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import AnimatedText from '@/components/AnimatedText';
 import { Button } from '@/components/ui/button';
 import TextMarquee from '@/components/TextMarquee';
 import HowItWorks from '@/components/HowItWorks';
@@ -23,23 +22,19 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground flex flex-col transition-colors duration-300 overflow-x-hidden">
       {/* Navbar */}
       <nav className="bg-card p-4 flex justify-between items-center border-b border-border sticky top-0 z-50">
-        <div className="text-xl font-bold font-sans tracking-tight h-8 flex items-center">Clanup</div>
+        <div className="text-xl font-bold font-mono tracking-tight h-8 flex items-center">Clanup</div>
         <div className="flex items-center gap-6">
-          <div className="text-xl font-bold font-sans tracking-tight cursor-pointer hover:opacity-70 transition-opacity h-8 flex items-center">About</div>
+          <div className="text-xl font-bold font-mono tracking-tight cursor-pointer hover:opacity-70 transition-opacity h-8 flex items-center">About</div>
         </div>
       </nav>
 
       {/* Hero Section */}
       <div className="flex flex-col items-center px-4 py-12 md:py-20">
         <div className="text-center w-full max-w-3xl flex flex-col items-center">
-          <div className="text-4xl md:text-6xl font-bold font-sans leading-tight mb-2">
-            <AnimatedText className="from-foreground via-muted-foreground to-foreground">
-              Great hacks start with
-            </AnimatedText>
+          <div className="text-4xl md:text-6xl font-bold font-sans leading-tight mb-2 text-white">
+            Great hacks start with
             <br />
-            <AnimatedText className="from-foreground via-muted-foreground to-foreground">
-              Great teams
-            </AnimatedText>
+            Great teams
           </div>
 
           <div className="h-12 mt-4 mb-8 w-full flex items-center justify-center overflow-hidden">
@@ -93,7 +88,7 @@ const Index = () => {
       {/* How It Works Steps Section */}
       <HowItWorksSteps />
 
-      {/* Explore & Learn More Buttons Section - Positioned above CityExplorer */}
+      {/* Explore & Learn More Buttons Section */}
       <div className="flex flex-row items-center justify-center gap-3 md:gap-6 pb-8 pt-16 px-4">
         <Button
           className="bg-[#FF7A00] hover:bg-[#FF8A00] text-black font-bold py-4 md:py-5 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center justify-center gap-2 w-[150px] md:w-[220px]"
@@ -109,16 +104,8 @@ const Index = () => {
         </Button>
       </div>
 
-      {/* City Explorer Section */}
-      <div className="mt-12">
-        <CityExplorer />
-      </div>
-
-      {/* Feature Video Section */}
-      <FeatureVideo />
-
-      {/* Features Section - Moved to the end */}
-      <div className="relative overflow-hidden pb-12 mt-24">
+      {/* Features Section - Moved up towards Explore */}
+      <div className="relative overflow-hidden pb-12 mt-12">
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/5 via-transparent to-foreground/5" />
         <div className="relative z-10">
           <div className="max-w-6xl mx-auto px-4">
@@ -186,6 +173,14 @@ const Index = () => {
           </div>
         </div>
       </div>
+
+      {/* City Explorer Section */}
+      <div className="mt-12">
+        <CityExplorer />
+      </div>
+
+      {/* Feature Video Section */}
+      <FeatureVideo />
 
       <div className="h-24"></div>
     </div>
