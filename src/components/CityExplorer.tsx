@@ -49,8 +49,8 @@ const CityExplorer = () => {
     <section className="w-full py-12 md:py-16 bg-background">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-4xl font-bold font-sora tracking-tight mb-3 uppercase">
-            Explore <span className="font-sans text-[#7be382] text-3xl md:text-5xl inline-block translate-y-[2px]">Clans</span> in your city
+          <h2 className="text-2xl md:text-4xl font-bold font-helvetica tracking-tight mb-3 uppercase">
+            Explore <span className="font-sora text-[#7be382] text-3xl md:text-5xl inline-block translate-y-[2px]">Clans</span> in your city
           </h2>
           <p className="text-base md:text-lg text-muted-foreground font-sora">
             Connect with local innovators and build together
