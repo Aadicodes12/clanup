@@ -14,32 +14,32 @@ import kolkataImg from '@/assets/kolkata.jpg';
 const cities = [
   { 
     name: "Mumbai", 
-    count: "120+ Teams",
+    count: "120+ Clans",
     image: mumbaiImg
   },
   { 
     name: "Delhi", 
-    count: "95+ Teams",
+    count: "95+ Clans",
     image: delhiImg
   },
   { 
     name: "Bengaluru", 
-    count: "150+ Teams",
+    count: "150+ Clans",
     image: "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=400&q=80"
   },
   { 
     name: "Hyderabad", 
-    count: "80+ Teams",
+    count: "80+ Clans",
     image: hyderabadImg
   },
   { 
     name: "Pune", 
-    count: "65+ Teams",
+    count: "65+ Clans",
     image: puneImg
   },
   { 
     name: "Kolkata", 
-    count: "45+ Teams",
+    count: "45+ Clans",
     image: kolkataImg
   },
 ];
@@ -50,7 +50,7 @@ const CityExplorer = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-4xl font-bold font-sora tracking-tight mb-3 uppercase">
-            Explore teams in your city
+            Explore Clans in your city
           </h2>
           <p className="text-base md:text-lg text-muted-foreground font-sora">
             Connect with local innovators and build together
