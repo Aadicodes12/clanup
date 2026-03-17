@@ -23,16 +23,23 @@ const baseCities = [
   { name: "Kolkata", image: kolkataImg },
 ];
 
-// Helper to get a random integer between 15 and 30 (inclusive)
-const getRandomCount = () => Math.floor(Math.random() * (30 - 15 + 1)) + 15;
+// Fixed clan counts per city
+const cityCounts: Record<string, string> = {
+  Mumbai: "30+ Clans",
+  Delhi: "20+ Clans",
+  Bengaluru: "30+ Clans",
+  Hyderabad: "15+ Clans",
+  Pune: "35+ Clans",
+  Kolkata: "20+ Clans",
+};
 
 const CityExplorer = () => {
-  // Generate a stable random count for each city only once
+  // Attach the fixed count to each city (once)
   const cities = useMemo(
     () =>
       baseCities.map((city) => ({
         ...city,
-        count: `${getRandomCount()} Clans`,
+        count: cityCounts[city.name] || "",
       })),
     [],
   );
@@ -58,7 +65,7 @@ const CityExplorer = () => {
               key={index}
               className="group cursor-pointer border-border transition-all duration-300 hover:shadow-xl bg-card overflow-hidden flex flex-col"
             >
-              {/* City Image - Always Visible */}
+              {/* City Image */}
               <div className="h-24 md:h-40 w-full overflow-hidden relative">
                 <img
                   src={city.image}
