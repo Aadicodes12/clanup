@@ -92,7 +92,7 @@ const Index = () => {
       {/* How It Works Steps Section */}
       <HowItWorksSteps />
 
-      {/* Explore & Learn More Buttons Section - PLACED ABOVE FEATURES */}
+      {/* Explore & Learn More Buttons Section */}
       <div className="flex flex-row items-center justify-center gap-3 md:gap-6 pb-12 pt-16 px-4">
         <Button
           className="bg-[#FF7A00] hover:bg-[#FF8A00] text-black font-bold py-4 md:py-5 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center justify-center gap-2 w-[150px] md:w-[220px]"
@@ -117,13 +117,13 @@ const Index = () => {
               <h2 className="text-4xl md:text-5xl font-bold font-sans tracking-tight mb-4 uppercase">
                 Features
               </h2>
-              <p className="text-lg md:text-xl text-gray-500 font-sora">
+              <p className="text-lg md:text-xl text-gray-400 font-sora">
                 Everything you need, nothing you don't
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
-              {/* Card 1 - Shifted Right (Cut out effect) */}
+              {/* Card 1 - Shifted Right */}
               <div className="col-span-1 relative group bg-white rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 translate-x-12 md:translate-x-8">
                 <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   1
@@ -140,8 +140,8 @@ const Index = () => {
                 </button>
               </div>
 
-              {/* Card 2 - Shifted Right (Cut out effect) */}
-              <div className="col-span-1 relative group bg-white rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 translate-x-12 md:translate-x-8">
+              {/* Card 2 - Shifted Left */}
+              <div className="col-span-1 relative group bg-white rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 -translate-x-12 md:-translate-x-8">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   2
                 </div>
@@ -157,8 +157,8 @@ const Index = () => {
                 </button>
               </div>
 
-              {/* Card 3 - Shifted Left (Cut out effect) */}
-              <div className="col-span-1 relative group bg-white rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 -translate-x-12 md:-translate-x-8">
+              {/* Card 3 - Shifted Right */}
+              <div className="col-span-1 relative group bg-white rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 translate-x-12 md:translate-x-8">
                 <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   3
                 </div>
