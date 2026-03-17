@@ -113,7 +113,7 @@ const Index = () => {
         <div className="relative z-10">
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold font-sora tracking-tight mb-4 uppercase">
+              <h2 className="text-2xl md:text-4xl font-bold font-sora tracking-tight mb-4">
                 Features
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground font-sora">
