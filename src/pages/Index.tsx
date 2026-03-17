@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import TextMarquee from '@/components/TextMarquee';
 import HowItWorks from '@/components/HowItWorks';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
+import Features from '@/components/Features';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useNavigate } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
@@ -25,6 +26,7 @@ const Index = () => {
         <div className="text-xl font-bold font-sans tracking-tight h-8 flex items-center">Clanup</div>
         <div className="flex items-center gap-6">
           <div className="text-xl font-bold font-sans tracking-tight cursor-pointer hover:opacity-70 transition-opacity h-8 flex items-center">About</div>
+          <ThemeToggle />
         </div>
       </nav>
 
@@ -90,23 +92,6 @@ const Index = () => {
       <HowItWorks />
       <HowItWorksSteps />
 
-      {/* Purple Semicircle Section */}
-      <div className="relative overflow-hidden">
-        <div className="absolute bottom-0 left-0 right-0 h-[200px] bg-[#7be382] rounded-full" />
-        <div className="relative z-10">
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="text-center py-16">
-              <h2 className="text-4xl md:text-5xl font-bold font-sora text-black mb-4">
-                Ready to find your perfect team?
-              </h2>
-              <p className="text-lg text-black/80 font-sora">
-                Join thousands of innovators building amazing projects together
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Explore & Learn More Buttons Section */}
       <div className="flex flex-row items-center justify-center gap-3 md:gap-6 pb-12 pt-8 px-4">
         <Button 
@@ -123,6 +108,14 @@ const Index = () => {
         </Button>
       </div>
 
+      {/* Section Break */}
+      <div className="w-full px-6 md:px-24 mb-16">
+        <div className="border-t-2 border-foreground/10 w-full"></div>
+      </div>
+
+      {/* Features Section */}
+      <Features />
+      
       <div className="h-24"></div>
     </div>
   );
