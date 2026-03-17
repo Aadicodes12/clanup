@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import TextMarquee from '@/components/TextMarquee';
 import HowItWorks from '@/components/HowItWorks';
@@ -12,6 +12,13 @@ import { ArrowUpRight } from 'lucide-react';
 
 const Index = () => {
   const navigate = useNavigate();
+  const [isUnderlineVisible, setIsUnderlineVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsUnderlineVisible(true), 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   const marqueeMessages = [
     "Build your hackathon team in minutes",
     "Find skilled teammates for your next project",
@@ -34,7 +41,27 @@ const Index = () => {
           <div className="text-4xl md:text-6xl font-bold font-sans leading-tight mb-2 text-white">
             Great hacks start with
             <br />
-            Great teams
+            Great <span className="relative inline-block">
+              teams
+              <svg 
+                className="absolute -bottom-2 left-0 w-full h-3 md:h-4 pointer-events-none" 
+                viewBox="0 0 100 10" 
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M0,5 Q25,0 50,5 T100,5"
+                  fill="none"
+                  stroke="#7be382"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  className={`transition-all duration-1000 ease-out ${isUnderlineVisible ? 'stroke-dashoffset-0' : 'stroke-dashoffset-100'}`}
+                  style={{
+                    strokeDasharray: 100,
+                    strokeDashoffset: isUnderlineVisible ? 0 : 100
+                  }}
+                />
+              </svg>
+            </span>
           </div>
 
           <div className="h-12 mt-4 mb-8 w-full flex items-center justify-center overflow-hidden">
