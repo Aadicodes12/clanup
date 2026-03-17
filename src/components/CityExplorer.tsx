@@ -12,37 +12,18 @@ import puneImg from '@/assets/pune.jpg';
 import kolkataImg from '@/assets/kolkata.jpg';
 
 const cities = [
-  { 
-    name: "Mumbai", 
-    count: "20-30 Clans",
-    image: mumbaiImg
+  { name: "Mumbai", image: mumbaiImg },
+  { name: "Delhi", image: delhiImg },
+  {
+    name: "Bengaluru",
+    image: "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=400&q=80",
   },
-  { 
-    name: "Delhi", 
-    count: "20-30 Clans",
-    image: delhiImg
-  },
-  { 
-    name: "Bengaluru", 
-    count: "20-30 Clans",
-    image: "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=400&q=80"
-  },
-  { 
-    name: "Hyderabad", 
-    count: "20-30 Clans",
-    image: hyderabadImg
-  },
-  { 
-    name: "Pune", 
-    count: "20-30 Clans",
-    image: puneImg
-  },
-  { 
-    name: "Kolkata", 
-    count: "20-30 Clans",
-    image: kolkataImg
-  },
+  { name: "Hyderabad", image: hyderabadImg },
+  { name: "Pune", image: puneImg },
+  { name: "Kolkata", image: kolkataImg },
 ];
+
+const getRandomCount = () => Math.floor(Math.random() * (30 - 15 + 1)) + 15; // 15‑30 inclusive
 
 const CityExplorer = () => {
   return (
@@ -59,15 +40,15 @@ const CityExplorer = () => {
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
           {cities.map((city, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className="group cursor-pointer border-border hover:border-[#7be382] transition-all duration-300 hover:shadow-xl bg-card overflow-hidden flex flex-col"
             >
               {/* City Image - Always Visible */}
               <div className="h-24 md:h-40 w-full overflow-hidden relative">
-                <img 
-                  src={city.image} 
-                  alt={city.name} 
+                <img
+                  src={city.image}
+                  alt={city.name}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
@@ -81,7 +62,9 @@ const CityExplorer = () => {
                     </div>
                     <div>
                       <h3 className="text-sm md:text-lg font-bold font-sora text-foreground">{city.name}</h3>
-                      <p className="text-[10px] md:text-xs text-muted-foreground font-sora">{city.count}</p>
+                      <p className="text-[10px] md:text-xs text-muted-foreground font-sora">
+                        {getRandomCount()} Clans
+                      </p>
                     </div>
                   </div>
                   <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-[#7be382] group-hover:translate-x-1 transition-all duration-300" />
