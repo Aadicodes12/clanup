@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import TextMarquee from '@/components/TextMarquee';
 import HowItWorks from '@/components/HowItWorks';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
-import FeatureVideo from '@/components/FeatureVideo';
 import CityExplorer from '@/components/CityExplorer';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useNavigate } from 'react-router-dom';
@@ -138,7 +137,7 @@ const Index = () => {
         <CityExplorer />
       </div>
 
-      {/* Features Section - Moved up to be closer to City Explorer */}
+      {/* Features Section */}
       <div className="relative overflow-hidden pb-12 mt-4">
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/5 via-transparent to-foreground/5" />
         <div className="relative z-10">
@@ -153,7 +152,7 @@ const Index = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
-              {/* Card 1 - Shifted Right */}
+              {/* Card 1 */}
               <div className="col-span-1 relative group bg-card text-card-foreground rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 translate-x-12 md:translate-x-8 border border-border">
                 <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   1
@@ -170,7 +169,7 @@ const Index = () => {
                 </button>
               </div>
 
-              {/* Card 2 - Shifted Left */}
+              {/* Card 2 */}
               <div className="col-span-1 relative group bg-card text-card-foreground rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 -translate-x-12 md:-translate-x-8 border border-border">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   2
@@ -187,7 +186,7 @@ const Index = () => {
                 </button>
               </div>
 
-              {/* Card 3 - Shifted Right */}
+              {/* Card 3 */}
               <div className="col-span-1 relative group bg-card text-card-foreground rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 translate-x-12 md:translate-x-8 border border-border">
                 <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   3
@@ -208,8 +207,32 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Feature Video Section - Moved to the end */}
-      <FeatureVideo />
+      {/* New Action Buttons Section */}
+      <div className="max-w-6xl mx-auto px-4 py-12 w-full">
+        <div className="flex flex-col items-start space-y-4">
+          <Button 
+            variant="outline" 
+            className="h-10 px-6 rounded-md border-border hover:bg-accent hover:text-accent-foreground font-sora text-sm transition-all"
+            onClick={() => navigate('/teams')}
+          >
+            Find Hackathons
+          </Button>
+          <Button 
+            variant="outline" 
+            className="h-10 px-6 rounded-md border-border hover:bg-accent hover:text-accent-foreground font-sora text-sm transition-all"
+            onClick={() => console.log('Find Case Competitions clicked')}
+          >
+            Find Case Competitions
+          </Button>
+          <Button 
+            variant="outline" 
+            className="h-10 px-6 rounded-md border-border hover:bg-accent hover:text-accent-foreground font-sora text-sm transition-all"
+            onClick={() => console.log('Find Ideathons clicked')}
+          >
+            Find Ideathons
+          </Button>
+        </div>
+      </div>
 
       <div className="h-24"></div>
     </div>
