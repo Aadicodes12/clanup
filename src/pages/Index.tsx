@@ -44,15 +44,15 @@ const Index = () => {
             Great <span className="relative inline-block">
               teams
               <svg 
-                className="absolute -bottom-2 left-0 w-full h-3 md:h-4 pointer-events-none" 
-                viewBox="0 0 100 10" 
+                className="absolute -bottom-1 left-0 w-full h-1 pointer-events-none" 
+                viewBox="0 0 100 2" 
                 preserveAspectRatio="none"
               >
                 <path
-                  d="M0,5 Q25,0 50,5 T100,5"
+                  d="M0,1 L100,1"
                   fill="none"
                   stroke="#7be382"
-                  strokeWidth="3"
+                  strokeWidth="2"
                   strokeLinecap="round"
                   className={`transition-all duration-1000 ease-out ${isUnderlineVisible ? 'stroke-dashoffset-0' : 'stroke-dashoffset-100'}`}
                   style={{
