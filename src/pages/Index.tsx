@@ -58,7 +58,7 @@ const Index = () => {
               playsInline
               className="w-full h-full object-cover"
             >
-              <source src="/untitled design.mp4" type="video/mp4" />
+              <source src="/5530-184666657_small.mp4" type="video/mp4" />
             </video>
           </div>
 
