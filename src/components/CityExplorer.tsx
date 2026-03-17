@@ -30,7 +30,10 @@ const CityExplorer = () => {
     <section className="w-full py-12 md:py-16 bg-background">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-4xl font-bold font-sora tracking-tight mb-3 uppercase">
+          <h2
+            className="text-2xl md:text-4xl font-bold font-sora tracking-tight mb-3 uppercase"
+            style={{ fontVariant: "small-caps" }}
+          >
             Explore clans in your city
           </h2>
           <p className="text-base md:text-lg text-muted-foreground font-sora">
@@ -42,7 +45,7 @@ const CityExplorer = () => {
           {cities.map((city, index) => (
             <Card
               key={index}
-              className="group cursor-pointer border-border hover:border-[#7be382] transition-all duration-300 hover:shadow-xl bg-card overflow-hidden flex flex-col"
+              className="group cursor-pointer border-border transition-all duration-300 hover:shadow-xl bg-card overflow-hidden flex flex-col"
             >
               {/* City Image - Always Visible */}
               <div className="h-24 md:h-40 w-full overflow-hidden relative">
