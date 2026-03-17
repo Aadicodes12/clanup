@@ -90,23 +90,6 @@ const Index = () => {
       <HowItWorks />
       <HowItWorksSteps />
 
-      {/* Purple Semicircle Section */}
-      <div className="relative overflow-hidden">
-        <div className="absolute bottom-0 left-0 right-0 h-[200px] bg-[#7be382] rounded-full" />
-        <div className="relative z-10">
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="text-center py-16">
-              <h2 className="text-4xl md:text-5xl font-bold font-sora text-black mb-4">
-                Ready to find your perfect team?
-              </h2>
-              <p className="text-lg text-black/80 font-sora">
-                Join thousands of innovators building amazing projects together
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* New Cards Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/10 via-transparent to-foreground/10" />
