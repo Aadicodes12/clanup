@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button';
 import TextMarquee from '@/components/TextMarquee';
 import HowItWorks from '@/components/HowItWorks';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
-import Features from '@/components/Features';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useNavigate } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
@@ -26,7 +25,6 @@ const Index = () => {
         <div className="text-xl font-bold font-sans tracking-tight h-8 flex items-center">Clanup</div>
         <div className="flex items-center gap-6">
           <div className="text-xl font-bold font-sans tracking-tight cursor-pointer hover:opacity-70 transition-opacity h-8 flex items-center">About</div>
-          <ThemeToggle />
         </div>
       </nav>
 
@@ -108,14 +106,6 @@ const Index = () => {
         </Button>
       </div>
 
-      {/* Section Break */}
-      <div className="w-full px-6 md:px-24 mb-16">
-        <div className="border-t-2 border-foreground/10 w-full"></div>
-      </div>
-
-      {/* Features Section */}
-      <Features />
-      
       <div className="h-24"></div>
     </div>
   );
