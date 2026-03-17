@@ -104,7 +104,15 @@ const Index = () => {
         </Button>
       </div>
 
-      {/* Features Section - Moved up towards Explore */}
+      {/* City Explorer Section */}
+      <div className="mt-12">
+        <CityExplorer />
+      </div>
+
+      {/* Feature Video Section */}
+      <FeatureVideo />
+
+      {/* Features Section - Moved to the end */}
       <div className="relative overflow-hidden pb-12 mt-12">
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/5 via-transparent to-foreground/5" />
         <div className="relative z-10">
@@ -173,14 +181,6 @@ const Index = () => {
           </div>
         </div>
       </div>
-
-      {/* City Explorer Section */}
-      <div className="mt-12">
-        <CityExplorer />
-      </div>
-
-      {/* Feature Video Section */}
-      <FeatureVideo />
 
       <div className="h-24"></div>
     </div>
