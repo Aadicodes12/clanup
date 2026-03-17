@@ -105,15 +105,12 @@ const Index = () => {
       </div>
 
       {/* City Explorer Section */}
-      <div className="mt-12">
+      <div className="mt-8">
         <CityExplorer />
       </div>
 
-      {/* Feature Video Section */}
-      <FeatureVideo />
-
-      {/* Features Section - Moved to the end */}
-      <div className="relative overflow-hidden pb-12 mt-12">
+      {/* Features Section - Moved up to be closer to City Explorer */}
+      <div className="relative overflow-hidden pb-12 mt-4">
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/5 via-transparent to-foreground/5" />
         <div className="relative z-10">
           <div className="max-w-6xl mx-auto px-4">
@@ -181,6 +178,9 @@ const Index = () => {
           </div>
         </div>
       </div>
+
+      {/* Feature Video Section - Moved to the end */}
+      <FeatureVideo />
 
       <div className="h-24"></div>
     </div>
