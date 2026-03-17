@@ -1,9 +1,8 @@
 "use client";
 
 import React from 'react';
-import { MapPin, ArrowRight } from 'lucide-center';
+import { ArrowRight, MapPin as MapPinIcon } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import { MapPin as MapPinIcon } from 'lucide-react';
 
 // Import local assets
 import mumbaiImg from '@/assets/mumbai.jpg';
