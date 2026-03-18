@@ -46,7 +46,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <div className="flex flex-col items-center px-4 py-10 md:py-12">
+      <div className="flex flex-col items-center px-4 py-11 md:py-13">
         <div className="text-center w-full max-w-3xl flex flex-col items-center">
           <div className="text-3xl md:text-5xl font-bold font-sans leading-tight mb-1 text-foreground uppercase">
             Great hacks start with
@@ -74,12 +74,12 @@ const Index = () => {
           </div>
 
           {/* Updated Subheader */}
-          <p className="text-lg md:text-xl text-muted-foreground font-sora max-w-lg leading-relaxed text-center mb-8">
+          <p className="text-lg md:text-xl text-muted-foreground font-sora max-w-lg leading-relaxed text-center mb-9">
             find your hackathon team in minutes
           </p>
 
           {/* Join Count Line */}
-          <div className="flex items-center gap-2 mt-5 mb-8 px-4 py-1.5 rounded-full bg-muted/50">
+          <div className="flex items-center gap-2 mt-6 mb-9 px-4 py-1.5 rounded-full bg-muted/50">
             <div className="flex -space-x-2">
               {[1, 2, 3].map((i) => (
                 <div key={i} className="w-5 h-5 rounded-full border-2 border-background bg-muted flex items-center justify-center overflow-hidden">
@@ -93,7 +93,7 @@ const Index = () => {
           </div>
 
           {/* Hero Video Section - Adjusted positioning */}
-          <div className="w-full max-w-[340px] md:max-w-lg mx-auto mb-5 md:mb-7 rounded-2xl overflow-hidden border-2 border-border bg-card shadow-2xl shadow-primary/5 relative aspect-video">
+          <div className="w-full max-w-[340px] md:max-w-lg mx-auto mb-6 md:mb-8 rounded-2xl overflow-hidden border-2 border-border bg-card shadow-2xl shadow-primary/5 relative aspect-video">
             <video              autoPlay
               loop
               muted              playsInline
@@ -117,9 +117,9 @@ const Index = () => {
               Join a team that fits me
             </Button>
 
-            <div className="w-16 h-[2px] bg-foreground/10 mt-12 mb-7"></div>
+            <div className="w-16 h-[2px] bg-foreground/10 mt-12 mb-8"></div>
 
-            <p className="text-lg md:text-xl text-muted-foreground font-sora max-w-lg leading-relaxed px-6 mb-10">
+            <p className="text-lg md:text-xl text-muted-foreground font-sora max-w-lg leading-relaxed px-6 mb-11">
               Clanup matches you with other members who are actively looking to participate in hackathons, collab on projects and build something great together.
             </p>
           </div>
@@ -133,7 +133,7 @@ const Index = () => {
       <HowItWorksSteps />
 
       {/* Explore & Learn More Buttons Section */}
-      <div className="flex flex-row items-center justify-center gap-3 md:gap-6 pb-6 pt-12 px-4">
+      <div className="flex flex-row items-center justify-center gap-3 md:gap-6 pb-7 pt-13 px-4">
         <Button
           className="bg-[#FF7A00] hover:bg-[#FF8A00] text-black font-bold py-3 md:py-4 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center justify-center gap-2 w-[150px] md:w-[220px]"
           onClick={() => navigate('/teams')}
@@ -149,17 +149,17 @@ const Index = () => {
       </div>
 
       {/* City Explorer Section */}
-      <div className="mt-6">
+      <div className="mt-7">
         <CityExplorer />
       </div>
 
       {/* Features Section */}
-      <div className="relative overflow-hidden pb-10 mt-8">
+      <div className="relative overflow-hidden pb-11 mt-9">
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/5 via-transparent to-foreground/5" />
         <div className="relative z-10">
           <div className="max-w-6xl mx-auto px-4">
-            <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-4xl font-bold font-sora tracking-tight mb-3">
+            <div className="text-center mb-11">
+              <h2 className="text-2xl md:text-4xl font-bold font-sora tracking-tight mb-4">
                 Features
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground font-sora">
@@ -222,7 +222,7 @@ const Index = () => {
       </div>
 
       {/* Testimonials Section */}
-      <div className="mt-10">
+      <div className="mt-11">
         <TestimonialsMinimal />
       </div>
 
