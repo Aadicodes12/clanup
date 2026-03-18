@@ -180,7 +180,7 @@ const Index = () => {
                 </div>
                 <h3 className="text-xl font-bold font-sora mb-3">Get hired across industries</h3>
                 <p className="text-muted-foreground font-sora text-xs mb-6 leading-relaxed">
-                  Showcase your hackathon wins and project portfolio directly to top companies across industries looking for talent.
+                  Showcase your hackathon wins and project portfolio directly to firms across industries looking for talent.
                 </p>
                 <button
                   onClick={() => console.log('Get hired clicked')}
