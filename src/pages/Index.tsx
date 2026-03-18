@@ -11,15 +11,27 @@ import Footer from '@/components/Footer';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useNavigate } from 'react-router-dom';
 import { ArrowUpRight, Menu } from 'lucide-react';
+import { useAuth } from '@/components/AuthProvider';
 
 const Index = () => {
   const navigate = useNavigate();
+  const { user, loading } = useAuth();
   const [isUnderlineVisible, setIsUnderlineVisible] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsUnderlineVisible(true), 500);
     return () => clearTimeout(timer);
   }, []);
+
+  // Auto-resume: If user is logged in and has a draft, take them back to finish it
+  useEffect(() => {
+    if (!loading && user) {
+      const hasDraft = localStorage.getItem('clanup_draft_team');
+      if (hasDraft) {
+        navigate('/make-team');
+      }
+    }
+  }, [user, loading, navigate]);
 
   const marqueeMessages = [
     "Build your hackathon team in minutes",
@@ -152,7 +164,7 @@ const Index = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
-              {/* Card 1 - Shifted Right */}
+              {/* Card 1 - Smart Matching */}
               <div className="col-span-1 relative group bg-card text-card-foreground rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 translate-x-12 md:translate-x-8 border border-border">
                 <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   1
@@ -168,7 +180,7 @@ const Index = () => {
                 </button>
               </div>
 
-              {/* Card 2 - Shifted Left */}
+              {/* Card 2 - Get hired */}
               <div className="col-span-1 relative group bg-card text-card-foreground rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 -translate-x-12 md:-translate-x-8 border border-border">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   2
@@ -184,7 +196,7 @@ const Index = () => {
                 </button>
               </div>
 
-              {/* Card 3 - Shifted Right */}
+              {/* Card 3 - Real-time Collaboration */}
               <div className="col-span-1 relative group bg-card text-card-foreground rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 translate-x-12 md:translate-x-8 border border-border">
                 <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   3
@@ -205,7 +217,7 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Testimonials Section - Pushed down with mt-24 */}
+      {/* Testimonials Section */}
       <div className="mt-24">
         <TestimonialsMinimal />
       </div>
