@@ -178,12 +178,12 @@ const Index = () => {
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   2
                 </div>
-                <h3 className="text-xl font-bold font-sora mb-3">Team Management</h3>
+                <h3 className="text-xl font-bold font-sora mb-3">Get hired by firms</h3>
                 <p className="text-muted-foreground font-sora text-xs mb-6 leading-relaxed">
-                  Easily create, join, and manage your hackathon teams all in one centralized dashboard.
+                  Showcase your hackathon wins and project portfolio directly to top tech companies looking for talent.
                 </p>
                 <button
-                  onClick={() => console.log('Team Management clicked')}
+                  onClick={() => console.log('Get hired clicked')}
                   className="absolute bottom-4 left-4 p-2 rounded-full bg-background border border-border text-foreground transition-all duration-300 group-hover:bg-foreground group-hover:text-background group-hover:scale-110"
                 >
                   <ArrowUpRight className="w-4 h-4" />
