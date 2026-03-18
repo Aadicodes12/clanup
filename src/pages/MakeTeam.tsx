@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useMemo } from 'react';
-import { motion } from 'framer-motion';
 import { 
   Plus, 
   Check, 
@@ -10,8 +9,7 @@ import {
   Cpu, 
   Zap, 
   ChevronLeft,
-  Sparkles,
-  AlertCircle
+  Sparkles
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -117,7 +115,6 @@ const MakeTeam = () => {
 
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-white font-sora selection:bg-[#7be382] selection:text-black overflow-x-hidden">
-      {/* Signup Modal */}
       <SignupModal 
         isOpen={isSignupOpen} 
         onClose={() => setIsSignupOpen(false)} 
@@ -128,7 +125,6 @@ const MakeTeam = () => {
         }}
       />
 
-      {/* Header */}
       <nav className="p-6 flex items-center justify-between border-b border-white/5 sticky top-0 bg-[#0A0A0A]/80 backdrop-blur-md z-40">
         <button 
           onClick={() => navigate('/')}
@@ -142,11 +138,7 @@ const MakeTeam = () => {
       </nav>
 
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
-        
-        {/* Main Content */}
         <div className="lg:col-span-8 space-y-16">
-          
-          {/* Hero Section */}
           <header className="space-y-6">
             <div className="space-y-2">
               <Badge variant="outline" className="border-[#7be382] text-[#7be382] px-3 py-1 rounded-full text-[10px] uppercase tracking-widest font-bold">
@@ -164,7 +156,6 @@ const MakeTeam = () => {
             </div>
           </header>
 
-          {/* Role Builder */}
           <section className="space-y-8">
             <div className="flex items-center gap-4">
               <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-gray-500">Role Builder</h2>
@@ -173,13 +164,9 @@ const MakeTeam = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {roles.map((role) => (
-                <motion.div
+                <div
                   key={role.id}
-                  layout
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  whileHover={{ scale: 1.02 }}
-                  className={`relative group cursor-pointer rounded-3xl border-2 p-8 transition-all duration-500 ${
+                  className={`relative group cursor-pointer rounded-3xl border-2 p-8 transition-all duration-500 hover:scale-[1.02] ${
                     role.status === 'you' 
                       ? 'border-[#7be382] bg-[#7be382]/5 shadow-[0_0_30px_rgba(123,227,130,0.05)]' 
                       : role.status === 'filled'
@@ -215,12 +202,11 @@ const MakeTeam = () => {
                       role.skills?.join(' • ') || 'Ready to build'
                     )}
                   </p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </section>
 
-          {/* Smart Suggestions */}
           <section className="space-y-8">
             <div className="flex items-center gap-4">
               <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-gray-500">
@@ -268,7 +254,6 @@ const MakeTeam = () => {
           </section>
         </div>
 
-        {/* Side Panel (Sticky) */}
         <div className="lg:col-span-4">
           <div className="sticky top-32 space-y-6">
             <Card className="bg-white/[0.02] border-white/10 backdrop-blur-2xl rounded-[2.5rem] overflow-hidden">
@@ -331,12 +316,7 @@ const MakeTeam = () => {
               </CardContent>
             </Card>
 
-            {/* Hackathon Fit */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="p-8 rounded-[2rem] bg-gradient-to-br from-[#7be382]/10 via-transparent to-transparent border border-[#7be382]/20 relative overflow-hidden group"
-            >
+            <div className="p-8 rounded-[2rem] bg-gradient-to-br from-[#7be382]/10 via-transparent to-transparent border border-[#7be382]/20 relative overflow-hidden group">
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                 <Sparkles className="w-12 h-12 text-[#7be382]" />
               </div>
@@ -349,10 +329,9 @@ const MakeTeam = () => {
                   Based on your current stack, you're a perfect match for <span className="text-white font-bold">EthIndia 2024</span>.
                 </p>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   );
