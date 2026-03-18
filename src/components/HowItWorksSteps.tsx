@@ -104,7 +104,7 @@ const HowItWorksSteps = () => {
                 {/* Center Circle - Always Centered */}
                 <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10">
                   <div className={cn(
-                    "w-7 h-7 md:w-12 md:h-12 rounded-full bg-[#7be382] flex items-center justify-center text-black font-bold shadow-[0_0_15px_rgba(123,227,130,0.3)] transition-all duration-500",
+                    "w-7 h-7 md:w-12 md:h-12 rounded-full bg-[#7be382] flex items-center justify-center text-black font-bold text-xs md:text-xl shadow-[0_0_15px_rgba(123,227,130,0.3)] transition-all duration-500",
                     isVisible ? "scale-100 opacity-100" : "scale-0 opacity-0"
                   )}
                   style={{ transitionDelay: `${index * 200 + 100}ms` }}
