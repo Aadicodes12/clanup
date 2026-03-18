@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Mail, Chrome, Loader2, ArrowLeft } from 'lucide-react';
+import { X, Mail, Chrome, Loader2, ArrowLeft, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { supabase } from '@/integrations/supabase/client';
@@ -32,7 +32,17 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose, teamSnapshot
           redirectTo: window.location.origin + '/make-team',
         },
       });
-      if (error) throw error;
+      
+      if (error) {
+        if (error.message.includes("provider_not_enabled") || error.message.includes("not enabled")) {
+          toast.error("Google login isn't enabled in Supabase yet. Try Email instead!", {
+            duration: 5000,
+            icon: <AlertCircle className="text-amber-500" />
+          });
+        } else {
+          throw error;
+        }
+      }
     } catch (error: any) {
       toast.error(error.message || "Failed to sign in with Google");
     } finally {
