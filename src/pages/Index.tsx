@@ -7,7 +7,7 @@ import HowItWorks from '@/components/HowItWorks';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
 import FeatureVideo from '@/components/FeatureVideo';
 import CityExplorer from '@/components/CityExplorer';
-import Testimonials from '@/components/Testimonials';
+import TestimonialsMinimal from '@/components/TestimonialsMinimal';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useNavigate } from 'react-router-dom';
 import { ArrowUpRight, Menu } from 'lucide-react';
@@ -50,8 +50,7 @@ const Index = () => {
               teams
               <svg 
                 className="absolute -bottom-1 left-0 w-full h-1 pointer-events-none" 
-                viewBox="0 0 100 2" 
-                preserveAspectRatio="none"
+                viewBox="0 0 100 2"                 preserveAspectRatio="none"
               >
                 <path
                   d="M0,1 L100,1"
@@ -79,11 +78,9 @@ const Index = () => {
 
           {/* Hero Video Section */}
           <div className="w-full max-w-[340px] md:max-w-lg mx-auto mb-10 rounded-2xl overflow-hidden border-2 border-border bg-card shadow-2xl shadow-primary/5 relative aspect-video">
-            <video
-              autoPlay
+            <video              autoPlay
               loop
-              muted
-              playsInline
+              muted              playsInline
               className="w-full h-full object-cover"
             >
               <source src="/5530-184666657_small.mp4" type="video/mp4" />
@@ -97,13 +94,11 @@ const Index = () => {
             >
               Browse Teams
             </Button>
-            <Button
-              variant="outline"
+            <Button              variant="outline"
               className="border-2 border-foreground/10 hover:border-foreground/30 text-foreground font-bold py-6 px-10 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight w-full max-w-[300px]"
               onClick={() => console.log('Sign Up clicked')}
             >
-              Sign Up
-            </Button>
+              Sign Up            </Button>
 
             <div className="w-16 h-[2px] bg-foreground/10 mt-16 mb-8"></div>
 
@@ -165,8 +160,7 @@ const Index = () => {
                 <p className="text-muted-foreground font-sora text-xs mb-6 leading-relaxed">
                   Our algorithm connects you with teammates based on complementary skills and shared interests.
                 </p>
-                <button
-                  onClick={() => console.log('Smart Matching clicked')}
+                <button                  onClick={() => console.log('Smart Matching clicked')}
                   className="absolute bottom-4 right-4 p-2 rounded-full bg-background border border-border text-foreground transition-all duration-300 group-hover:bg-foreground group-hover:text-background group-hover:scale-110"
                 >
                   <ArrowUpRight className="w-4 h-4" />
@@ -182,8 +176,7 @@ const Index = () => {
                 <p className="text-muted-foreground font-sora text-xs mb-6 leading-relaxed">
                   Showcase your hackathon wins and project portfolio directly to firms across industries looking for talent.
                 </p>
-                <button
-                  onClick={() => console.log('Get hired clicked')}
+                <button                  onClick={() => console.log('Get hired clicked')}
                   className="absolute bottom-4 left-4 p-2 rounded-full bg-background border border-border text-foreground transition-all duration-300 group-hover:bg-foreground group-hover:text-background group-hover:scale-110"
                 >
                   <ArrowUpRight className="w-4 h-4" />
@@ -211,8 +204,8 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Testimonials Section */}
-      <Testimonials />
+      {/* Testimonials Section - Using minimalist dark UI component */}
+      <TestimonialsMinimal />
 
       {/* Feature Video Section - Moved to the end */}
       <FeatureVideo />
