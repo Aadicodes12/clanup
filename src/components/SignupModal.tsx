@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Mail, Chrome, Loader2, ArrowLeft, AlertCircle } from 'lucide-react';
+import { X, Mail, Chrome, Loader2, ArrowLeft, AlertCircle, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { supabase } from '@/integrations/supabase/client';
