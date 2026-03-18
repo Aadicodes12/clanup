@@ -7,6 +7,7 @@ import HowItWorks from '@/components/HowItWorks';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
 import FeatureVideo from '@/components/FeatureVideo';
 import CityExplorer from '@/components/CityExplorer';
+import Testimonials from '@/components/Testimonials';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useNavigate } from 'react-router-dom';
 import { ArrowUpRight, Menu } from 'lucide-react';
@@ -175,80 +176,6 @@ const Index = () => {
               {/* Card 2 - Shifted Left */}
               <div className="col-span-1 relative group bg-card text-card-foreground rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 -translate-x-12 md:-translate-x-8 border border-border">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
-                  3
-                </div>
-                <h3 className="text-xl font-bold font-sora mb-3">Get hired</h3>
-                <p className="text-muted-foreground font-sora text-xs mb-6 leading-relaxed">
-                  Showcase your hackathon wins and project portfolio directly to firms across industries looking for talent.
-                </p>
-                <button
-                  onClick={() => console.log('Get hired clicked')}
-                  className="absolute bottom-4 left-4 p-2 rounded-full bg-background border border-border text-foreground transition-all duration-300 group-hover:bg-foreground group-hover:text-background group-hover:scale-110"
-                >
-                  <ArrowUpRight className="w-4 h-4" />
-                </button>
-              </div>
-
-              {/* Card 3 - Shifted Right */}
-              <div className="col-span-1 relative group bg-card text-card-foreground rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 translate-x-12 md:translate-x-8 border border-border">
-                <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
-                  3
-                </div>
-                <h3 className="text-xl font-bold font-sora mb-3">Real-time Collaboration</h3>
-                <p className="text-muted-foreground font-sora text-xs mb-6 leading-relaxed">
-                  Communicate and collaborate with your team members through our integrated chat and project tools.
-                </p>
-                <button
-                  onClick={() => console.log('Real-time Collaboration clicked')}
-                  className="absolute bottom-4 right-4 p-2 rounded-full bg-background border border-border text-foreground transition-all duration-300 group-hover:bg-foreground group-hover:text-background group-hover:scale-110"
-                >
-                  <ArrowUpRight className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Animated Testimonial Effect */}
-      <div className="relative overflow-hidden pb-12 mt-10">
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground/5 via-transparent to-foreground/5" />
-        <div className="relative z-10">
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-2xl md:text-4xl font-bold font-sora tracking-tight mb-4">
-                What Users Say
-              </h2>
-              <p className="text-lg md:text-xl text-muted-foreground font-sora">
-                Real experiences from our community
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
-              {/* Card 1 - Shifted Right */}
-              <div className="col-span-1 relative group bg-card text-card-foreground rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 translate-x-12 md:translate-x-8 border border-border">
-                <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
-                  1
-                </div>
-                <h3 className="text-xl font-bold font-sora mb-3">Smart Matching</h3>
-                <p className="text-muted-foreground font-sora text-xs mb-6 leading-relaxed">
-                  Our algorithm connects you with teammates based on complementary skills and shared interests.
-                </p>
-                <button
-                  onClick={() => console.log('Smart Matching clicked')}
-                  className="absolute bottom-4 right-4 p-2 rounded-full bg-background border border-border text-foreground transition-all duration-300 group-hover:bg-foreground group-hover:text-background group-hover:scale-110"
-                >
-                  <ArrowUpRight className="w-4 h-4" />
-                </button>
-
-                {/* Animated Testimonial Line */}
-                <div className="absolute bottom-4 right-4 w-1 h-0 bg-[#7be382] rounded-full transition-all duration-1000 ease-out"></div>
-                <div className="absolute bottom-4 right-4 w-0 h-0 bg-[#7be382] rounded-full transition-all duration-1000 ease-out"></div>
-              </div>
-
-              {/* Card 2 - Shifted Left */}
-              <div className="col-span-1 relative group bg-card text-card-foreground rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 -translate-x-12 md:-translate-x-8 border border-border">
-                <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   2
                 </div>
                 <h3 className="text-xl font-bold font-sora mb-3">Get hired</h3>
@@ -261,10 +188,6 @@ const Index = () => {
                 >
                   <ArrowUpRight className="w-4 h-4" />
                 </button>
-
-                {/* Animated Testimonial Line */}
-                <div className="absolute bottom-4 left-4 w-1 h-0 bg-[#7be382] rounded-full transition-all duration-1000 ease-out"></div>
-                <div className="absolute bottom-4 left-4 w-0 h-0 bg-[#7be382] rounded-full transition-all duration-1000 ease-out"></div>
               </div>
 
               {/* Card 3 - Shifted Right */}
@@ -282,15 +205,14 @@ const Index = () => {
                 >
                   <ArrowUpRight className="w-4 h-4" />
                 </button>
-
-                {/* Animated Testimonial Line */}
-                <div className="absolute bottom-4 right-4 w-1 h-0 bg-[#7be382] rounded-full transition-all duration-1000 ease-out"></div>
-                <div className="absolute bottom-4 right-4 w-0 h-0 bg-[#7be382] rounded-full transition-all duration-1000 ease-out"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* Feature Video Section - Moved to the end */}
       <FeatureVideo />
