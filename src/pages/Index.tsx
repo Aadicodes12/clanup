@@ -35,7 +35,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col transition-colors duration-300 overflow-x-hidden">
       {/* Navbar */}
-      <nav className="bg-card p-2 flex justify-between items-center border-b border-border sticky top-0 z-50">
+      <nav className="bg-card p-2 flex justify-between items-center sticky top-0 z-50">
         <div className="text-lg font-bold font-mono tracking-tight h-6 flex items-center">Clanup</div>
         <div className="flex items-center gap-2 md:gap-4">
           <ThemeToggle />
@@ -79,7 +79,7 @@ const Index = () => {
           </p>
 
           {/* Join Count Line */}
-          <div className="flex items-center gap-2 mt-6 mb-10 px-4 py-2 rounded-full bg-muted/50 border border-border/50">
+          <div className="flex items-center gap-2 mt-6 mb-10 px-4 py-2 rounded-full bg-muted/50">
             <div className="flex -space-x-2">
               {[1, 2, 3].map((i) => (
                 <div key={i} className="w-6 h-6 rounded-full border-2 border-background bg-muted flex items-center justify-center overflow-hidden">
