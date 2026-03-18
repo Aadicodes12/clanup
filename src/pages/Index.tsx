@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import TextMarquee from '@/components/TextMarquee';
 import HowItWorks from '@/components/HowItWorks';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
-import FeatureVideo from '@/components/FeatureVideo';
 import CityExplorer from '@/components/CityExplorer';
 import TestimonialsMinimal from '@/components/TestimonialsMinimal';
 import Footer from '@/components/Footer';
@@ -209,9 +208,6 @@ const Index = () => {
       <div className="mt-24">
         <TestimonialsMinimal />
       </div>
-
-      {/* Feature Video Section */}
-      <FeatureVideo />
 
       {/* Footer */}
       <Footer />
