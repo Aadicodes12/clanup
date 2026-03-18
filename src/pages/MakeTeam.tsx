@@ -83,6 +83,7 @@ const MakeTeam = () => {
   const navigate = useNavigate();
   const { user, loading: authLoading } = useAuth();
   
+  // Initialize state from localStorage if available
   const [roles, setRoles] = useState<Role[]>(() => {
     const saved = localStorage.getItem('clanup_draft_team');
     if (saved) {
@@ -101,6 +102,7 @@ const MakeTeam = () => {
 
   const [isSignupOpen, setIsSignupOpen] = useState(false);
 
+  // Save to localStorage whenever roles change
   useEffect(() => {
     const stateToSave = roles.map(({ icon, ...rest }) => rest);
     localStorage.setItem('clanup_draft_team', JSON.stringify(stateToSave));
@@ -135,11 +137,14 @@ const MakeTeam = () => {
   };
 
   const handleFinalize = () => {
+    // If we are still loading auth state, wait
     if (authLoading) return;
     
     if (!user) {
+      // User is not logged in, show the signup modal
       setIsSignupOpen(true);
     } else {
+      // User is logged in, finalize and go to dashboard
       toast.success("Team locked in! Redirecting to dashboard...");
       localStorage.removeItem('clanup_draft_team');
       setTimeout(() => navigate('/dashboard'), 1500);
@@ -148,7 +153,7 @@ const MakeTeam = () => {
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
-    toast.info("Signed out.");
+    toast.info("Signed out. You can now test the signup flow again.");
   };
 
   return (
