@@ -9,7 +9,7 @@ import FeatureVideo from '@/components/FeatureVideo';
 import CityExplorer from '@/components/CityExplorer';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useNavigate } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Menu } from 'lucide-react';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -31,9 +31,11 @@ const Index = () => {
       {/* Navbar */}
       <nav className="bg-card p-4 flex justify-between items-center border-b border-border sticky top-0 z-50">
         <div className="text-lg font-bold font-mono tracking-tight h-8 flex items-center">Clanup</div>
-        <div className="flex items-center gap-4 md:gap-6">
-          <div className="text-sm md:text-lg font-bold font-mono tracking-tight cursor-pointer hover:opacity-70 transition-opacity h-8 flex items-center">About</div>
+        <div className="flex items-center gap-2 md:gap-4">
           <ThemeToggle />
+          <Button variant="ghost" size="icon" className="rounded-full">
+            <Menu className="h-6 w-6" />
+          </Button>
         </div>
       </nav>
 
