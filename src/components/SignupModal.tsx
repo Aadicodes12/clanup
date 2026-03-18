@@ -23,8 +23,8 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose, teamSnapshot
   const handleGoogleLogin = async () => {
     try {
       setLoading(true);
-      // Use origin + pathname to avoid carrying over old auth codes in the URL
-      const redirectUrl = window.location.origin + window.location.pathname;
+      // Use origin only to ensure it matches Supabase whitelist
+      const redirectUrl = window.location.origin;
       
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
@@ -47,7 +47,7 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose, teamSnapshot
 
     try {
       setLoading(true);
-      const redirectUrl = window.location.origin + window.location.pathname;
+      const redirectUrl = window.location.origin;
       const { error } = await supabase.auth.signInWithOtp({
         email,
         options: {
