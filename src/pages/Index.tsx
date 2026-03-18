@@ -9,8 +9,9 @@ import TestimonialsMinimal from '@/components/TestimonialsMinimal';
 import Footer from '@/components/Footer';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useNavigate } from 'react-router-dom';
-import { ArrowUpRight, Menu, Users } from 'lucide-react';
+import { ArrowUpRight, Menu } from 'lucide-react';
 import { useAuth } from '@/components/AuthProvider';
+import Counter from '@/components/Counter';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -88,7 +89,7 @@ const Index = () => {
               ))}
             </div>
             <p className="text-sm md:text-base font-sora font-medium text-muted-foreground">
-              Join <span className="text-foreground font-bold">200+ hackers</span>
+              Join <span className="text-foreground font-bold"><Counter end={200} suffix="+" /> hackers</span>
             </p>
           </div>
 
