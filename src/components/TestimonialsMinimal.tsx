@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 const testimonials = [
@@ -22,34 +22,15 @@ const testimonials = [
 ];
 
 const TestimonialsMinimal = () => {
-  const [visibleIndices, setVisibleIndices] = useState<number[]>([]);
-  const testimonialRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = testimonialRefs.current.indexOf(entry.target as HTMLDivElement);
-            if (index !== -1 && !visibleIndices.includes(index)) {
-              setVisibleIndices((prev) => [...prev, index]);
-            }
-          }
-        });
-      },
-      { threshold: 0.2 },
-    );
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    }, 4000);
 
-    testimonialRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => {
-      testimonialRefs.current.forEach((ref) => {
-        if (ref) observer.unobserve(ref);
-      });
-    };
-  }, [visibleIndices]);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section className="w-full py-24 bg-[#000000] relative overflow-hidden">
@@ -62,7 +43,7 @@ const TestimonialsMinimal = () => {
       />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
+        <div className="text-center mb-16">
           <h2 className="text-2xl md:text-4xl font-bold font-sora text-white mb-3 tracking-tight">
             Still in doubt?
           </h2>
@@ -71,41 +52,52 @@ const TestimonialsMinimal = () => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-y-16 md:gap-y-24">
-          {testimonials.map((t, i) => (
-            <div
-              key={i}
-              ref={(el) => (testimonialRefs.current[i] = el)}
-              className={cn(
-                "relative flex flex-col items-center text-center transition-all duration-1000 ease-out",
-                visibleIndices.includes(i) 
-                  ? "opacity-100 translate-y-0" 
-                  : "opacity-0 translate-y-4"
-              )}
-            >
-              {/* Testimonial Content */}
-              <div className="mb-4 md:mb-6 px-4">
-                <blockquote className="text-white font-medium text-lg md:text-xl leading-relaxed mb-4 font-sora">
+        {/* Sliding Content Container */}
+        <div className="relative h-40 md:h-48 overflow-hidden mb-8">
+          <div 
+            className="flex transition-transform duration-700 ease-in-out h-full"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {testimonials.map((t, i) => (
+              <div 
+                key={i} 
+                className="w-full flex-shrink-0 flex flex-col items-center justify-center text-center px-4"
+              >
+                <blockquote className="text-white font-medium text-lg md:text-2xl leading-relaxed mb-4 font-sora max-w-2xl">
                   "{t.quote}"
                 </blockquote>
                 <div className="flex flex-col items-center gap-1">
-                  <span className="text-[#888888] text-sm font-sora">{t.author}</span>
-                  <span className="text-[#666666] text-xs font-sora font-light">{t.role}</span>
+                  <span className="text-[#888888] text-sm md:text-base font-sora">{t.author}</span>
+                  <span className="text-[#666666] text-xs md:text-sm font-sora font-light">{t.role}</span>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
 
-              {/* Floating Anchor Line */}
-              <div className="w-full max-w-xs md:max-w-md mt-4 relative">
-                {/* The Line */}
-                <div className="h-[1px] w-full bg-[#2A2A2A]" />
-                {/* The Soft Glow */}
-                <div 
-                  className="absolute inset-0 h-[1px] w-full bg-[#00FF88] blur-md opacity-10"
-                  style={{ boxShadow: '0 0 15px 2px rgba(0, 255, 136, 0.08)' }}
-                />
-              </div>
-            </div>
-          ))}
+        {/* Permanent Floating Anchor Line */}
+        <div className="w-full max-w-xs md:max-w-md mx-auto relative">
+          {/* The Line (Greyish White) */}
+          <div className="h-[1px] w-full bg-white/20" />
+          
+          {/* The Soft Green Glow */}
+          <div 
+            className="absolute inset-0 h-[1px] w-full bg-[#00FF88] blur-md opacity-10"
+            style={{ boxShadow: '0 0 20px 4px rgba(0, 255, 136, 0.12)' }}
+          />
+          
+          {/* Pagination Dots (Optional but helpful for context) */}
+          <div className="flex justify-center gap-2 mt-6">
+            {testimonials.map((_, i) => (
+              <div 
+                key={i}
+                className={cn(
+                  "w-1.5 h-1.5 rounded-full transition-all duration-300",
+                  currentIndex === i ? "bg-[#00FF88] w-4" : "bg-white/20"
+                )}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
