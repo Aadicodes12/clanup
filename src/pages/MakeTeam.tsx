@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { 
   Plus, 
   Check, 
@@ -18,6 +18,7 @@ import { Badge } from '@/components/ui/badge';
 import { useNavigate } from 'react-router-dom';
 import { toast } from "sonner";
 import SignupModal from '@/components/SignupModal';
+import { useAuth } from '@/components/AuthProvider';
 
 interface Role {
   id: string;
@@ -78,8 +79,33 @@ const SUGGESTED_TEAMMATES = [
 
 const MakeTeam = () => {
   const navigate = useNavigate();
-  const [roles, setRoles] = useState<Role[]>(INITIAL_ROLES);
+  const { user } = useAuth();
+  
+  // Initialize state from localStorage if available
+  const [roles, setRoles] = useState<Role[]>(() => {
+    const saved = localStorage.getItem('clanup_draft_team');
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        // Re-attach icons since they can't be stringified
+        return parsed.map((p: any) => ({
+          ...p,
+          icon: INITIAL_ROLES.find(r => r.id === p.id)?.icon
+        }));
+      } catch (e) {
+        return INITIAL_ROLES;
+      }
+    }
+    return INITIAL_ROLES;
+  });
+
   const [isSignupOpen, setIsSignupOpen] = useState(false);
+
+  // Save to localStorage whenever roles change
+  useEffect(() => {
+    const stateToSave = roles.map(({ icon, ...rest }) => rest);
+    localStorage.setItem('clanup_draft_team', JSON.stringify(stateToSave));
+  }, [roles]);
 
   const teamStrength = useMemo(() => {
     const filledCount = roles.filter(r => r.status !== 'empty').length;
@@ -109,8 +135,15 @@ const MakeTeam = () => {
     toast.success(`${roles.find(r => r.id === id)?.title} added to squad!`);
   };
 
-  const triggerSignup = () => {
-    setIsSignupOpen(true);
+  const handleFinalize = () => {
+    if (!user) {
+      setIsSignupOpen(true);
+    } else {
+      toast.success("Team locked in! Redirecting to dashboard...");
+      // Here you would typically save to Supabase DB
+      localStorage.removeItem('clanup_draft_team');
+      setTimeout(() => navigate('/dashboard'), 1500);
+    }
   };
 
   return (
@@ -241,7 +274,7 @@ const MakeTeam = () => {
                         <Button 
                           variant="outline" 
                           className="w-full border-white/10 hover:bg-[#7be382] hover:text-black hover:border-[#7be382] transition-all duration-300 rounded-xl font-bold"
-                          onClick={triggerSignup}
+                          onClick={handleFinalize}
                         >
                           Add to Squad
                         </Button>
@@ -301,7 +334,7 @@ const MakeTeam = () => {
                 <div className="pt-6 space-y-4">
                   <Button 
                     className="w-full bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-8 rounded-2xl text-xl group shadow-[0_20px_40px_rgba(123,227,130,0.15)] transition-all duration-500 hover:-translate-y-1"
-                    onClick={triggerSignup}
+                    onClick={handleFinalize}
                   >
                     Lock This Team In
                     <Zap className="w-5 h-5 ml-2 fill-current" />
@@ -309,8 +342,13 @@ const MakeTeam = () => {
                   <Button 
                     variant="ghost" 
                     className="w-full text-gray-600 hover:text-white hover:bg-white/5 py-6 rounded-2xl transition-colors"
+                    onClick={() => {
+                      localStorage.removeItem('clanup_draft_team');
+                      setRoles(INITIAL_ROLES);
+                      toast.info("Draft cleared.");
+                    }}
                   >
-                    Still fixing stuff
+                    Reset Draft
                   </Button>
                 </div>
               </CardContent>

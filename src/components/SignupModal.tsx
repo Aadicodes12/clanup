@@ -23,14 +23,13 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose, teamSnapshot
   const handleGoogleLogin = async () => {
     try {
       setLoading(true);
-      // Explicitly get the current origin (e.g., https://clanup.vercel.app)
-      const currentOrigin = window.location.origin;
+      // Use window.location.href to return to the exact page (e.g., /make-team)
+      const redirectUrl = window.location.href;
       
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          // This tells Supabase exactly where to send the user back to
-          redirectTo: currentOrigin,
+          redirectTo: redirectUrl,
         },
       });
       
@@ -57,7 +56,7 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose, teamSnapshot
       const { error } = await supabase.auth.signInWithOtp({
         email,
         options: {
-          emailRedirectTo: window.location.origin,
+          emailRedirectTo: window.location.href,
         },
       });
       if (error) throw error;
