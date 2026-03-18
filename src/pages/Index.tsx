@@ -43,11 +43,11 @@ const Index = () => {
       {/* Hero Section */}
       <div className="flex flex-col items-center px-4 py-12 md:py-20">
         <div className="text-center w-full max-w-3xl flex flex-col items-center">
-          <div className="text-4xl md:text-6xl font-bold font-sans leading-tight mb-2 text-foreground">
-            Great hacks start with
+          <div className="text-3xl md:text-5xl font-bold font-sans leading-tight mb-2 text-foreground uppercase">
+            Find your hackathon
             <br />
-            Great <span className="relative inline-block">
-              teams
+            <span className="relative inline-block">
+              team
               <svg 
                 className="absolute -bottom-1 left-0 w-full h-1 pointer-events-none" 
                 viewBox="0 0 100 2"                 preserveAspectRatio="none"
@@ -65,7 +65,7 @@ const Index = () => {
                   }}
                 />
               </svg>
-            </span>
+            </span> in 2 minutes
           </div>
 
           <div className="h-12 mt-4 mb-8 w-full flex items-center justify-center overflow-hidden">
