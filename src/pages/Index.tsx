@@ -75,7 +75,7 @@ const Index = () => {
 
           {/* Updated Subheader */}
           <p className="text-lg md:text-xl text-muted-foreground font-sora max-w-lg leading-relaxed text-center mb-10">
-            Where builders, designers, and hackers team up
+            find your hackathon team in minutes
           </p>
 
           {/* Join Count Line */}
