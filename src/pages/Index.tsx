@@ -92,8 +92,8 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Hero Video Section */}
-          <div className="w-full max-w-[340px] md:max-w-lg mx-auto mb-10 rounded-2xl overflow-hidden border-2 border-border bg-card shadow-2xl shadow-primary/5 relative aspect-video">
+          {/* Hero Video Section - Adjusted positioning */}
+          <div className="w-full max-w-[340px] md:max-w-lg mx-auto mb-8 md:mb-10 rounded-2xl overflow-hidden border-2 border-border bg-card shadow-2xl shadow-primary/5 relative aspect-video">
             <video              autoPlay
               loop
               muted              playsInline
