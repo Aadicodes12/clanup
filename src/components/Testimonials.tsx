@@ -1,8 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Quote } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const testimonials = [
   {
@@ -38,23 +37,51 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex flex-col gap-12 max-w-4xl mx-auto">
           {testimonials.map((t, i) => (
-            <Card key={i} className="bg-card border-border hover:border-[#7be382] transition-colors duration-300 relative overflow-hidden group">
-              <CardContent className="p-8">
-                <Quote className="w-10 h-10 text-[#7be382]/20 absolute top-4 right-4 group-hover:text-[#7be382]/40 transition-colors" />
-                <p className="text-foreground font-sora text-lg mb-8 relative z-10 leading-relaxed">
+            <div 
+              key={i} 
+              className={cn(
+                "flex items-end gap-3 md:gap-4",
+                i % 2 === 0 ? "flex-row" : "flex-row-reverse"
+              )}
+            >
+              {/* Avatar */}
+              <div className="flex-shrink-0 mb-1">
+                <img 
+                  src={t.avatar} 
+                  alt={t.author} 
+                  className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-muted border-2 border-border" 
+                />
+              </div>
+
+              {/* Chat Bubble */}
+              <div className={cn(
+                "relative max-w-[85%] md:max-w-[70%] p-4 md:p-6 rounded-2xl shadow-sm transition-all duration-300 hover:shadow-md",
+                i % 2 === 0 
+                  ? "bg-card border border-border rounded-bl-none" 
+                  : "bg-[#7be382]/10 border border-[#7be382]/20 rounded-br-none"
+              )}>
+                <p className="text-foreground font-sora text-sm md:text-base leading-relaxed mb-3">
                   "{t.quote}"
                 </p>
-                <div className="flex items-center gap-4">
-                  <img src={t.avatar} alt={t.author} className="w-12 h-12 rounded-full bg-muted" />
-                  <div>
-                    <h4 className="font-bold font-sora text-foreground">{t.author}</h4>
-                    <p className="text-sm text-muted-foreground font-sora">{t.role}</p>
-                  </div>
+                <div className={cn(
+                  "flex flex-col",
+                  i % 2 === 0 ? "items-start" : "items-end"
+                )}>
+                  <span className="font-bold font-sora text-xs md:text-sm text-foreground">{t.author}</span>
+                  <span className="text-[10px] md:text-xs text-muted-foreground font-sora">{t.role}</span>
                 </div>
-              </CardContent>
-            </Card>
+                
+                {/* Bubble Tail */}
+                <div className={cn(
+                  "absolute bottom-0 w-4 h-4",
+                  i % 2 === 0 
+                    ? "-left-2 bg-card border-l border-b border-border rotate-45" 
+                    : "-right-2 bg-[#7be382]/10 border-r border-b border-[#7be382]/20 -rotate-45"
+                )} style={{ clipPath: 'polygon(100% 0, 0% 100%, 100% 100%)' }}></div>
+              </div>
+            </div>
           ))}
         </div>
       </div>

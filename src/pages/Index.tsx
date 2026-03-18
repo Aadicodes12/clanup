@@ -141,8 +141,8 @@ const Index = () => {
         <CityExplorer />
       </div>
 
-      {/* Features Section - Moved up to be closer to City Explorer */}
-      <div className="relative overflow-hidden pb-12 mt-4">
+      {/* Features Section - Increased margin-top from mt-4 to mt-10 */}
+      <div className="relative overflow-hidden pb-12 mt-10">
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/5 via-transparent to-foreground/5" />
         <div className="relative z-10">
           <div className="max-w-6xl mx-auto px-4">
