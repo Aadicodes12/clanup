@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/components/theme-provider";
 import Index from "./pages/Index";
 import Teams from "./pages/Teams";
+import MakeTeam from "./pages/MakeTeam";
 import NewPage from "./pages/NewPage";
 import NotFound from "./pages/NotFound";
 
@@ -21,6 +22,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/teams" element={<Teams />} />
+            <Route path="/make-team" element={<MakeTeam />} />
             <Route path="/new-page" element={<NewPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

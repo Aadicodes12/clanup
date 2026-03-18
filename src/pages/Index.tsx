@@ -90,7 +90,7 @@ const Index = () => {
           <div className="flex flex-col w-full items-center space-y-4">
             <Button
               className="bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-6 px-10 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight w-full max-w-[300px]"
-              onClick={() => navigate('/teams')}
+              onClick={() => navigate('/make-team')}
             >
               Make a team
             </Button>
