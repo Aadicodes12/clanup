@@ -1,19 +1,17 @@
 "use client";
 
 import React, { useState, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   Plus, 
   Check, 
-  User, 
   Code, 
   Palette, 
   Cpu, 
-  AlertCircle, 
   Zap, 
-  ArrowRight,
   ChevronLeft,
-  Sparkles
+  Sparkles,
+  AlertCircle
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -21,6 +19,7 @@ import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import { useNavigate } from 'react-router-dom';
 import { toast } from "sonner";
+import SignupModal from '@/components/SignupModal';
 
 interface Role {
   id: string;
@@ -82,7 +81,7 @@ const SUGGESTED_TEAMMATES = [
 const MakeTeam = () => {
   const navigate = useNavigate();
   const [roles, setRoles] = useState<Role[]>(INITIAL_ROLES);
-  const [selectedRoleId, setSelectedRoleId] = useState<string | null>(null);
+  const [isSignupOpen, setIsSignupOpen] = useState(false);
 
   const teamStrength = useMemo(() => {
     const filledCount = roles.filter(r => r.status !== 'empty').length;
@@ -112,10 +111,25 @@ const MakeTeam = () => {
     toast.success(`${roles.find(r => r.id === id)?.title} added to squad!`);
   };
 
+  const triggerSignup = () => {
+    setIsSignupOpen(true);
+  };
+
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white font-sora selection:bg-[#7be382] selection:text-black">
+    <div className="min-h-screen bg-[#0A0A0A] text-white font-sora selection:bg-[#7be382] selection:text-black overflow-x-hidden">
+      {/* Signup Modal */}
+      <SignupModal 
+        isOpen={isSignupOpen} 
+        onClose={() => setIsSignupOpen(false)} 
+        teamSnapshot={{
+          filledRoles: roles.filter(r => r.status !== 'empty').length,
+          totalRoles: roles.length,
+          strength: teamStrength
+        }}
+      />
+
       {/* Header */}
-      <nav className="p-6 flex items-center justify-between border-b border-white/5">
+      <nav className="p-6 flex items-center justify-between border-b border-white/5 sticky top-0 bg-[#0A0A0A]/80 backdrop-blur-md z-40">
         <button 
           onClick={() => navigate('/')}
           className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
@@ -124,33 +138,39 @@ const MakeTeam = () => {
           <span>Back</span>
         </button>
         <div className="text-xl font-bold font-mono tracking-tighter">CLANUP</div>
-        <div className="w-20" /> {/* Spacer */}
+        <div className="w-20" />
       </nav>
 
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
         
         {/* Main Content */}
-        <div className="lg:col-span-8 space-y-12">
+        <div className="lg:col-span-8 space-y-16">
           
-          {/* Top Section */}
-          <header className="space-y-4">
-            <Badge variant="outline" className="border-[#7be382] text-[#7be382] px-3 py-1 rounded-full">
-              Step 2 — Build Your Squad
-            </Badge>
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tighter leading-none">
-              Build a Team <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">
-                That Doesn't Suck
-              </span>
-            </h1>
-            <p className="text-xl text-gray-400 max-w-md">
-              Pick roles. Fill gaps. Start building.
-            </p>
+          {/* Hero Section */}
+          <header className="space-y-6">
+            <div className="space-y-2">
+              <Badge variant="outline" className="border-[#7be382] text-[#7be382] px-3 py-1 rounded-full text-[10px] uppercase tracking-widest font-bold">
+                Step 2 — Build Your Squad
+              </Badge>
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.9] font-sora">
+                Build a Team <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">
+                  That Doesn't Suck
+                </span>
+              </h1>
+              <p className="text-xl text-gray-400 max-w-md font-light">
+                Add roles. Fill gaps. Start building.
+              </p>
+            </div>
           </header>
 
           {/* Role Builder */}
-          <section className="space-y-6">
-            <h2 className="text-sm font-bold uppercase tracking-widest text-gray-500">Role Builder</h2>
+          <section className="space-y-8">
+            <div className="flex items-center gap-4">
+              <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-gray-500">Role Builder</h2>
+              <div className="h-[1px] flex-grow bg-white/5" />
+            </div>
+            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {roles.map((role) => (
                 <motion.div
@@ -159,34 +179,38 @@ const MakeTeam = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   whileHover={{ scale: 1.02 }}
-                  className={`relative group cursor-pointer rounded-2xl border-2 p-6 transition-all duration-300 ${
+                  className={`relative group cursor-pointer rounded-3xl border-2 p-8 transition-all duration-500 ${
                     role.status === 'you' 
-                      ? 'border-[#7be382] bg-[#7be382]/5' 
+                      ? 'border-[#7be382] bg-[#7be382]/5 shadow-[0_0_30px_rgba(123,227,130,0.05)]' 
                       : role.status === 'filled'
                       ? 'border-white/20 bg-white/5'
                       : 'border-white/5 bg-white/[0.02] hover:border-white/20'
                   }`}
                   onClick={() => role.status === 'empty' && handleAddRole(role.id)}
                 >
-                  <div className="flex items-center justify-between mb-4">
-                    <div className={`p-3 rounded-xl ${
+                  <div className="flex items-center justify-between mb-6">
+                    <div className={`p-4 rounded-2xl ${
                       role.status === 'you' ? 'bg-[#7be382] text-black' : 'bg-white/10 text-white'
                     }`}>
                       {role.icon}
                     </div>
                     {role.status === 'you' ? (
-                      <Badge className="bg-[#7be382] text-black">YOU</Badge>
+                      <Badge className="bg-[#7be382] text-black font-bold">YOU</Badge>
                     ) : role.status === 'filled' ? (
-                      <Check className="text-[#7be382] w-6 h-6" />
+                      <div className="w-8 h-8 rounded-full bg-[#7be382]/20 flex items-center justify-center">
+                        <Check className="text-[#7be382] w-5 h-5" />
+                      </div>
                     ) : (
-                      <Plus className="text-gray-600 group-hover:text-white transition-colors" />
+                      <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                        <Plus className="text-gray-600 group-hover:text-white w-5 h-5" />
+                      </div>
                     )}
                   </div>
                   
-                  <h3 className="text-xl font-bold mb-1">{role.title}</h3>
-                  <p className="text-sm text-gray-500">
+                  <h3 className="text-2xl font-bold mb-2 tracking-tight">{role.title}</h3>
+                  <p className="text-sm text-gray-500 font-light">
                     {role.status === 'empty' ? (
-                      <span className="italic">({role.suggestion})</span>
+                      <span className="italic opacity-60">({role.suggestion})</span>
                     ) : (
                       role.skills?.join(' • ') || 'Ready to build'
                     )}
@@ -196,36 +220,42 @@ const MakeTeam = () => {
             </div>
           </section>
 
-          {/* Suggested Teammates */}
-          <section className="space-y-6">
-            <div className="flex items-center justify-between">
-              <h2 className="text-sm font-bold uppercase tracking-widest text-gray-500">
+          {/* Smart Suggestions */}
+          <section className="space-y-8">
+            <div className="flex items-center gap-4">
+              <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-gray-500">
                 People you should probably team up with
               </h2>
+              <div className="h-[1px] flex-grow bg-white/5" />
             </div>
+            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {SUGGESTED_TEAMMATES.map((person, i) => (
-                <Card key={i} className="bg-white/[0.03] border-white/5 hover:border-white/10 transition-all overflow-hidden group">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <img src={person.avatar} alt={person.name} className="w-12 h-12 rounded-full bg-white/10" />
-                      <div className="flex-grow">
-                        <div className="flex items-center justify-between mb-1">
-                          <h4 className="font-bold text-lg text-white">{person.name}</h4>
-                          <span className="text-[#7be382] text-xs font-bold">{person.match}% Match</span>
+                <Card key={i} className="bg-white/[0.03] border-white/5 hover:border-white/10 transition-all duration-500 overflow-hidden group rounded-3xl">
+                  <CardContent className="p-8">
+                    <div className="flex items-start gap-6">
+                      <div className="relative">
+                        <img src={person.avatar} alt={person.name} className="w-16 h-16 rounded-2xl bg-white/10 object-cover" />
+                        <div className="absolute -bottom-2 -right-2 bg-[#7be382] text-black text-[10px] font-black px-2 py-0.5 rounded-md">
+                          {person.match}%
                         </div>
-                        <p className="text-sm text-gray-400 mb-3">{person.role}</p>
-                        <div className="flex flex-wrap gap-2 mb-4">
+                      </div>
+                      <div className="flex-grow space-y-4">
+                        <div>
+                          <h4 className="font-bold text-xl text-white tracking-tight">{person.name}</h4>
+                          <p className="text-sm text-gray-500 font-light">{person.role}</p>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
                           {person.skills.map(skill => (
-                            <Badge key={skill} variant="secondary" className="bg-white/5 text-gray-400 text-[10px]">
+                            <Badge key={skill} variant="secondary" className="bg-white/5 text-gray-400 text-[10px] border-none">
                               {skill}
                             </Badge>
                           ))}
                         </div>
                         <Button 
                           variant="outline" 
-                          className="w-full border-white/10 hover:bg-[#7be382] hover:text-black hover:border-[#7be382] transition-all group-hover:translate-y-0"
-                          onClick={() => toast.info(`Request sent to ${person.name}`)}
+                          className="w-full border-white/10 hover:bg-[#7be382] hover:text-black hover:border-[#7be382] transition-all duration-300 rounded-xl font-bold"
+                          onClick={triggerSignup}
                         >
                           Add to Squad
                         </Button>
@@ -240,29 +270,42 @@ const MakeTeam = () => {
 
         {/* Side Panel (Sticky) */}
         <div className="lg:col-span-4">
-          <div className="sticky top-24 space-y-6">
-            <Card className="bg-white/[0.03] border-white/10 backdrop-blur-xl">
-              <CardContent className="p-8 space-y-8">
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-bold text-white">Team Strength</h3>
-                    <span className="text-3xl font-bold text-[#7be382]">{teamStrength}%</span>
+          <div className="sticky top-32 space-y-6">
+            <Card className="bg-white/[0.02] border-white/10 backdrop-blur-2xl rounded-[2.5rem] overflow-hidden">
+              <CardContent className="p-10 space-y-10">
+                <div className="space-y-6">
+                  <div className="flex items-end justify-between">
+                    <div className="space-y-1">
+                      <h3 className="text-sm font-bold text-gray-500 uppercase tracking-widest">Team Strength</h3>
+                      <div className="text-5xl font-bold text-white tracking-tighter">
+                        {teamStrength}<span className="text-[#7be382]">%</span>
+                      </div>
+                    </div>
+                    <div className="text-right pb-1">
+                      <span className={`text-xs font-bold px-3 py-1 rounded-full ${
+                        teamStrength < 50 ? 'bg-red-500/10 text-red-400' : 'bg-[#7be382]/10 text-[#7be382]'
+                      }`}>
+                        {teamStrength < 50 ? 'Not winning yet' : 'Looking solid'}
+                      </span>
+                    </div>
                   </div>
-                  <Progress value={teamStrength} className="h-2 bg-white/10" />
+                  <Progress value={teamStrength} className="h-1.5 bg-white/5" />
                 </div>
 
-                <div className="space-y-4">
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-gray-500">Insights</h4>
-                  <div className="space-y-3">
+                <div className="space-y-6">
+                  <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-600">Live Insights</h4>
+                  <div className="space-y-4">
                     {insights.map((insight, i) => (
-                      <div key={i} className="flex items-start gap-3 text-sm">
-                        <div className={`mt-1 w-1.5 h-1.5 rounded-full ${
-                          insight.type === 'error' ? 'bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.5)]' :
+                      <div key={i} className="flex items-start gap-4 text-sm group">
+                        <div className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${
+                          insight.type === 'error' ? 'bg-red-500 shadow-[0_0_15px_rgba(239,68,68,0.5)]' :
                           insight.type === 'warning' ? 'bg-amber-500' :
-                          insight.type === 'success' ? 'bg-[#7be382] shadow-[0_0_10px_rgba(123,227,130,0.5)]' :
+                          insight.type === 'success' ? 'bg-[#7be382] shadow-[0_0_15px_rgba(123,227,130,0.5)]' :
                           'bg-blue-500'
                         }`} />
-                        <span className={insight.type === 'error' ? 'text-red-400' : 'text-gray-300'}>
+                        <span className={`font-light leading-tight ${
+                          insight.type === 'error' ? 'text-red-400/80' : 'text-gray-400'
+                        }`}>
                           {insight.text}
                         </span>
                       </div>
@@ -270,23 +313,17 @@ const MakeTeam = () => {
                   </div>
                 </div>
 
-                <div className="pt-4 space-y-3">
+                <div className="pt-6 space-y-4">
                   <Button 
-                    className="w-full bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-6 rounded-xl text-lg group"
-                    onClick={() => {
-                      if (teamStrength < 50) {
-                        toast.error("Your team is too weak. Add more roles.");
-                      } else {
-                        toast.success("Team locked in! Redirecting to dashboard...");
-                      }
-                    }}
+                    className="w-full bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-8 rounded-2xl text-xl group shadow-[0_20px_40px_rgba(123,227,130,0.15)] transition-all duration-500 hover:-translate-y-1"
+                    onClick={triggerSignup}
                   >
                     Lock This Team In
                     <Zap className="w-5 h-5 ml-2 fill-current" />
                   </Button>
                   <Button 
                     variant="ghost" 
-                    className="w-full text-gray-500 hover:text-white hover:bg-white/5"
+                    className="w-full text-gray-600 hover:text-white hover:bg-white/5 py-6 rounded-2xl transition-colors"
                   >
                     Still fixing stuff
                   </Button>
@@ -295,15 +332,24 @@ const MakeTeam = () => {
             </Card>
 
             {/* Hackathon Fit */}
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-[#7be382]/10 to-transparent border border-[#7be382]/20">
-              <div className="flex items-center gap-2 mb-2">
-                <Sparkles className="w-4 h-4 text-[#7be382]" />
-                <span className="text-xs font-bold text-[#7be382] uppercase tracking-tighter">Hackathon Fit</span>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="p-8 rounded-[2rem] bg-gradient-to-br from-[#7be382]/10 via-transparent to-transparent border border-[#7be382]/20 relative overflow-hidden group"
+            >
+              <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                <Sparkles className="w-12 h-12 text-[#7be382]" />
               </div>
-              <p className="text-sm text-gray-400 leading-relaxed">
-                Based on your current stack, you're a perfect match for <span className="text-white font-bold">EthIndia 2024</span>.
-              </p>
-            </div>
+              <div className="relative z-10 space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-[#7be382] animate-pulse" />
+                  <span className="text-[10px] font-black text-[#7be382] uppercase tracking-[0.2em]">Hackathon Fit</span>
+                </div>
+                <p className="text-sm text-gray-400 leading-relaxed font-light">
+                  Based on your current stack, you're a perfect match for <span className="text-white font-bold">EthIndia 2024</span>.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
 
