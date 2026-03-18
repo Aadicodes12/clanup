@@ -95,7 +95,7 @@ const Index = () => {
               Make a team
             </Button>
             <Button              variant="outline"
-              className="border-2 border-foreground/10 hover:border-foreground/30 text-foreground font-bold py-6 px-10 text-sm md:text-base rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight w-full max-w-[260px]"
+              className="border-2 border-foreground/10 hover:border-foreground/30 text-foreground font-bold py-6 px-10 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight w-full max-w-[260px]"
               onClick={() => console.log('Join a team clicked')}
             >
               Join a team that fits me
