@@ -7,23 +7,18 @@ import { useTheme } from "next-themes";
 const testimonials = [
   {
     quote: "Clanup helped me find a team for my first hackathon in just 10 minutes. We ended up winning!",
-    author: "Rohan Sharma",
+    author: "Dhruv Shah",
     role: "Full-stack Developer",
   },
   {
     quote: "The smart matching algorithm is incredible. I found teammates with exactly the skills I was missing.",
-    author: "Priya Patel",
+    author: "Nishika Sharma",
     role: "UI/UX Designer",
   },
   {
     quote: "Managing a team has never been easier. The dashboard keeps everything organized and transparent.",
-    author: "Arjun Mehta",
+    author: "Karan Iyer",
     role: "Product Manager",
-  },
-  {
-    quote: "I found my co-founder for my startup through Clanup. The community here is top-notch.",
-    author: "Ananya Iyer",
-    role: "Frontend Engineer",
   },
 ];
 
@@ -104,7 +99,7 @@ const TestimonialsMinimal = () => {
             style={{ boxShadow: '0 0 25px 6px rgba(0, 255, 136, 0.5)' }}
           />
           
-          {/* Pagination Dots - Now the final element */}
+          {/* Pagination Dots */}
           <div className="flex justify-center gap-2 mt-6">
             {testimonials.map((_, i) => (
               <div 
