@@ -26,7 +26,7 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose, teamSnapshot
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: '/make-team',
+          redirectTo: `${window.location.origin}/make-team`,
         },
       });
       
@@ -56,7 +56,7 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose, teamSnapshot
       const { error } = await supabase.auth.signInWithOtp({
         email,
         options: {
-          emailRedirectTo: '/make-team',
+          emailRedirectTo: `${window.location.origin}/make-team`,
         },
       });
       if (error) throw error;
