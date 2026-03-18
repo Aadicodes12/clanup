@@ -8,6 +8,8 @@ import { AuthProvider } from "@/components/AuthProvider";
 import Index from "./pages/Index";
 import Teams from "./pages/Teams";
 import MakeTeam from "./pages/MakeTeam";
+import Dashboard from "./pages/Dashboard";
+import Profile from "./pages/Profile";
 import NewPage from "./pages/NewPage";
 import NotFound from "./pages/NotFound";
 
@@ -25,6 +27,8 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/teams" element={<Teams />} />
               <Route path="/make-team" element={<MakeTeam />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/profile" element={<Profile />} />
               <Route path="/new-page" element={<NewPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
