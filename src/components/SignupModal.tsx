@@ -23,22 +23,20 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose, teamSnapshot
   const handleGoogleLogin = async () => {
     try {
       setLoading(true);
-      // Use window.location.origin to get the base URL (e.g., https://your-app.vercel.app)
-      const redirectUrl = window.location.origin;
+      // Explicitly get the current origin (e.g., https://clanup.vercel.app)
+      const currentOrigin = window.location.origin;
       
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: redirectUrl,
+          // This tells Supabase exactly where to send the user back to
+          redirectTo: currentOrigin,
         },
       });
       
       if (error) {
-        if (error.message.includes("provider_not_enabled") || error.message.includes("not enabled")) {
-          toast.error("Google login isn't enabled in Supabase yet. Go to Auth > Providers > Google to enable it!", {
-            duration: 6000,
-            icon: <AlertCircle className="text-amber-500" />
-          });
+        if (error.message.includes("provider_not_enabled")) {
+          toast.error("Google login isn't enabled in Supabase yet.");
         } else {
           throw error;
         }
