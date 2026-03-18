@@ -73,9 +73,9 @@ const Index = () => {
             </span>
           </div>
 
-          {/* Subtitle */}
+          {/* Updated Subheader */}
           <p className="text-lg md:text-xl text-muted-foreground font-sora max-w-lg leading-relaxed text-center mb-10">
-            Connect with innovators and solve problems together
+            Where builders, designers, and hackers team up
           </p>
 
           {/* Join Count Line */}
