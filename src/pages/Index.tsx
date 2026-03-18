@@ -201,7 +201,7 @@ const Index = () => {
               </div>
 
               {/* Card 3 - Real-time Collaboration */}
-              <div className="col-span-1 relative group bg-card text-card-foreground rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 translate-x-12 md:translate-x-8 border border-border>
+              <div className="col-span-1 relative group bg-card text-card-foreground rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 translate-x-12 md:translate-x-8 border border-border">
                 <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   3
                 </div>
