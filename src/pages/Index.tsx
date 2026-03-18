@@ -8,6 +8,7 @@ import HowItWorksSteps from '@/components/HowItWorksSteps';
 import FeatureVideo from '@/components/FeatureVideo';
 import CityExplorer from '@/components/CityExplorer';
 import TestimonialsMinimal from '@/components/TestimonialsMinimal';
+import Footer from '@/components/Footer';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useNavigate } from 'react-router-dom';
 import { ArrowUpRight, Menu } from 'lucide-react';
@@ -136,7 +137,7 @@ const Index = () => {
         <CityExplorer />
       </div>
 
-      {/* Features Section - Increased margin-top from mt-4 to mt-10 */}
+      {/* Features Section */}
       <div className="relative overflow-hidden pb-12 mt-10">
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/5 via-transparent to-foreground/5" />
         <div className="relative z-10">
@@ -204,13 +205,16 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Testimonials Section - Using minimalist dark UI component */}
-      <TestimonialsMinimal />
+      {/* Testimonials Section - Pushed down with mt-24 */}
+      <div className="mt-24">
+        <TestimonialsMinimal />
+      </div>
 
-      {/* Feature Video Section - Moved to the end */}
+      {/* Feature Video Section */}
       <FeatureVideo />
 
-      <div className="h-24"></div>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
