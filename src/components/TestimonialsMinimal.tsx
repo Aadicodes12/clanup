@@ -7,18 +7,23 @@ import { useTheme } from "next-themes";
 const testimonials = [
   {
     quote: "Clanup helped me find a team for my first hackathon in just 10 minutes. We ended up winning!",
-    author: "Alex Chen",
+    author: "Rohan Sharma",
     role: "Full-stack Developer",
   },
   {
     quote: "The smart matching algorithm is incredible. I found teammates with exactly the skills I was missing.",
-    author: "Sarah Miller",
+    author: "Priya Patel",
     role: "UI/UX Designer",
   },
   {
     quote: "Managing a team has never been easier. The dashboard keeps everything organized and transparent.",
-    author: "Michael Ross",
+    author: "Arjun Mehta",
     role: "Product Manager",
+  },
+  {
+    quote: "I found my co-founder for my startup through Clanup. The community here is top-notch.",
+    author: "Ananya Iyer",
+    role: "Frontend Engineer",
   },
 ];
 
@@ -46,7 +51,7 @@ const TestimonialsMinimal = () => {
   const subMutedTextColor = isInverted ? "text-gray-400" : "text-[#666666]";
 
   return (
-    <section className={cn("w-full py-24 relative overflow-hidden transition-colors duration-500", bgColor)}>
+    <section className={cn("w-full pt-12 pb-10 relative overflow-hidden transition-colors duration-500", bgColor)}>
       {/* Subtle Grain Texture Overlay */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-[0.03] mix-blend-overlay"
@@ -56,17 +61,17 @@ const TestimonialsMinimal = () => {
       />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className={cn("text-2xl md:text-4xl font-bold font-sora mb-3 tracking-tight", textColor)}>
+        <div className="text-center mb-10">
+          <h2 className={cn("text-2xl md:text-4xl font-bold font-sora mb-2 tracking-tight", textColor)}>
             Still in doubt?
           </h2>
-          <p className={cn("text-lg font-sora font-light", mutedTextColor)}>
+          <p className={cn("text-base md:text-lg font-sora font-light", mutedTextColor)}>
             Have a look at what our users say
           </p>
         </div>
 
         {/* Sliding Content Container */}
-        <div className="relative h-40 md:h-48 overflow-hidden mb-8">
+        <div className="relative h-36 md:h-40 overflow-hidden mb-6">
           <div 
             className="flex transition-transform duration-700 ease-in-out h-full"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -76,12 +81,12 @@ const TestimonialsMinimal = () => {
                 key={i} 
                 className="w-full flex-shrink-0 flex flex-col items-center justify-center text-center px-4"
               >
-                <blockquote className={cn("font-medium text-lg md:text-2xl italic leading-relaxed mb-4 font-sora max-w-2xl", textColor)}>
+                <blockquote className={cn("font-medium text-base md:text-xl italic leading-relaxed mb-3 font-sora max-w-2xl", textColor)}>
                   "{t.quote}"
                 </blockquote>
-                <div className="flex flex-col items-center gap-1">
-                  <span className={cn("text-sm md:text-base font-sora", mutedTextColor)}>{t.author}</span>
-                  <span className={cn("text-xs md:text-sm font-sora font-light", subMutedTextColor)}>{t.role}</span>
+                <div className="flex flex-col items-center gap-0.5">
+                  <span className={cn("text-xs md:text-sm font-sora", mutedTextColor)}>{t.author}</span>
+                  <span className={cn("text-[10px] md:text-xs font-sora font-light", subMutedTextColor)}>{t.role}</span>
                 </div>
               </div>
             ))}
@@ -99,8 +104,8 @@ const TestimonialsMinimal = () => {
             style={{ boxShadow: '0 0 25px 6px rgba(0, 255, 136, 0.5)' }}
           />
           
-          {/* Pagination Dots */}
-          <div className="flex justify-center gap-2 mt-8">
+          {/* Pagination Dots - Now the final element */}
+          <div className="flex justify-center gap-2 mt-6">
             {testimonials.map((_, i) => (
               <div 
                 key={i}
