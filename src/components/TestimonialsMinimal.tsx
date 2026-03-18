@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
 
 const testimonials = [
   {
@@ -23,8 +24,11 @@ const testimonials = [
 
 const TestimonialsMinimal = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
     }, 4000);
@@ -32,8 +36,17 @@ const TestimonialsMinimal = () => {
     return () => clearInterval(timer);
   }, []);
 
+  if (!mounted) return null;
+
+  // Invert colors: If theme is dark, section is light. If theme is light, section is dark.
+  const isInverted = resolvedTheme === "dark";
+  const bgColor = isInverted ? "bg-white" : "bg-black";
+  const textColor = isInverted ? "text-black" : "text-white";
+  const mutedTextColor = isInverted ? "text-gray-500" : "text-[#888888]";
+  const subMutedTextColor = isInverted ? "text-gray-400" : "text-[#666666]";
+
   return (
-    <section className="w-full py-24 bg-[#000000] relative overflow-hidden">
+    <section className={cn("w-full py-24 relative overflow-hidden transition-colors duration-500", bgColor)}>
       {/* Subtle Grain Texture Overlay */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-[0.03] mix-blend-overlay"
@@ -44,10 +57,10 @@ const TestimonialsMinimal = () => {
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-4xl font-bold font-sora text-white mb-3 tracking-tight">
+          <h2 className={cn("text-2xl md:text-4xl font-bold font-sora mb-3 tracking-tight", textColor)}>
             Still in doubt?
           </h2>
-          <p className="text-lg text-[#888888] font-sora font-light">
+          <p className={cn("text-lg font-sora font-light", mutedTextColor)}>
             Have a look at what our users say
           </p>
         </div>
@@ -63,12 +76,12 @@ const TestimonialsMinimal = () => {
                 key={i} 
                 className="w-full flex-shrink-0 flex flex-col items-center justify-center text-center px-4"
               >
-                <blockquote className="text-white font-medium text-lg md:text-2xl leading-relaxed mb-4 font-sora max-w-2xl">
+                <blockquote className={cn("font-medium text-lg md:text-2xl italic leading-relaxed mb-4 font-sora max-w-2xl", textColor)}>
                   "{t.quote}"
                 </blockquote>
                 <div className="flex flex-col items-center gap-1">
-                  <span className="text-[#888888] text-sm md:text-base font-sora">{t.author}</span>
-                  <span className="text-[#666666] text-xs md:text-sm font-sora font-light">{t.role}</span>
+                  <span className={cn("text-sm md:text-base font-sora", mutedTextColor)}>{t.author}</span>
+                  <span className={cn("text-xs md:text-sm font-sora font-light", subMutedTextColor)}>{t.role}</span>
                 </div>
               </div>
             ))}
@@ -78,22 +91,22 @@ const TestimonialsMinimal = () => {
         {/* Permanent Floating Anchor Line */}
         <div className="w-full max-w-xs md:max-w-md mx-auto relative">
           {/* The Line (Greyish White) */}
-          <div className="h-[1px] w-full bg-white/20" />
+          <div className="h-[1px] w-full bg-gray-400/30" />
           
-          {/* The Soft Green Glow */}
+          {/* Enhanced Green Glow */}
           <div 
-            className="absolute inset-0 h-[1px] w-full bg-[#00FF88] blur-md opacity-10"
-            style={{ boxShadow: '0 0 20px 4px rgba(0, 255, 136, 0.12)' }}
+            className="absolute inset-0 h-[1px] w-full bg-[#00FF88] blur-lg opacity-40"
+            style={{ boxShadow: '0 0 25px 6px rgba(0, 255, 136, 0.5)' }}
           />
           
-          {/* Pagination Dots (Optional but helpful for context) */}
-          <div className="flex justify-center gap-2 mt-6">
+          {/* Pagination Dots */}
+          <div className="flex justify-center gap-2 mt-8">
             {testimonials.map((_, i) => (
               <div 
                 key={i}
                 className={cn(
                   "w-1.5 h-1.5 rounded-full transition-all duration-300",
-                  currentIndex === i ? "bg-[#00FF88] w-4" : "bg-white/20"
+                  currentIndex === i ? "bg-[#00FF88] w-4" : "bg-gray-400/20"
                 )}
               />
             ))}
