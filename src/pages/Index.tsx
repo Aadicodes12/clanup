@@ -7,6 +7,7 @@ import HowItWorks from '@/components/HowItWorks';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
 import FeatureVideo from '@/components/FeatureVideo';
 import CityExplorer from '@/components/CityExplorer';
+import Testimonials from '@/components/Testimonials';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useNavigate } from 'react-router-dom';
 import { ArrowUpRight, Menu } from 'lucide-react';
@@ -209,6 +210,9 @@ const Index = () => {
           </div>
         </div>
       </div>
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* Feature Video Section - Moved to the end */}
       <FeatureVideo />
