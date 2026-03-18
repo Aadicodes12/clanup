@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import TextMarquee from '@/components/TextMarquee';
 import HowItWorks from '@/components/HowItWorks';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
 import CityExplorer from '@/components/CityExplorer';
@@ -10,7 +9,7 @@ import TestimonialsMinimal from '@/components/TestimonialsMinimal';
 import Footer from '@/components/Footer';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useNavigate } from 'react-router-dom';
-import { ArrowUpRight, Menu } from 'lucide-react';
+import { ArrowUpRight, Menu, Users } from 'lucide-react';
 import { useAuth } from '@/components/AuthProvider';
 
 const Index = () => {
@@ -32,12 +31,6 @@ const Index = () => {
       }
     }
   }, [user, loading, navigate]);
-
-  const marqueeMessages = [
-    "Build your hackathon team in minutes",
-    "Find skilled teammates for your next project",
-    "Connect with innovators and problem-solvers",
-  ];
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col transition-colors duration-300 overflow-x-hidden">
@@ -80,12 +73,18 @@ const Index = () => {
             </span>
           </div>
 
-          <div className="h-12 mt-4 mb-8 w-full flex items-center justify-center overflow-hidden">
-            <TextMarquee
-              messages={marqueeMessages}
-              className="text-sm md:text-lg font-sora font-bold text-amber-500 dark:text-amber-400"
-              duration="20s"
-            />
+          {/* Join Count Line */}
+          <div className="flex items-center gap-2 mt-6 mb-10 px-4 py-2 rounded-full bg-muted/50 border border-border/50">
+            <div className="flex -space-x-2">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="w-6 h-6 rounded-full border-2 border-background bg-muted flex items-center justify-center overflow-hidden">
+                  <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i + 10}`} alt="User" className="w-full h-full object-cover" />
+                </div>
+              ))}
+            </div>
+            <p className="text-sm md:text-base font-sora font-medium text-muted-foreground">
+              Join <span className="text-foreground font-bold">200+ hackers</span> already on Clanup
+            </p>
           </div>
 
           {/* Hero Video Section */}
