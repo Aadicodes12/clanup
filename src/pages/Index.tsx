@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import HowItWorks from '@/components/HowItWorks';
 import HowItWorksSteps from '@/components/HowItWorksSteps';
@@ -16,12 +16,6 @@ import Counter from '@/components/Counter';
 const Index = () => {
   const navigate = useNavigate();
   const { user, loading } = useAuth();
-  const [isUnderlineVisible, setIsUnderlineVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsUnderlineVisible(true), 500);
-    return () => clearTimeout(timer);
-  }, []);
 
   // Auto-resume: If user is logged in and has a draft, take them back to finish it
   useEffect(() => {
@@ -52,26 +46,7 @@ const Index = () => {
           <div className="text-3xl md:text-5xl font-bold font-sans leading-tight mb-1 text-foreground uppercase">
             Great hacks start with
             <br />
-            great <span className="relative inline-block">
-              teams
-              <svg 
-                className="absolute -bottom-1 left-0 w-full h-1 pointer-events-none" 
-                viewBox="0 0 100 2"                 preserveAspectRatio="none"
-              >
-                <path
-                  d="M0,1 L100,1"
-                  fill="none"
-                  stroke="#7be382"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  className={`transition-all duration-1000 ease-out ${isUnderlineVisible ? 'stroke-dashoffset-0' : 'stroke-dashoffset-100'}`}
-                  style={{
-                    strokeDasharray: 100,
-                    strokeDashoffset: isUnderlineVisible ? 0 : 100
-                  }}
-                />
-              </svg>
-            </span>
+            great teams
           </div>
 
           {/* Updated Subheader */}
