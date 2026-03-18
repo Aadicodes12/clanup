@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Mail, Chrome, Loader2, ArrowLeft, AlertCircle, Zap } from 'lucide-react';
