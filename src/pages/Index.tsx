@@ -37,7 +37,7 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground flex flex-col transition-colors duration-300 overflow-x-hidden">
       {/* Navbar */}
       <nav className="bg-card p-1 flex justify-between items-center sticky top-0 z-50">
-        <div className="text-lg font-bold font-mono tracking-tight h-6 flex items-center">Clanup</div>
+        <div className="text-lg font-bold font-mono tracking-tight h-6 flex items-center ml-1">Clanup</div>
         <div className="flex items-center gap-2 md:gap-4">
           <ThemeToggle />
           <Button variant="ghost" size="icon" className="rounded-full">
