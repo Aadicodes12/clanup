@@ -92,13 +92,14 @@ const Index = () => {
               className="bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-6 px-10 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight w-full max-w-[300px]"
               onClick={() => navigate('/teams')}
             >
-              Browse Teams
+              Make a team
             </Button>
             <Button              variant="outline"
-              className="border-2 border-foreground/10 hover:border-foreground/30 text-foreground font-bold py-6 px-10 text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight w-full max-w-[300px]"
-              onClick={() => console.log('Sign Up clicked')}
+              className="border-2 border-foreground/10 hover:border-foreground/30 text-foreground font-bold py-6 px-10 text-sm md:text-base rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight w-full max-w-[260px]"
+              onClick={() => console.log('Join a team clicked')}
             >
-              Sign Up            </Button>
+              Join a team that fits me
+            </Button>
 
             <div className="w-16 h-[2px] bg-foreground/10 mt-16 mb-8"></div>
 
