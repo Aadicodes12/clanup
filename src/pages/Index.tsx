@@ -178,7 +178,7 @@ const Index = () => {
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   2
                 </div>
-                <h3 className="text-xl font-bold font-sora mb-3">Get hired across industries</h3>
+                <h3 className="text-xl font-bold font-sora mb-3">Get hired</h3>
                 <p className="text-muted-foreground font-sora text-xs mb-6 leading-relaxed">
                   Showcase your hackathon wins and project portfolio directly to firms across industries looking for talent.
                 </p>
