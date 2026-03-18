@@ -73,13 +73,8 @@ const Index = () => {
             </span>
           </div>
 
-          {/* Subtitle */}
-          <p className="text-lg md:text-xl text-muted-foreground font-sora max-w-lg leading-relaxed px-6 mb-8">
-            Find teammates for hackathons and projects in minutes
-          </p>
-
           {/* Join Count Line */}
-          <div className="flex items-center gap-2 mt-6 mb-10 px-4 py-2 rounded-full bg-muted/50 border border-border/50 w-fit mx-auto">
+          <div className="flex items-center gap-2 mt-6 mb-10 px-4 py-2 rounded-full bg-muted/50 border border-border/50">
             <div className="flex -space-x-2">
               {[1, 2, 3].map((i) => (
                 <div key={i} className="w-6 h-6 rounded-full border-2 border-background bg-muted flex items-center justify-center overflow-hidden">
