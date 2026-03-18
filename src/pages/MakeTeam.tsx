@@ -9,7 +9,8 @@ import {
   Cpu, 
   Zap, 
   ChevronLeft,
-  Sparkles
+  Sparkles,
+  LogOut
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -19,6 +20,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from "sonner";
 import SignupModal from '@/components/SignupModal';
 import { useAuth } from '@/components/AuthProvider';
+import { supabase } from '@/integrations/supabase/client';
 
 interface Role {
   id: string;
@@ -79,15 +81,13 @@ const SUGGESTED_TEAMMATES = [
 
 const MakeTeam = () => {
   const navigate = useNavigate();
-  const { user } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   
-  // Initialize state from localStorage if available
   const [roles, setRoles] = useState<Role[]>(() => {
     const saved = localStorage.getItem('clanup_draft_team');
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
-        // Re-attach icons since they can't be stringified
         return parsed.map((p: any) => ({
           ...p,
           icon: INITIAL_ROLES.find(r => r.id === p.id)?.icon
@@ -101,7 +101,6 @@ const MakeTeam = () => {
 
   const [isSignupOpen, setIsSignupOpen] = useState(false);
 
-  // Save to localStorage whenever roles change
   useEffect(() => {
     const stateToSave = roles.map(({ icon, ...rest }) => rest);
     localStorage.setItem('clanup_draft_team', JSON.stringify(stateToSave));
@@ -136,14 +135,20 @@ const MakeTeam = () => {
   };
 
   const handleFinalize = () => {
+    if (authLoading) return;
+    
     if (!user) {
       setIsSignupOpen(true);
     } else {
       toast.success("Team locked in! Redirecting to dashboard...");
-      // Here you would typically save to Supabase DB
       localStorage.removeItem('clanup_draft_team');
       setTimeout(() => navigate('/dashboard'), 1500);
     }
+  };
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    toast.info("Signed out.");
   };
 
   return (
@@ -167,7 +172,13 @@ const MakeTeam = () => {
           <span>Back</span>
         </button>
         <div className="text-xl font-bold font-mono tracking-tighter">CLANUP</div>
-        <div className="w-20" />
+        <div className="flex items-center gap-4">
+          {user && (
+            <Button variant="ghost" size="sm" onClick={handleSignOut} className="text-gray-500 hover:text-white gap-2">
+              <LogOut className="w-4 h-4" /> Sign Out
+            </Button>
+          )}
+        </div>
       </nav>
 
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -336,7 +347,7 @@ const MakeTeam = () => {
                     className="w-full bg-[#7be382] hover:bg-[#6ad071] text-black font-bold py-8 rounded-2xl text-xl group shadow-[0_20px_40px_rgba(123,227,130,0.15)] transition-all duration-500 hover:-translate-y-1"
                     onClick={handleFinalize}
                   >
-                    Lock This Team In
+                    {user ? "Lock This Team In" : "Sign Up to Lock In"}
                     <Zap className="w-5 h-5 ml-2 fill-current" />
                   </Button>
                   <Button 

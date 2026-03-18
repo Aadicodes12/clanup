@@ -23,8 +23,8 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose, teamSnapshot
   const handleGoogleLogin = async () => {
     try {
       setLoading(true);
-      // Use window.location.href to return to the exact page (e.g., /make-team)
-      const redirectUrl = window.location.href;
+      // Use origin + pathname to avoid carrying over old auth codes in the URL
+      const redirectUrl = window.location.origin + window.location.pathname;
       
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
@@ -33,13 +33,7 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose, teamSnapshot
         },
       });
       
-      if (error) {
-        if (error.message.includes("provider_not_enabled")) {
-          toast.error("Google login isn't enabled in Supabase yet.");
-        } else {
-          throw error;
-        }
-      }
+      if (error) throw error;
     } catch (error: any) {
       toast.error(error.message || "Failed to sign in with Google");
     } finally {
@@ -53,10 +47,11 @@ const SignupModal: React.FC<SignupModalProps> = ({ isOpen, onClose, teamSnapshot
 
     try {
       setLoading(true);
+      const redirectUrl = window.location.origin + window.location.pathname;
       const { error } = await supabase.auth.signInWithOtp({
         email,
         options: {
-          emailRedirectTo: window.location.href,
+          emailRedirectTo: redirectUrl,
         },
       });
       if (error) throw error;
