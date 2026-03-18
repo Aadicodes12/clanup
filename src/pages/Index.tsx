@@ -44,10 +44,10 @@ const Index = () => {
       <div className="flex flex-col items-center px-4 py-12 md:py-20">
         <div className="text-center w-full max-w-3xl flex flex-col items-center">
           <div className="text-3xl md:text-5xl font-bold font-sans leading-tight mb-2 text-foreground uppercase">
-            Find your hackathon
+            Build hackathon
             <br />
             <span className="relative inline-block">
-              team
+              teams
               <svg 
                 className="absolute -bottom-1 left-0 w-full h-1 pointer-events-none" 
                 viewBox="0 0 100 2"                 preserveAspectRatio="none"
@@ -65,7 +65,7 @@ const Index = () => {
                   }}
                 />
               </svg>
-            </span> in 2 minutes
+            </span> that actually win
           </div>
 
           <div className="h-12 mt-4 mb-8 w-full flex items-center justify-center overflow-hidden">
