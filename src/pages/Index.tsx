@@ -73,6 +73,11 @@ const Index = () => {
             </span>
           </div>
 
+          {/* Subtitle */}
+          <p className="text-lg md:text-xl text-muted-foreground font-sora max-w-lg leading-relaxed text-center mb-10">
+            Connect with innovators and solve problems together
+          </p>
+
           {/* Join Count Line */}
           <div className="flex items-center gap-2 mt-6 mb-10 px-4 py-2 rounded-full bg-muted/50 border border-border/50">
             <div className="flex -space-x-2">
@@ -83,7 +88,7 @@ const Index = () => {
               ))}
             </div>
             <p className="text-sm md:text-base font-sora font-medium text-muted-foreground">
-              Join <span className="text-foreground font-bold">200+ hackers</span> already on Clanup
+              Join <span className="text-foreground font-bold">200+ hackers</span>
             </p>
           </div>
 
@@ -196,7 +201,7 @@ const Index = () => {
               </div>
 
               {/* Card 3 - Real-time Collaboration */}
-              <div className="col-span-1 relative group bg-card text-card-foreground rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 translate-x-12 md:translate-x-8 border border-border">
+              <div className="col-span-1 relative group bg-card text-card-foreground rounded-2xl p-6 shadow-2xl transform transition-all duration-700 hover:scale-100 scale-90 translate-x-12 md:translate-x-8 border border-border>
                 <div className="absolute -top-4 -right-4 w-12 h-12 bg-[#7be382] rounded-full flex items-center justify-center text-black text-lg font-bold">
                   3
                 </div>
