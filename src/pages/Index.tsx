@@ -68,7 +68,7 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Hero Video Section - Adjusted positioning */}
+          {/* Hero Video Section */}
           <div className="w-full max-w-[340px] md:max-w-lg mx-auto mb-6 md:mb-8 rounded-2xl overflow-hidden border-2 border-border bg-card shadow-2xl shadow-primary/5 relative aspect-video">
             <video              autoPlay
               loop
@@ -88,9 +88,9 @@ const Index = () => {
             </Button>
             <Button              variant="outline"
               className="border-2 border-foreground/10 hover:border-foreground/30 text-foreground font-bold py-5 px-9 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight w-full max-w-[260px]"
-              onClick={() => console.log('Join a team clicked')}
+              onClick={() => navigate('/teams')}
             >
-              Join a team that fits me
+              Browse teams
             </Button>
 
             <div className="w-16 h-[2px] bg-foreground/10 mt-12 mb-8"></div>
@@ -114,7 +114,7 @@ const Index = () => {
           className="bg-[#FF7A00] hover:bg-[#FF8A00] text-black font-bold py-3 md:py-4 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center justify-center gap-2 w-[150px] md:w-[220px]"
           onClick={() => navigate('/teams')}
         >
-          Explore <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5" />
+          Explore teams <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5" />
         </Button>
         <Button
           className="bg-foreground text-background hover:opacity-90 font-bold py-3 md:py-4 text-lg md:text-xl rounded-full transition-all duration-300 transform hover:scale-105 font-sora tracking-tight flex items-center justify-center gap-2 w-[150px] md:w-[220px]"
@@ -153,7 +153,7 @@ const Index = () => {
                 <p className="text-muted-foreground font-sora text-xs mb-3 leading-relaxed">
                   Our algorithm connects you with teammates based on complementary skills and shared interests.
                 </p>
-                <button                  onClick={() => console.log('Smart Matching clicked')}
+                <button                  onClick={() => navigate('/teams')}
                   className="absolute bottom-2 right-2 p-1 rounded-full bg-background border border-border text-foreground transition-all duration-300 group-hover:bg-foreground group-hover:text-background group-hover:scale-110"
                 >
                   <ArrowUpRight className="w-3 h-3" />
